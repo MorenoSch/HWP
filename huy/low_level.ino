@@ -1,14 +1,19 @@
-void setPin11(boolean high);
-void setPin11asm(boolean high);
+void __attribute__((optimize("O0"))) setPin11(boolean high);
+void __attribute__((optimize("O0"))) setPin11Asm(boolean high);
 uint32_t timeSetPin11highlvl();
 uint32_t timeSetPin11lowlvl();
-uint32_t timeSetPin11asm();
+uint32_t timeSetPin11Asm();
 
 /*
 Aufgabe 3:
 high level time (mit digitalWrite): 1746 ms
-low level time (mit Register PORTB): 1747 ms
-asm time (mit Assembler): 1747 ms
+low level time (mit Register PORTB): 138 ms
+asm time (mit Assembler): 125 ms
+
+Aufgabe 4:
+high level time (mit digitalWrite): 1746 ms
+low level time (mit Register PORTB): 1131 ms
+asm time (mit Assembler): 905 ms
 */
 
 void setup() {
@@ -18,19 +23,19 @@ void setup() {
   Serial.print("high level time: ");
   Serial.println(timeSetPin11highlvl());
   Serial.print("low level time: ");
-  Serial.println(timeSetPin11highlvl());
+  Serial.println(timeSetPin11lowlvl());
   Serial.print("asm time: ");
-  Serial.println(timeSetPin11highlvl());
+  Serial.println(timeSetPin11Asm());
 }
 
 void loop(){
-  setPin11asm(true);
+  setPin11Asm(true);
   delay(1000);
-  setPin11asm(false);
+  setPin11Asm(false);
   delay(1000);
 }
 
-void setPin11(boolean high){
+void __attribute__((optimize("O0"))) setPin11(boolean high){
   if(high == true){
     PORTB |= 0b0001000;  
   }else{
@@ -38,7 +43,7 @@ void setPin11(boolean high){
   }  
 }
 
-void setPin11asm(boolean high){
+void __attribute__((optimize("O0"))) setPin11Asm(boolean high){
   if(high == true){
     asm volatile(
     "sbi %0, %1\n\t" // 2 clocks
@@ -73,11 +78,11 @@ uint32_t timeSetPin11lowlvl(){
   return end_time - start_time;
 }
 
-uint32_t timeSetPin11asm(){
+uint32_t timeSetPin11Asm(){
   uint32_t start_time = millis();
   for(uint32_t i = 0; i < 100000; i++){
-    setPin11asm(true);
-    setPin11asm(false);
+    setPin11Asm(true);
+    setPin11Asm(false);
   }
   uint32_t end_time = millis();
   return end_time - start_time;
