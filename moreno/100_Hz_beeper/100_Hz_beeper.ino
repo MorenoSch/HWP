@@ -7,6 +7,9 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   musicPin12();
+  delay(1000);
+  noTone(12);
+  tone(12, 100);
 }
 
 // interrupt service routine for timer 2 compare match
