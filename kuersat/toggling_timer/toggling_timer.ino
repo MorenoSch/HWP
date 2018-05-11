@@ -21,24 +21,27 @@ void setup() {
   
   //reset control register for timer 1
   TCCR1A = 0;
-  TCCR1b = 0;
+  TCCR1B = 0;
 
   // set clock prescaler timer 2: 64
   TCCR2B |= (1 << CS22);
   
-  // set clock prescaler timer 1  : 64
-  TCCR1B |= (1 << CS22)
+  // set clock prescaler timer 1  : 64 and enable interrupt
+  TCCR1B |= (1 << CS11) | (1 << CS10) ;
+  
 
 
   // set mode (CTC) for timer 1 and 2
   TCCR2A |= (1 << WGM21);
-  TCCR1A |= (1 << WGM21);
-    
+  TCCR1B |= (1 << WGM12);
+
   // set output compare register A for timer1 and 2
   OCR2A = 39;
-  OCR1A = 125 
-  // enable interrupt
+  OCR1A = 124; 
+  // enable interrupt 
   TIMSK2 |= (1 << OCIE2A);
+
+  //enalbe interrupt on ORC1A for timer one
   TIMSK1 |= (1 << OCIE1A);
   
   // eable all interrupts
@@ -46,9 +49,9 @@ void setup() {
 }
 
 void loop() {
-  if(tCount %1000 == 0){
-    Serial.println(tcount/1000);
-  }
+  Serial.println(tCount);
+  uint32_t p = millis();
+  while(millis() - p < 1000){}
 }
 
 // interrupt service routine for timer 2 compare match
