@@ -1,11 +1,10 @@
 // Copyright 2015: Jan Burchard
 // HWP Code: Low Level Pin Toggling with timer
-volatile uint32_t tCount;
+volatile uint32_t tCount = 0;
 void setup() {
   Serial.begin(115200);  
   // pin as output
   pinMode(12, OUTPUT);
-  tCount = 0;
   // how about a tone with 400 Hz
   // -> counter has to overflow 800x /second
   // set divider at 64
@@ -21,22 +20,27 @@ void setup() {
   
   //reset control register for timer 1
   TCCR1A = 0;
-  TCCR1b = 0;
+  TCCR1B = 0;
 
   // set clock prescaler timer 2: 64
   TCCR2B |= (1 << CS22);
   
   // set clock prescaler timer 1  : 64
-  TCCR1B |= (1 << CS22)
+  TCCR1B |= (1 << CS11);
+  TCCR1B |= (1 << CS10);
 
 
-  // set mode (CTC) for timer 1 and 2
+  // set mode (CTC) for  Timer 2
   TCCR2A |= (1 << WGM21);
-  TCCR1A |= (1 << WGM21);
+
+  // set mode (CTC) for timer 1
+  TCCR1B |= (1 << WGM12);
     
   // set output compare register A for timer1 and 2
   OCR2A = 39;
-  OCR1A = 125 
+  OCR1A = 124;
+
+  
   // enable interrupt
   TIMSK2 |= (1 << OCIE2A);
   TIMSK1 |= (1 << OCIE1A);
@@ -46,10 +50,9 @@ void setup() {
 }
 
 void loop() {
-  if(tCount %1000 == 0){
-    Serial.println(tcount/1000);
+    Serial.println(tCount);
+    delay(1000);
   }
-}
 
 // interrupt service routine for timer 2 compare match
 ISR(TIMER2_COMPA_vect) {
@@ -60,8 +63,6 @@ ISR(TIMER2_COMPA_vect) {
 
 // timer one compare match
 ISR(TIMER1_COMPA_vect) {
-  
-  // toggle pin 13
   tCount += 1;
 }
 
