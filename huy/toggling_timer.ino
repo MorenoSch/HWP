@@ -1,13 +1,25 @@
 // Copyright 2015: Jan Burchard
 // HWP Code: Low Level Pin Toggling with timer
 
+
+
 volatile uint32_t tCount = 0;
+uint32_t duration[] = {
+  1000, 500, 1000, 2000, 1000, 500, 1000, 1500, 2000, 2500
+};
+volatile uint32_t sCount = 0;
+volatile uint32_t index = 0;
+uint32_t melody[] = {
+  
+};
 
 void setup() {
   
   // pin as output
   pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
 
+  setupTimer2();
   setupTimer1();
 
   Serial.begin(115200);
@@ -15,16 +27,24 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.print("tCount: ");
-  Serial.println(tCount);
+  Serial.print("sCount: ");
+  Serial.println(sCount);
   delay(1000);
 }
 
 // interrupt service routine for timer 2 compare match
 ISR(TIMER2_COMPA_vect) {
-  
   // toggle pin
-  PINB |= (1 << 4);
+  // PINB |= (1 << 4);
+  
+  if(tCount >= sCount){
+    index += 1;
+    index = index % 10;
+    sCount = tCount + duration[index];
+    
+    // toggle pin
+    PINB |= (1 << PINB3);
+  }
 }
 
 // interrupt service routine for timer 1 compare match
@@ -88,10 +108,7 @@ void setupTimer1(){
   TCCR1B |= (1 << CS11);
   TCCR1B |= (1 << CS10);
   // set mode (CTC)
-  //TCCR1B &= ~(1 << WGM13);
   TCCR1B |= (1 << WGM12);
-  //TCCR1A &= ~(1 << WGM11);
-  //TCCR1A &= ~(1 << WGM10);
     
   // set output compare register A
   OCR1A = 124;
