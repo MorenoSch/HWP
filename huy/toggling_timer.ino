@@ -1,11 +1,51 @@
 // Copyright 2015: Jan Burchard
 // HWP Code: Low Level Pin Toggling with timer
 
+volatile uint32_t tCount = 0;
+
 void setup() {
   
   // pin as output
   pinMode(12, OUTPUT);
+
+  setupTimer1();
+
+  Serial.begin(115200);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  Serial.print("tCount: ");
+  Serial.println(tCount);
+  delay(1000);
+}
+
+// interrupt service routine for timer 2 compare match
+ISR(TIMER2_COMPA_vect) {
   
+  // toggle pin
+  PINB |= (1 << 4);
+}
+
+// interrupt service routine for timer 1 compare match
+ISR(TIMER1_COMPA_vect) {
+  tCount += 1;
+}
+
+
+void Pin12freq(uint16_t freq){
+  uint32_t interrupt = 125000/(freq * 2);
+  if(interrupt > 255){
+    TCCR2B |= (1 << CS21);
+    interrupt = 125000/((freq * 2)*4);
+  }
+  else{
+    TCCR2B &= ~(1 << CS21);
+  }
+  OCR2A = interrupt;
+}
+
+void setupTimer2(){
   // how about a tone with 400 Hz
   // -> counter has to overflow 800x /second
   // set divider at 64
@@ -35,38 +75,31 @@ void setup() {
   sei();
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  delay(1000);
-  Pin12freq(100);
-  delay(1000);
-  Pin12freq(200);
-  delay(1000);
-  Pin12freq(400);
-  delay(1000);
-  Pin12freq(800);
-  delay(1000);
-  Pin12freq(1600);
+void setupTimer1(){
+  // disable all interrupts
+  cli();
   
-}
-
-// interrupt service routine for timer 2 compare match
-ISR(TIMER2_COMPA_vect) {
+  // reset control registers
+  TCCR1A = 0;     
+  TCCR1B = 0;    
   
-  // toggle pin
-  PINB |= (1 << 4);
-}
-
-
-void Pin12freq(uint16_t freq){
-  uint32_t interrupt = 125000/(freq * 2);
-  if(interrupt > 255){
-    TCCR2B |= (1 << CS21);
-    interrupt = 125000/((freq * 2)*4);
-  }
-  else{
-    TCCR2B &= ~(1 << CS21);
-  }
-  OCR2A = interrupt;
+  // set clock prescaler: 64
+  TCCR1B &= ~(1 << CS12);
+  TCCR1B |= (1 << CS11);
+  TCCR1B |= (1 << CS10);
+  // set mode (CTC)
+  //TCCR1B &= ~(1 << WGM13);
+  TCCR1B |= (1 << WGM12);
+  //TCCR1A &= ~(1 << WGM11);
+  //TCCR1A &= ~(1 << WGM10);
+    
+  // set output compare register A
+  OCR1A = 124;
+    
+  // enable interrupt
+  TIMSK1 |= (1 << OCIE1A);    
+  
+  // enable all interrupts
+  sei();
 }
 
