@@ -1,17 +1,11 @@
-// Copyright 2015: Jan Burchard
-// HWP Code: Low Level Pin Toggling with timer
-
 void setup() {
   
   // pin as output
   pinMode(12, OUTPUT);
   
-  // how about a tone with 400 Hz
-  // -> counter has to overflow 800x /second
-  // set divider at 64
-  // -> counter increased at 125000 Hz
-  // -> count to 156.25 -> 156
-  
+  // starting frequency is 400 Hz
+  // 8.000.000/(frequency*2)*prescaler)
+  // so it should interruot if the timer is at 156
   // disable all interrupts
   cli();
   
@@ -19,7 +13,7 @@ void setup() {
   TCCR2A = 0;     
   TCCR2B = 0;    
   
-  // set clock prescaler: 256
+  // set clock prescaler: 64
   TCCR2B |= (1 << CS22);
   // set mode (CTC)
   TCCR2A |= (1 << WGM21);
@@ -53,10 +47,14 @@ ISR(TIMER2_COMPA_vect) {
 
 
 void Pin12freq(uint16_t freq){
+  // reset prescaler to 64
   TCCR2B &= (0 << CS21);
   TCCR2B |= (1 << CS22);
   uint16_t interrupt = 125000/(freq * 2);
   if(interrupt > 255){
+    // if the timer would overflow with a 64 prescaler before
+    // it would get an interrupt, the prescaler gets set to 256 and 
+    // the interrupt gets calculated with the new prescaler.
     TCCR2B |= (1 << CS21);
     interrupt = 8000000/((freq * 2)*256);
   }
