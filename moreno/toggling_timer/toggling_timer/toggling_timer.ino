@@ -1,3 +1,6 @@
+volatile uint32_t sCount = 0;
+volatile uint32_t tCount = 0;
+volatile uint8_t index = 0;
 void setup() {
   
   // pin as output
@@ -6,23 +9,39 @@ void setup() {
   // starting frequency is 400 Hz
   // 8.000.000/(frequency*2)*prescaler)
   // so it should interruot if the timer is at 156
-  // disable all interrupts
+    // disable all interrupts
   cli();
   
   // reset control registers
   TCCR2A = 0;     
   TCCR2B = 0;    
   
-  // set clock prescaler: 64
+  //reset control register for timer 1
+  TCCR1A = 0;
+  TCCR1B = 0;
+
+  // set clock prescaler timer 2: 64
   TCCR2B |= (1 << CS22);
-  // set mode (CTC)
+  
+  // set clock prescaler timer 1  : 64
+  TCCR1B |= (1 << CS11);
+  TCCR1B |= (1 << CS10);
+
+
+  // set mode (CTC) for  Timer 2
   TCCR2A |= (1 << WGM21);
+
+  // set mode (CTC) for timer 1
+  TCCR1B |= (1 << WGM12);
     
-  // set output compare register A
-  OCR2A = 156;
-    
+  // set output compare register A for timer1 and 2
+  OCR2A = 39;
+  OCR1A = 124;
+
+  
   // enable interrupt
-  TIMSK2 |= (1 << OCIE2A);    
+  TIMSK2 |= (1 << OCIE2A);
+  TIMSK1 |= (1 << OCIE1A);
   
   // eable all interrupts
   sei();
@@ -30,12 +49,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  Serial.println(tCount);
   delay(1000);
-  Pin12freq(2000);
-  delay(1000);
-  Pin12freq(400);
-  delay(1000);
-  Pin12freq(100);
  }
 
 // interrupt service routine for timer 2 compare match
@@ -45,6 +60,9 @@ ISR(TIMER2_COMPA_vect) {
   PINB |= (1 << 4);
 }
 
+ISR(TIMER1_COMPA_vect) {
+  tCount += 1;
+}
 
 void Pin12freq(uint16_t freq){
   // reset prescaler to 64
