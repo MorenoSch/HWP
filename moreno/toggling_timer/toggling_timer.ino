@@ -1,10 +1,12 @@
 volatile uint32_t sCount = 0;
 volatile uint32_t tCount = 0;
 volatile uint8_t index = 0;
+uint32_t duration[10] = {500, 500, 500, 500, 500, 500, 500, 500, 500, 500};
 void setup() {
   
   // pin as output
   pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
   
   // starting frequency is 400 Hz
   // 8.000.000/(frequency*2)*prescaler)
@@ -58,6 +60,15 @@ ISR(TIMER2_COMPA_vect) {
   
   // toggle pin
   PINB |= (1 << 4);
+  if(tCount >= sCount){
+    if(index < 9){
+    index += 1;
+    }
+    else{
+      index = 0;
+    }
+    sCount = tCount + duration[index];
+  }
 }
 
 ISR(TIMER1_COMPA_vect) {
