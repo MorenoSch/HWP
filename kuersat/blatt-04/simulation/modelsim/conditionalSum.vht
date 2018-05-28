@@ -1,0 +1,179 @@
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+
+-- ***************************************************************************
+-- This file contains a Vhdl test bench template that is freely editable to   
+-- suit user's needs .Comments are provided in each section to help the user  
+-- fill out necessary details.                                                
+-- ***************************************************************************
+-- Generated on "05/23/2018 01:25:25"
+                                                            
+-- Vhdl Test Bench template for design  :  conditionalSum
+-- 
+-- Simulation tool : ModelSim-Altera (VHDL)
+-- 
+
+LIBRARY ieee;                                               
+USE ieee.std_logic_1164.all;                                
+
+ENTITY conditionalSum_vhd_tst IS
+END conditionalSum_vhd_tst;
+ARCHITECTURE conditionalSum_arch OF conditionalSum_vhd_tst IS
+-- constants                                                 
+-- signals                                                   
+SIGNAL A0 : STD_LOGIC;
+SIGNAL A1 : STD_LOGIC;
+SIGNAL B0 : STD_LOGIC;
+SIGNAL B1 : STD_LOGIC;
+SIGNAL carry_in : STD_LOGIC;
+SIGNAL carry_out : STD_LOGIC;
+SIGNAL sum0 : STD_LOGIC;
+SIGNAL Sum1 : STD_LOGIC;
+COMPONENT conditionalSum
+	PORT (
+	A0 : IN STD_LOGIC;
+	A1 : IN STD_LOGIC;
+	B0 : IN STD_LOGIC;
+	B1 : IN STD_LOGIC;
+	carry_in : IN STD_LOGIC;
+	carry_out : OUT STD_LOGIC;
+	sum0 : OUT STD_LOGIC;
+	Sum1 : OUT STD_LOGIC
+	);
+END COMPONENT;
+BEGIN
+	i1 : conditionalSum
+	PORT MAP (
+-- list connections between master ports and signals
+	A0 => A0,
+	A1 => A1,
+	B0 => B0,
+	B1 => B1,
+	carry_in => carry_in,
+	carry_out => carry_out,
+	sum0 => sum0,
+	Sum1 => Sum1
+	);
+init : PROCESS                                               
+-- variable declarations                                     
+BEGIN                                                        
+        -- code that executes only once
+	A0 <= '0';
+	A1 <= '0';
+	B0 <= '0';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '0';
+	B0 <= '0';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '0';
+	A1 <= '1';
+	B0 <= '0';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '1';
+	B0 <= '0';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '0';
+	A1 <= '0';
+	B0 <= '1';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '0';
+	B0 <= '1';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '0';
+	A1 <= '1';
+	B0 <= '1';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '1';
+	B0 <= '1';
+	B1 <= '0';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '0';
+	A1 <= '0';
+	B0 <= '0';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '0';
+	B0 <= '0';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '0';
+	A1 <= '1';
+	B0 <= '0';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '1';
+	B0 <= '0';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '0';
+	A1 <= '0';
+	B0 <= '1';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '0';
+	B0 <= '1';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '0';
+	A1 <= '1';
+	B0 <= '1';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+	A0 <= '1';
+	A1 <= '1';
+	B0 <= '1';
+	B1 <= '1';
+	carry_in <= '0';
+	wait for 50 ns;
+		  
+WAIT;                                                       
+END PROCESS init;                                           
+always : PROCESS                                              
+-- optional sensitivity list                                  
+-- (        )                                                 
+-- variable declarations                                      
+BEGIN                                                         
+        -- code executes for every event on sensitivity list  
+WAIT;                                                        
+END PROCESS always;                                          
+END conditionalSum_arch;
