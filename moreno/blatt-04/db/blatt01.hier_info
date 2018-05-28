@@ -1,0 +1,102 @@
+|conditionalSum
+sum0 <= Volladder:inst.sum
+carry_in => Volladder:inst.carry_in
+A0 => Volladder:inst.A
+B0 => Volladder:inst.B
+Sum1 <= zweibitmultiplexer:inst4.result0
+A1 => Volladder:inst1.A
+A1 => Volladder:inst2.A
+B1 => Volladder:inst1.B
+B1 => Volladder:inst2.B
+carry_out <= zweibitmultiplexer:inst4.result1
+
+
+|conditionalSum|Volladder:inst
+carry_out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A => Halfadder_V:inst.a
+B => Halfadder_V:inst.b
+carry_in => Halfadder_V:inst2.a
+sum <= Halfadder_V:inst2.sum_bit
+
+
+|conditionalSum|Volladder:inst|Halfadder_V:inst
+a => sum_bit.IN0
+a => carry_bit.IN0
+b => sum_bit.IN1
+b => carry_bit.IN1
+sum_bit <= sum_bit.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= carry_bit.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conditionalSum|Volladder:inst|Halfadder_V:inst2
+a => sum_bit.IN0
+a => carry_bit.IN0
+b => sum_bit.IN1
+b => carry_bit.IN1
+sum_bit <= sum_bit.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= carry_bit.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conditionalSum|zweibitmultiplexer:inst4
+selekt => result0.OUTPUTSELECT
+selekt => result1.OUTPUTSELECT
+S00 => result0.DATAB
+S01 => result1.DATAB
+S10 => result0.DATAA
+S11 => result1.DATAA
+result0 <= result0.DB_MAX_OUTPUT_PORT_TYPE
+result1 <= result1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conditionalSum|Volladder:inst1
+carry_out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A => Halfadder_V:inst.a
+B => Halfadder_V:inst.b
+carry_in => Halfadder_V:inst2.a
+sum <= Halfadder_V:inst2.sum_bit
+
+
+|conditionalSum|Volladder:inst1|Halfadder_V:inst
+a => sum_bit.IN0
+a => carry_bit.IN0
+b => sum_bit.IN1
+b => carry_bit.IN1
+sum_bit <= sum_bit.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= carry_bit.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conditionalSum|Volladder:inst1|Halfadder_V:inst2
+a => sum_bit.IN0
+a => carry_bit.IN0
+b => sum_bit.IN1
+b => carry_bit.IN1
+sum_bit <= sum_bit.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= carry_bit.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conditionalSum|Volladder:inst2
+carry_out <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A => Halfadder_V:inst.a
+B => Halfadder_V:inst.b
+carry_in => Halfadder_V:inst2.a
+sum <= Halfadder_V:inst2.sum_bit
+
+
+|conditionalSum|Volladder:inst2|Halfadder_V:inst
+a => sum_bit.IN0
+a => carry_bit.IN0
+b => sum_bit.IN1
+b => carry_bit.IN1
+sum_bit <= sum_bit.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= carry_bit.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|conditionalSum|Volladder:inst2|Halfadder_V:inst2
+a => sum_bit.IN0
+a => carry_bit.IN0
+b => sum_bit.IN1
+b => carry_bit.IN1
+sum_bit <= sum_bit.DB_MAX_OUTPUT_PORT_TYPE
+carry_bit <= carry_bit.DB_MAX_OUTPUT_PORT_TYPE
+
+
