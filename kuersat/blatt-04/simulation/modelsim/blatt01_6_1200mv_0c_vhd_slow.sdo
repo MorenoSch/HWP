@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "conditionalSum")
-  (DATE "05/23/2018 01:24:47")
+  (DATE "05/29/2018 13:20:08")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition")
@@ -141,7 +141,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|result0\~0\\)
+    (INSTANCE \\inst4\|inst5\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (2163:2163:2163) (2360:2360:2360))
@@ -155,7 +155,7 @@
   )
   (CELL
     (CELLTYPE "cycloneive_lcell_comb")
-    (INSTANCE \\inst4\|result1\~0\\)
+    (INSTANCE \\inst4\|inst4\~0\\)
     (DELAY
       (ABSOLUTE
         (PORT datab (2161:2161:2161) (2357:2357:2357))

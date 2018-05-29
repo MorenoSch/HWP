@@ -38,14 +38,15 @@ carry_bit <= carry_bit.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |conditionalSum|zweibitmultiplexer:inst4
-selekt => result0.OUTPUTSELECT
-selekt => result1.OUTPUTSELECT
-S00 => result0.DATAB
-S01 => result1.DATAB
-S10 => result0.DATAA
-S11 => result1.DATAA
-result0 <= result0.DB_MAX_OUTPUT_PORT_TYPE
-result1 <= result1.DB_MAX_OUTPUT_PORT_TYPE
+result0 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+selekt => inst3.IN0
+selekt => inst6.IN0
+selekt => inst2.IN0
+S10 => inst3.IN1
+S00 => inst1.IN1
+result1 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S11 => inst2.IN1
+S01 => inst.IN1
 
 
 |conditionalSum|Volladder:inst1

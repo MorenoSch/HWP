@@ -1,5 +1,5 @@
 Analysis & Synthesis report for blatt01
-Wed May 23 01:24:35 2018
+Tue May 29 13:19:52 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 23 01:24:35 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 29 13:19:52 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; blatt01                                     ;
 ; Top-level Entity Name              ; conditionalSum                              ;
@@ -149,8 +149,8 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -160,16 +160,16 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                    ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
-; Halfadder_V.vhd                  ; yes             ; User VHDL File                     ; C:/intelFPGA_lite/18.0/blatt01/Halfadder_V.vhd        ;         ;
-; Volladder.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.0/blatt01/Volladder.bdf          ;         ;
-; zweibitmultiplexer.vhd           ; yes             ; User VHDL File                     ; C:/intelFPGA_lite/18.0/blatt01/zweibitmultiplexer.vhd ;         ;
-; conditionalSum.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.0/blatt01/conditionalSum.bdf     ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+---------+
+; Halfadder_V.vhd                  ; yes             ; User VHDL File                     ; /home/computer/Arduino/git/HWP/kuersat/blatt-04/Halfadder_V.vhd        ;         ;
+; Volladder.bdf                    ; yes             ; User Block Diagram/Schematic File  ; /home/computer/Arduino/git/HWP/kuersat/blatt-04/Volladder.bdf          ;         ;
+; conditionalSum.bdf               ; yes             ; User Block Diagram/Schematic File  ; /home/computer/Arduino/git/HWP/kuersat/blatt-04/conditionalSum.bdf     ;         ;
+; zweibitmultiplexer.bdf           ; yes             ; User Block Diagram/Schematic File  ; /home/computer/Arduino/git/HWP/kuersat/blatt-04/zweibitmultiplexer.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------+
@@ -262,22 +262,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Wed May 23 01:24:23 2018
+    Info: Processing started: Tue May 29 13:19:29 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off blatt01 -c blatt01
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file halfadder_v.vhd
-    Info (12022): Found design unit 1: Halfadder_V-behavior File: C:/intelFPGA_lite/18.0/blatt01/Halfadder_V.vhd Line: 26
-    Info (12023): Found entity 1: Halfadder_V File: C:/intelFPGA_lite/18.0/blatt01/Halfadder_V.vhd Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file volladder.bdf
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file Halfadder_V.vhd
+    Info (12022): Found design unit 1: Halfadder_V-behavior File: /home/computer/Arduino/git/HWP/kuersat/blatt-04/Halfadder_V.vhd Line: 26
+    Info (12023): Found entity 1: Halfadder_V File: /home/computer/Arduino/git/HWP/kuersat/blatt-04/Halfadder_V.vhd Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file Volladder.bdf
     Info (12023): Found entity 1: Volladder
 Info (12021): Found 1 design units, including 1 entities, in source file carry_ripple.bdf
     Info (12023): Found entity 1: carry_ripple
-Info (12021): Found 2 design units, including 1 entities, in source file zweibitmultiplexer.vhd
-    Info (12022): Found design unit 1: zweibitmultiplexer-behavior File: C:/intelFPGA_lite/18.0/blatt01/zweibitmultiplexer.vhd Line: 25
-    Info (12023): Found entity 1: zweibitmultiplexer File: C:/intelFPGA_lite/18.0/blatt01/zweibitmultiplexer.vhd Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file conditionalsum.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file conditionalSum.bdf
     Info (12023): Found entity 1: conditionalSum
+Info (12021): Found 1 design units, including 1 entities, in source file zweibitmultiplexer.bdf
+    Info (12023): Found entity 1: zweibitmultiplexer
 Info (12127): Elaborating entity "conditionalSum" for the top level hierarchy
 Info (12128): Elaborating entity "Volladder" for hierarchy "Volladder:inst"
 Info (12128): Elaborating entity "Halfadder_V" for hierarchy "Volladder:inst|Halfadder_V:inst"
@@ -290,9 +289,9 @@ Info (21057): Implemented 12 device resources after synthesis - the final resour
     Info (21059): Implemented 3 output pins
     Info (21061): Implemented 4 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 713 megabytes
-    Info: Processing ended: Wed May 23 01:24:35 2018
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 966 megabytes
+    Info: Processing ended: Tue May 29 13:19:52 2018
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:37
 
 

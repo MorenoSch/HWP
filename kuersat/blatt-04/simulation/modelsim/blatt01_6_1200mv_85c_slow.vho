@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition"
 
--- DATE "05/23/2018 01:24:46"
+-- DATE "05/29/2018 13:20:08"
 
 -- 
 -- Device: Altera EP4CE6E22C6 Package TQFP144
@@ -126,8 +126,8 @@ SIGNAL \inst|inst2|sum_bit~0_combout\ : std_logic;
 SIGNAL \A1~input_o\ : std_logic;
 SIGNAL \B1~input_o\ : std_logic;
 SIGNAL \inst|inst3~0_combout\ : std_logic;
-SIGNAL \inst4|result0~0_combout\ : std_logic;
-SIGNAL \inst4|result1~0_combout\ : std_logic;
+SIGNAL \inst4|inst5~0_combout\ : std_logic;
+SIGNAL \inst4|inst4~0_combout\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -175,7 +175,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst4|result0~0_combout\,
+	i => \inst4|inst5~0_combout\,
 	devoe => ww_devoe,
 	o => \Sum1~output_o\);
 
@@ -187,7 +187,7 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \inst4|result1~0_combout\,
+	i => \inst4|inst4~0_combout\,
 	devoe => ww_devoe,
 	o => \carry_out~output_o\);
 
@@ -279,9 +279,9 @@ PORT MAP (
 	combout => \inst|inst3~0_combout\);
 
 -- Location: LCCOMB_X1_Y6_N12
-\inst4|result0~0\ : cycloneive_lcell_comb
+\inst4|inst5~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst4|result0~0_combout\ = \A1~input_o\ $ (\B1~input_o\ $ (\inst|inst3~0_combout\))
+-- \inst4|inst5~0_combout\ = \A1~input_o\ $ (\B1~input_o\ $ (\inst|inst3~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -292,12 +292,12 @@ PORT MAP (
 	datab => \A1~input_o\,
 	datac => \B1~input_o\,
 	datad => \inst|inst3~0_combout\,
-	combout => \inst4|result0~0_combout\);
+	combout => \inst4|inst5~0_combout\);
 
 -- Location: LCCOMB_X1_Y6_N30
-\inst4|result1~0\ : cycloneive_lcell_comb
+\inst4|inst4~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \inst4|result1~0_combout\ = (\A1~input_o\ & ((\B1~input_o\) # (\inst|inst3~0_combout\))) # (!\A1~input_o\ & (\B1~input_o\ & \inst|inst3~0_combout\))
+-- \inst4|inst4~0_combout\ = (\A1~input_o\ & ((\B1~input_o\) # (\inst|inst3~0_combout\))) # (!\A1~input_o\ & (\B1~input_o\ & \inst|inst3~0_combout\))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -308,7 +308,7 @@ PORT MAP (
 	datab => \A1~input_o\,
 	datac => \B1~input_o\,
 	datad => \inst|inst3~0_combout\,
-	combout => \inst4|result1~0_combout\);
+	combout => \inst4|inst4~0_combout\);
 
 ww_sum0 <= \sum0~output_o\;
 
