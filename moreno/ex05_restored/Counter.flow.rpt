@@ -1,5 +1,5 @@
 Flow report for Counter
-Thu Jun 07 13:22:46 2018
+Thu Jun 07 15:55:01 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun 07 13:22:46 2018       ;
+; Flow Status                        ; Successful - Thu Jun 07 15:55:01 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Counter                                     ;
-; Top-level Entity Name              ; myCounter                                   ;
+; Top-level Entity Name              ; CounterWithOutput                           ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3 / 22,320 ( < 1 % )                        ;
-;     Total combinational functions  ; 3 / 22,320 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 3 / 22,320 ( < 1 % )                        ;
-; Total registers                    ; 3                                           ;
-; Total pins                         ; 5 / 154 ( 3 % )                             ;
+; Total logic elements               ; 71 / 22,320 ( < 1 % )                       ;
+;     Total combinational functions  ; 58 / 22,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 41 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 41                                          ;
+; Total pins                         ; 8 / 154 ( 5 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
@@ -64,38 +64,38 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/07/2018 13:22:24 ;
+; Start date & time ; 06/07/2018 15:54:38 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Counter             ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id        ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
-; COMPILER_SIGNATURE_ID                ; 190090212219486.152837054405672        ; --            ; --          ; --                ;
-; EDA_DESIGN_INSTANCE_NAME             ; i1                                     ; --            ; --          ; myCounter_vhd_tst ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; myCounter_vhd_tst                      ; --            ; --          ; eda_simulation    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --          ; eda_simulation    ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)                 ; <None>        ; --          ; --                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation    ;
-; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/myCounter.vht      ; --            ; --          ; myCounter_vhd_tst ;
-; EDA_TEST_BENCH_FILE                  ; myCounter.vhd                          ; --            ; --          ; myCounter_vhd_tst ;
-; EDA_TEST_BENCH_MODULE_NAME           ; myCounter_vhd_tst                      ; --            ; --          ; myCounter_vhd_tst ;
-; EDA_TEST_BENCH_NAME                  ; myCounter_vhd_tst                      ; --            ; --          ; eda_simulation    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --          ; --                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; myCounter   ; Top               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; myCounter   ; Top               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; myCounter   ; Top               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                ;
-; SEARCH_PATH                          ; vhdl/                                  ; --            ; --          ; --                ;
-; TOP_LEVEL_ENTITY                     ; myCounter                              ; Counter       ; --          ; --                ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                      ;
++--------------------------------------+----------------------------------------+---------------+-------------------+-------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name       ; Section Id        ;
++--------------------------------------+----------------------------------------+---------------+-------------------+-------------------+
+; COMPILER_SIGNATURE_ID                ; 190090212219486.152837967812592        ; --            ; --                ; --                ;
+; EDA_DESIGN_INSTANCE_NAME             ; i1                                     ; --            ; --                ; myCounter_vhd_tst ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; myCounter_vhd_tst                      ; --            ; --                ; eda_simulation    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --                ; eda_simulation    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)                 ; <None>        ; --                ; --                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --                ; eda_simulation    ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/myCounter.vht      ; --            ; --                ; myCounter_vhd_tst ;
+; EDA_TEST_BENCH_FILE                  ; Counter.bdf                            ; --            ; --                ; myCounter_vhd_tst ;
+; EDA_TEST_BENCH_MODULE_NAME           ; myCounter_vhd_tst                      ; --            ; --                ; myCounter_vhd_tst ;
+; EDA_TEST_BENCH_NAME                  ; myCounter_vhd_tst                      ; --            ; --                ; eda_simulation    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --                ; --                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --                ; --                ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --                ; --                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; CounterWithOutput ; Top               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; CounterWithOutput ; Top               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; CounterWithOutput ; Top               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --                ; --                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                ; --                ;
+; SEARCH_PATH                          ; vhdl/                                  ; --            ; --                ; --                ;
+; TOP_LEVEL_ENTITY                     ; CounterWithOutput                      ; Counter       ; --                ; --                ;
++--------------------------------------+----------------------------------------+---------------+-------------------+-------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -103,12 +103,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4807 MB             ; 00:00:23                           ;
-; Fitter               ; 00:00:04     ; 1.0                     ; 5538 MB             ; 00:00:06                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4809 MB             ; 00:00:23                           ;
+; Fitter               ; 00:00:05     ; 1.0                     ; 5537 MB             ; 00:00:07                           ;
 ; Assembler            ; 00:00:01     ; 1.0                     ; 4691 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4792 MB             ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4653 MB             ; 00:00:01                           ;
-; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:33                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4793 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4655 MB             ; 00:00:01                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:34                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

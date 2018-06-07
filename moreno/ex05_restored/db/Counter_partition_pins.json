@@ -4,11 +4,15 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "countOut[0]",
+					"name" : "DIN",
 					"strict" : false
 				},
 				{
-					"name" : "countOut[1]",
+					"name" : "CS_n",
+					"strict" : false
+				},
+				{
+					"name" : "SCLK",
 					"strict" : false
 				},
 				{
@@ -16,11 +20,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "count",
+					"name" : "countOut[1]",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "countOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT",
 					"strict" : false
 				}
 			]
