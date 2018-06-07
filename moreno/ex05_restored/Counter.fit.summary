@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Jun 07 15:54:54 2018
+Fitter Status : Successful - Thu Jun 07 18:08:34 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : Counter
 Top-level Entity Name : CounterWithOutput
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 71 / 22,320 ( < 1 % )
-    Total combinational functions : 58 / 22,320 ( < 1 % )
-    Dedicated logic registers : 41 / 22,320 ( < 1 % )
-Total registers : 41
+Total logic elements : 138 / 22,320 ( < 1 % )
+    Total combinational functions : 133 / 22,320 ( < 1 % )
+    Dedicated logic registers : 61 / 22,320 ( < 1 % )
+Total registers : 61
 Total pins : 8 / 154 ( 5 % )
 Total virtual pins : 0
 Total memory bits : 0 / 608,256 ( 0 % )

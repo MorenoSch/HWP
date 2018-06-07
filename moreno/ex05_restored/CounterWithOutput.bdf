@@ -325,13 +325,38 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 200 64))
 	)
 )
+(symbol
+	(rect -128 -88 96 -8)
+	(text "debounce" (rect 5 0 52 12)(font "Arial" ))
+	(text "inst9" (rect 8 64 30 81)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "DATA[11..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "DATA[11..0]" (rect 21 43 81 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 224 32)
+		(output)
+		(text "OP_DATA[11..0]" (rect 0 0 81 12)(font "Arial" ))
+		(text "OP_DATA[11..0]" (rect 135 27 216 39)(font "Arial" ))
+		(line (pt 224 32)(pt 208 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 208 64))
+	)
+)
 (connector
 	(pt 184 224)
 	(pt 200 224)
-)
-(connector
-	(pt -272 72)
-	(pt -240 72)
 )
 (connector
 	(pt -272 104)
@@ -344,11 +369,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -528 88)
 	(pt -240 88)
-)
-(connector
-	(pt -64 72)
-	(pt -24 72)
-	(bus)
 )
 (connector
 	(pt -64 200)
@@ -391,3 +411,73 @@ refer to the applicable agreement for further details.
 	(pt 496 80)
 	(bus)
 )
+(connector
+	(pt -144 16)
+	(pt -64 16)
+	(bus)
+)
+(connector
+	(pt -64 16)
+	(pt -64 72)
+	(bus)
+)
+(connector
+	(pt -40 8)
+	(pt -40 72)
+	(bus)
+)
+(connector
+	(pt -40 72)
+	(pt -24 72)
+	(bus)
+)
+(connector
+	(pt -256 72)
+	(pt -256 -40)
+)
+(connector
+	(pt -256 -40)
+	(pt -160 -40)
+)
+(connector
+	(pt -272 72)
+	(pt -256 72)
+)
+(connector
+	(pt -256 72)
+	(pt -240 72)
+)
+(connector
+	(pt -40 8)
+	(pt 120 8)
+	(bus)
+)
+(connector
+	(pt 120 -56)
+	(pt 96 -56)
+	(bus)
+)
+(connector
+	(pt 120 8)
+	(pt 120 -56)
+	(bus)
+)
+(connector
+	(pt -128 -40)
+	(pt -144 -40)
+	(bus)
+)
+(connector
+	(pt -144 -40)
+	(pt -144 16)
+	(bus)
+)
+(connector
+	(pt -160 -40)
+	(pt -160 -56)
+)
+(connector
+	(pt -160 -56)
+	(pt -128 -56)
+)
+(junction (pt -256 72))

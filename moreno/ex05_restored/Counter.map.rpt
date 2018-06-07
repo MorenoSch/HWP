@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Counter
-Thu Jun 07 15:54:48 2018
+Thu Jun 07 18:08:28 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -13,10 +13,11 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -42,15 +43,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 07 15:54:48 2018       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 07 18:08:28 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Counter                                     ;
 ; Top-level Entity Name              ; CounterWithOutput                           ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 70                                          ;
-;     Total combinational functions  ; 57                                          ;
-;     Dedicated logic registers      ; 41                                          ;
-; Total registers                    ; 41                                          ;
+; Total logic elements               ; 145                                         ;
+;     Total combinational functions  ; 132                                         ;
+;     Dedicated logic registers      ; 61                                          ;
+; Total registers                    ; 61                                          ;
 ; Total pins                         ; 8                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -171,6 +172,7 @@ refer to the applicable agreement for further details.
 ; vhdl/adcReader.vhd               ; yes             ; User VHDL File                     ; C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/vhdl/adcReader.vhd         ;         ;
 ; myCounter.vhd                    ; yes             ; User VHDL File                     ; C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/myCounter.vhd              ;         ;
 ; CounterWithOutput.bdf            ; yes             ; User Block Diagram/Schematic File  ; C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/CounterWithOutput.bdf      ;         ;
+; Vhdl1.vhd                        ; yes             ; User VHDL File                     ; C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd                  ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -179,30 +181,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Estimated Total logic elements              ; 70                      ;
+; Estimated Total logic elements              ; 145                     ;
 ;                                             ;                         ;
-; Total combinational functions               ; 57                      ;
+; Total combinational functions               ; 132                     ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 40                      ;
-;     -- 3 input functions                    ; 7                       ;
-;     -- <=2 input functions                  ; 10                      ;
+;     -- 4 input functions                    ; 46                      ;
+;     -- 3 input functions                    ; 56                      ;
+;     -- <=2 input functions                  ; 30                      ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 57                      ;
-;     -- arithmetic mode                      ; 0                       ;
+;     -- normal mode                          ; 114                     ;
+;     -- arithmetic mode                      ; 18                      ;
 ;                                             ;                         ;
-; Total registers                             ; 41                      ;
-;     -- Dedicated logic registers            ; 41                      ;
+; Total registers                             ; 61                      ;
+;     -- Dedicated logic registers            ; 61                      ;
 ;     -- I/O registers                        ; 0                       ;
 ;                                             ;                         ;
 ; I/O pins                                    ; 8                       ;
 ;                                             ;                         ;
 ; Embedded Multiplier 9-bit elements          ; 0                       ;
 ;                                             ;                         ;
-; Maximum fan-out node                        ; adcReader:inst1|clk_spi ;
-; Maximum fan-out                             ; 35                      ;
-; Total fan-out                               ; 328                     ;
-; Average fan-out                             ; 2.88                    ;
+; Maximum fan-out node                        ; debounce:inst9|Equal0~6 ;
+; Maximum fan-out                             ; 56                      ;
+; Total fan-out                               ; 597                     ;
+; Average fan-out                             ; 2.86                    ;
 +---------------------------------------------+-------------------------+
 
 
@@ -211,12 +213,59 @@ refer to the applicable agreement for further details.
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Entity Name       ; Library Name ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
-; |CounterWithOutput           ; 57 (0)              ; 41 (0)                    ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |CounterWithOutput                         ; CounterWithOutput ; work         ;
+; |CounterWithOutput           ; 132 (0)             ; 61 (0)                    ; 0           ; 0            ; 0       ; 0         ; 8    ; 0            ; |CounterWithOutput                         ; CounterWithOutput ; work         ;
 ;    |adcReader:inst1|         ; 44 (44)             ; 38 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CounterWithOutput|adcReader:inst1         ; adcReader         ; work         ;
-;    |analog_to_buttons:inst4| ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CounterWithOutput|analog_to_buttons:inst4 ; analog_to_buttons ; work         ;
+;    |analog_to_buttons:inst4| ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CounterWithOutput|analog_to_buttons:inst4 ; analog_to_buttons ; work         ;
+;    |debounce:inst9|          ; 72 (72)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CounterWithOutput|debounce:inst9          ; debounce          ; work         ;
 ;    |myCounter:inst|          ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |CounterWithOutput|myCounter:inst          ; myCounter         ; work         ;
 +------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                  ;
++-----------------------------------------------------+-----------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal   ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------+------------------------+
+; debounce:inst9|OP3[10]                              ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[10]                              ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[10]                              ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[9]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[9]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[9]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[6]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[6]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[6]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[7]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[7]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[7]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[8]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[8]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[8]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[5]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[5]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[5]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[2]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[2]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[2]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[3]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[3]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[3]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[4]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[4]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[4]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[0]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[0]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[0]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[1]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[1]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[1]                               ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP3[11]                              ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP2[11]                              ; debounce:inst9|Equal0 ; yes                    ;
+; debounce:inst9|OP1[11]                              ; debounce:inst9|Equal0 ; yes                    ;
+; Number of user-specified and inferred latches = 36  ;                       ;                        ;
++-----------------------------------------------------+-----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -224,10 +273,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 41    ;
+; Total registers                              ; 61    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Clear ; 42    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 13    ;
 ; Number of registers using Preset             ; 0     ;
@@ -240,19 +289,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 8                           ;
-; cycloneiii_ff         ; 41                          ;
-;     CLR               ; 22                          ;
+; cycloneiii_ff         ; 61                          ;
+;     CLR               ; 42                          ;
 ;     ENA               ; 13                          ;
 ;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 58                          ;
-;     normal            ; 58                          ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 40                          ;
+; cycloneiii_lcell_comb ; 133                         ;
+;     arith             ; 18                          ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 115                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 55                          ;
+;         4 data inputs ; 46                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 1.87                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -271,12 +323,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Thu Jun 07 15:54:37 2018
+    Info: Processing started: Thu Jun 07 18:08:17 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Counter -c Counter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/analog_to_buttons.vhd
-    Info (12022): Found design unit 1: analog_to_buttons-behavior File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/vhdl/analog_to_buttons.vhd Line: 19
+    Info (12022): Found design unit 1: analog_to_buttons-behavior File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/vhdl/analog_to_buttons.vhd Line: 18
     Info (12023): Found entity 1: analog_to_buttons File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/vhdl/analog_to_buttons.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file vhdl/adcreader.vhd
     Info (12022): Found design unit 1: adcReader-behavior File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/vhdl/adcReader.vhd Line: 33
@@ -288,20 +340,67 @@ Info (12021): Found 1 design units, including 1 entities, in source file counter
     Info (12023): Found entity 1: Counter
 Info (12021): Found 1 design units, including 1 entities, in source file counterwithoutput.bdf
     Info (12023): Found entity 1: CounterWithOutput
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl1.vhd
+    Info (12022): Found design unit 1: debounce-behavioral File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 15
+    Info (12023): Found entity 1: debounce File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 6
 Info (12127): Elaborating entity "CounterWithOutput" for the top level hierarchy
 Info (12128): Elaborating entity "adcReader" for hierarchy "adcReader:inst1"
 Info (12128): Elaborating entity "myCounter" for hierarchy "myCounter:inst"
 Info (12128): Elaborating entity "analog_to_buttons" for hierarchy "analog_to_buttons:inst4"
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:inst9"
+Warning (10492): VHDL Process Statement warning at Vhdl1.vhd(25): signal "counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at Vhdl1.vhd(27): signal "DATA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 27
+Warning (10492): VHDL Process Statement warning at Vhdl1.vhd(28): signal "OP1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at Vhdl1.vhd(29): signal "OP2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 29
+Warning (10631): VHDL Process Statement warning at Vhdl1.vhd(20): inferring latch(es) for signal or variable "OP1", which holds its previous value in one or more paths through the process File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Warning (10631): VHDL Process Statement warning at Vhdl1.vhd(20): inferring latch(es) for signal or variable "OP2", which holds its previous value in one or more paths through the process File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Warning (10631): VHDL Process Statement warning at Vhdl1.vhd(20): inferring latch(es) for signal or variable "OP3", which holds its previous value in one or more paths through the process File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[0]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[1]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[2]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[3]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[4]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[5]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[6]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[7]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[8]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[9]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[10]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP3[11]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[0]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[1]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[2]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[3]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[4]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[5]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[6]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[7]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[8]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[9]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[10]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP2[11]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[0]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[1]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[2]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[3]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[4]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[5]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[6]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[7]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[8]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[9]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[10]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
+Info (10041): Inferred latch for "OP1[11]" at Vhdl1.vhd(20) File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Vhdl1.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 153 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 70 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4809 megabytes
-    Info: Processing ended: Thu Jun 07 15:54:48 2018
+    Info (21061): Implemented 145 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4817 megabytes
+    Info: Processing ended: Thu Jun 07 18:08:28 2018
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:23
 

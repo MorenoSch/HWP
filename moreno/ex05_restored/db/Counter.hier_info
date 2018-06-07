@@ -1,6 +1,7 @@
 |CounterWithOutput
 DIN <= adcReader:inst1.DIN
 clk_50 => adcReader:inst1.clk_50
+clk_50 => debounce:inst9.CLK
 DOUT => adcReader:inst1.DOUT
 CS_n <= adcReader:inst1.CS_n
 SCLK <= adcReader:inst1.SCLK
@@ -180,5 +181,52 @@ analogIn[11] => LessThan1.IN13
 analogIn[11] => LessThan2.IN13
 button1pressed <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 button3pressed <= process_0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|CounterWithOutput|debounce:inst9
+CLK => counter[0].CLK
+CLK => counter[1].CLK
+CLK => counter[2].CLK
+CLK => counter[3].CLK
+CLK => counter[4].CLK
+CLK => counter[5].CLK
+CLK => counter[6].CLK
+CLK => counter[7].CLK
+CLK => counter[8].CLK
+CLK => counter[9].CLK
+CLK => counter[10].CLK
+CLK => counter[11].CLK
+CLK => counter[12].CLK
+CLK => counter[13].CLK
+CLK => counter[14].CLK
+CLK => counter[15].CLK
+CLK => counter[16].CLK
+CLK => counter[17].CLK
+CLK => counter[18].CLK
+CLK => counter[19].CLK
+DATA[0] => OP1[0].DATAIN
+DATA[1] => OP1[1].DATAIN
+DATA[2] => OP1[2].DATAIN
+DATA[3] => OP1[3].DATAIN
+DATA[4] => OP1[4].DATAIN
+DATA[5] => OP1[5].DATAIN
+DATA[6] => OP1[6].DATAIN
+DATA[7] => OP1[7].DATAIN
+DATA[8] => OP1[8].DATAIN
+DATA[9] => OP1[9].DATAIN
+DATA[10] => OP1[10].DATAIN
+DATA[11] => OP1[11].DATAIN
+OP_DATA[0] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[1] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[2] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[3] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[4] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[5] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[6] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[7] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[8] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[9] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[10] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
+OP_DATA[11] <= OP_DATA.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -11,8 +11,7 @@ entity analog_to_buttons is port(
 	analogIn : in std_logic_vector(11 downto 0);
 	
 	button1pressed : out std_logic;
-	button3pressed : out std_logic
-);
+	button3pressed : out std_logic);
 end analog_to_buttons;
 
 
