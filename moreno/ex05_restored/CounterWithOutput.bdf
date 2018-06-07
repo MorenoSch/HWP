@@ -297,9 +297,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -24 40 192 120)
+	(rect -16 40 200 120)
 	(text "analog_to_buttons" (rect 5 0 94 12)(font "Arial" ))
-	(text "inst4" (rect 8 64 31 76)(font "Arial" ))
+	(text "inst5" (rect 8 64 30 81)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -308,50 +308,28 @@ refer to the applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 3))
 	)
 	(port
+		(pt 0 48)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 43 35 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
 		(pt 216 32)
 		(output)
 		(text "button1pressed" (rect 0 0 75 12)(font "Arial" ))
-		(text "button1pressed" (rect 131 27 206 39)(font "Arial" ))
+		(text "button1pressed" (rect 132 27 207 39)(font "Arial" ))
 		(line (pt 216 32)(pt 200 32))
 	)
 	(port
 		(pt 216 48)
 		(output)
 		(text "button3pressed" (rect 0 0 75 12)(font "Arial" ))
-		(text "button3pressed" (rect 131 43 206 55)(font "Arial" ))
+		(text "button3pressed" (rect 132 43 207 55)(font "Arial" ))
 		(line (pt 216 48)(pt 200 48))
 	)
 	(drawing
 		(rectangle (rect 16 16 200 64))
-	)
-)
-(symbol
-	(rect -128 -88 96 -8)
-	(text "debounce" (rect 5 0 52 12)(font "Arial" ))
-	(text "inst9" (rect 8 64 30 81)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "DATA[11..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "DATA[11..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 224 32)
-		(output)
-		(text "OP_DATA[11..0]" (rect 0 0 81 12)(font "Arial" ))
-		(text "OP_DATA[11..0]" (rect 135 27 216 39)(font "Arial" ))
-		(line (pt 224 32)(pt 208 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 208 64))
 	)
 )
 (connector
@@ -384,10 +362,6 @@ refer to the applicable agreement for further details.
 )
 (connector
 	(pt 224 88)
-	(pt 192 88)
-)
-(connector
-	(pt 224 88)
 	(pt 224 96)
 )
 (connector
@@ -403,81 +377,56 @@ refer to the applicable agreement for further details.
 	(pt 280 72)
 )
 (connector
-	(pt 280 72)
-	(pt 192 72)
-)
-(connector
 	(pt 488 80)
 	(pt 496 80)
 	(bus)
 )
 (connector
-	(pt -144 16)
-	(pt -64 16)
-	(bus)
+	(pt 192 72)
+	(pt 200 72)
 )
 (connector
-	(pt -64 16)
+	(pt 200 72)
+	(pt 280 72)
+)
+(connector
+	(pt 192 88)
+	(pt 200 88)
+)
+(connector
+	(pt 200 88)
+	(pt 224 88)
+)
+(connector
 	(pt -64 72)
+	(pt -16 72)
 	(bus)
-)
-(connector
-	(pt -40 8)
-	(pt -40 72)
-	(bus)
-)
-(connector
-	(pt -40 72)
-	(pt -24 72)
-	(bus)
-)
-(connector
-	(pt -256 72)
-	(pt -256 -40)
-)
-(connector
-	(pt -256 -40)
-	(pt -160 -40)
 )
 (connector
 	(pt -272 72)
-	(pt -256 72)
-)
-(connector
-	(pt -256 72)
 	(pt -240 72)
 )
 (connector
-	(pt -40 8)
-	(pt 120 8)
-	(bus)
+	(pt -240 72)
+	(pt -240 -24)
 )
 (connector
-	(pt 120 -56)
-	(pt 96 -56)
-	(bus)
+	(pt -240 -24)
+	(pt -40 -24)
 )
 (connector
-	(pt 120 8)
-	(pt 120 -56)
-	(bus)
+	(pt -16 96)
+	(pt -16 88)
 )
 (connector
-	(pt -128 -40)
-	(pt -144 -40)
-	(bus)
+	(pt -16 88)
+	(pt -40 88)
 )
 (connector
-	(pt -144 -40)
-	(pt -144 16)
-	(bus)
+	(pt -40 -24)
+	(pt -40 88)
 )
-(connector
-	(pt -160 -40)
-	(pt -160 -56)
-)
-(connector
-	(pt -160 -56)
-	(pt -128 -56)
-)
-(junction (pt -256 72))
+(junction (pt 200 72))
+(junction (pt 200 88))
+(junction (pt -240 72))
+(junction (pt -16 88))
