@@ -1,0 +1,26 @@
+|myCounter
+count => zahl.IN1
+count => zahl.IN1
+count => zahl.IN1
+count => zahl.IN1
+count => zahl.IN1
+count => zahl.IN1
+count => zahl.IN1
+count => zahl.IN1
+rst => zahl.IN1
+rst => zahl.IN1
+rst => zahl.IN1
+rst => zahl.IN1
+rst => zahl.IN1
+rst => zahl.IN1
+rst => zahl.IN1
+rst => zahl.IN1
+rst => zahl[0].OUTPUTSELECT
+rst => zahl[1].OUTPUTSELECT
+rst => zahl[2].IN1
+rst => zahl[2].OUTPUTSELECT
+countOut[0] <= zahl[0].DB_MAX_OUTPUT_PORT_TYPE
+countOut[1] <= zahl[1].DB_MAX_OUTPUT_PORT_TYPE
+countOut[2] <= zahl[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
