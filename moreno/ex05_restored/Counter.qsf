@@ -67,6 +67,7 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME myCounter_vhd_tst -sectio
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VHDL_TEST_BENCH_FILE simulation/modelsim/myCounter.vht
 set_global_assignment -name VHDL_FILE vhdl/analog_to_buttons.vhd
 set_global_assignment -name VHDL_FILE vhdl/adcReader.vhd
@@ -76,4 +77,3 @@ set_global_assignment -name BDF_FILE CounterWithOutput.bdf
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/myCounter.vht -section_id myCounter_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_FILE Counter.bdf -section_id myCounter_vhd_tst
 set_global_assignment -name SEARCH_PATH vhdl/ -tag from_archive
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
