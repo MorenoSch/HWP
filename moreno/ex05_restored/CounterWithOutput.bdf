@@ -403,30 +403,29 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
+	(pt -256 72)
+	(pt -256 32)
+)
+(connector
 	(pt -272 72)
+	(pt -256 72)
+)
+(connector
+	(pt -256 72)
 	(pt -240 72)
 )
 (connector
-	(pt -240 72)
-	(pt -240 -24)
+	(pt -256 32)
+	(pt -40 32)
 )
 (connector
-	(pt -240 -24)
-	(pt -40 -24)
-)
-(connector
-	(pt -16 96)
-	(pt -16 88)
-)
-(connector
-	(pt -16 88)
+	(pt -40 32)
 	(pt -40 88)
 )
 (connector
-	(pt -40 -24)
 	(pt -40 88)
+	(pt -16 88)
 )
 (junction (pt 200 72))
 (junction (pt 200 88))
-(junction (pt -240 72))
-(junction (pt -16 88))
+(junction (pt -256 72))

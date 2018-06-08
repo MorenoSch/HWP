@@ -21,7 +21,7 @@ signal b1: std_logic;
 signal counter: unsigned(20 downto 0);
 
 begin
-process(clk, b1 ,b3)
+process(clk)
 begin
 	if( rising_edge(clk)) then
 		counter <= counter + 1;
