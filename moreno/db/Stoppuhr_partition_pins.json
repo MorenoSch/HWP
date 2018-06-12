@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DIN",
+					"strict" : false
+				},
+				{
+					"name" : "CS_n",
+					"strict" : false
+				},
+				{
+					"name" : "SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "counting[5]",
+					"strict" : false
+				},
+				{
+					"name" : "counting[4]",
+					"strict" : false
+				},
+				{
+					"name" : "counting[3]",
+					"strict" : false
+				},
+				{
+					"name" : "counting[2]",
+					"strict" : false
+				},
+				{
+					"name" : "counting[1]",
+					"strict" : false
+				},
+				{
+					"name" : "counting[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "DOUT",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

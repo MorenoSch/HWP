@@ -1,5 +1,5 @@
 Restore Archived Project report for Counter
-Thu Jun 07 18:16:18 2018
+Fri Jun 08 12:36:04 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Thu Jun 07 18:16:18 2018 ;
+; Restore Archived Project Status ; Successful - Fri Jun 08 12:36:04 2018 ;
 ; Revision Name                   ; Counter                               ;
 ; Top-level Entity Name           ; CounterWithOutput                     ;
 ; Family                          ; Cyclone IV E                          ;
@@ -51,7 +51,7 @@ Info: Generated report 'Counter.restore.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 11 warnings
     Info: Peak virtual memory: 4841 megabytes
-    Info: Processing ended: Thu Jun 07 18:16:18 2018
+    Info: Processing ended: Fri Jun 08 12:36:04 2018
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
