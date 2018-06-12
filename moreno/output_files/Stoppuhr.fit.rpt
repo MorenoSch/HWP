@@ -1,5 +1,5 @@
 Fitter report for Stoppuhr
-Fri Jun 08 13:38:20 2018
+Tue Jun 12 12:36:29 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -67,17 +67,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jun 08 13:38:20 2018       ;
+; Fitter Status                      ; Successful - Tue Jun 12 12:36:29 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Stoppuhr                                    ;
 ; Top-level Entity Name              ; Stoppuhr                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 153 / 22,320 ( < 1 % )                      ;
-;     Total combinational functions  ; 147 / 22,320 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 93 / 22,320 ( < 1 % )                       ;
-; Total registers                    ; 93                                          ;
+; Total logic elements               ; 154 / 22,320 ( < 1 % )                      ;
+;     Total combinational functions  ; 143 / 22,320 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 98 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 98                                          ;
 ; Total pins                         ; 11 / 154 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -159,7 +159,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.0%      ;
+;     Processor 2            ;   1.1%      ;
 ;     Processors 3-4         ;   0.8%      ;
 +----------------------------+-------------+
 
@@ -170,8 +170,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 276 ) ; 0.00 % ( 0 / 276 )         ; 0.00 % ( 0 / 276 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 276 ) ; 0.00 % ( 0 / 276 )         ; 0.00 % ( 0 / 276 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 278 ) ; 0.00 % ( 0 / 278 )         ; 0.00 % ( 0 / 278 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 278 ) ; 0.00 % ( 0 / 278 )         ; 0.00 % ( 0 / 278 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -194,7 +194,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 266 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 268 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -210,26 +210,26 @@ The pin-out file can be found in C:/Users/moren/BoS_Informatik/Semester_2/Mobile
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 153 / 22,320 ( < 1 % ) ;
-;     -- Combinational with no register       ; 60                     ;
-;     -- Register only                        ; 6                      ;
+; Total logic elements                        ; 154 / 22,320 ( < 1 % ) ;
+;     -- Combinational with no register       ; 56                     ;
+;     -- Register only                        ; 11                     ;
 ;     -- Combinational with a register        ; 87                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 56                     ;
-;     -- 3 input functions                    ; 17                     ;
-;     -- <=2 input functions                  ; 74                     ;
-;     -- Register only                        ; 6                      ;
+;     -- 4 input functions                    ; 58                     ;
+;     -- 3 input functions                    ; 20                     ;
+;     -- <=2 input functions                  ; 65                     ;
+;     -- Register only                        ; 11                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 93                     ;
-;     -- arithmetic mode                      ; 54                     ;
+;     -- normal mode                          ; 90                     ;
+;     -- arithmetic mode                      ; 53                     ;
 ;                                             ;                        ;
-; Total registers*                            ; 93 / 23,018 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 93 / 22,320 ( < 1 % )  ;
+; Total registers*                            ; 98 / 23,018 ( < 1 % )  ;
+;     -- Dedicated logic registers            ; 98 / 22,320 ( < 1 % )  ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 14 / 1,395 ( 1 % )     ;
+; Total LABs:  partially or completely used   ; 15 / 1,395 ( 1 % )     ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 11 / 154 ( 7 % )       ;
 ;     -- Clock pins                           ; 2 / 7 ( 29 % )         ;
@@ -240,19 +240,19 @@ The pin-out file can be found in C:/Users/moren/BoS_Informatik/Semester_2/Mobile
 ; Total block memory implementation bits      ; 0 / 608,256 ( 0 % )    ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 132 ( 0 % )        ;
 ; PLLs                                        ; 0 / 4 ( 0 % )          ;
-; Global signals                              ; 4                      ;
-;     -- Global clocks                        ; 4 / 20 ( 20 % )        ;
+; Global signals                              ; 5                      ;
+;     -- Global clocks                        ; 5 / 20 ( 25 % )        ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0.2% / 0.2% / 0.2%     ;
-; Peak interconnect usage (total/H/V)         ; 0.7% / 1.0% / 1.1%     ;
-; Maximum fan-out                             ; 45                     ;
-; Highest non-global fan-out                  ; 44                     ;
-; Total fan-out                               ; 750                    ;
-; Average fan-out                             ; 2.66                   ;
+; Peak interconnect usage (total/H/V)         ; 0.9% / 0.8% / 1.5%     ;
+; Maximum fan-out                             ; 46                     ;
+; Highest non-global fan-out                  ; 45                     ;
+; Total fan-out                               ; 772                    ;
+; Average fan-out                             ; 2.67                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -265,33 +265,33 @@ The pin-out file can be found in C:/Users/moren/BoS_Informatik/Semester_2/Mobile
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 153 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 60                    ; 0                              ;
-;     -- Register only                        ; 6                     ; 0                              ;
+; Total logic elements                        ; 154 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
+;     -- Combinational with no register       ; 56                    ; 0                              ;
+;     -- Register only                        ; 11                    ; 0                              ;
 ;     -- Combinational with a register        ; 87                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 56                    ; 0                              ;
-;     -- 3 input functions                    ; 17                    ; 0                              ;
-;     -- <=2 input functions                  ; 74                    ; 0                              ;
-;     -- Register only                        ; 6                     ; 0                              ;
+;     -- 4 input functions                    ; 58                    ; 0                              ;
+;     -- 3 input functions                    ; 20                    ; 0                              ;
+;     -- <=2 input functions                  ; 65                    ; 0                              ;
+;     -- Register only                        ; 11                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 93                    ; 0                              ;
-;     -- arithmetic mode                      ; 54                    ; 0                              ;
+;     -- normal mode                          ; 90                    ; 0                              ;
+;     -- arithmetic mode                      ; 53                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 93                    ; 0                              ;
-;     -- Dedicated logic registers            ; 93 / 22320 ( < 1 % )  ; 0 / 22320 ( 0 % )              ;
+; Total registers                             ; 98                    ; 0                              ;
+;     -- Dedicated logic registers            ; 98 / 22320 ( < 1 % )  ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 14 / 1395 ( 1 % )     ; 0 / 1395 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 15 / 1395 ( 1 % )     ; 0 / 1395 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 11                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 132 ( 0 % )       ; 0 / 132 ( 0 % )                ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
-; Clock control block                         ; 4 / 24 ( 16 % )       ; 0 / 24 ( 0 % )                 ;
+; Clock control block                         ; 5 / 24 ( 20 % )       ; 0 / 24 ( 0 % )                 ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
 ;     -- Input Connections                    ; 0                     ; 0                              ;
@@ -300,8 +300,8 @@ The pin-out file can be found in C:/Users/moren/BoS_Informatik/Semester_2/Mobile
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 745                   ; 5                              ;
-;     -- Registered Connections               ; 321                   ; 0                              ;
+;     -- Total Connections                    ; 767                   ; 5                              ;
+;     -- Registered Connections               ; 312                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -687,10 +687,10 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name               ; Entity Name       ; Library Name ;
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------+-------------------+--------------+
-; |Stoppuhr                    ; 153 (0)     ; 93 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 60 (0)       ; 6 (0)             ; 87 (0)           ; |Stoppuhr                         ; Stoppuhr          ; work         ;
-;    |adcReader:adc|           ; 57 (57)     ; 38 (38)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (19)      ; 4 (4)             ; 34 (34)          ; |Stoppuhr|adcReader:adc           ; adcReader         ; work         ;
-;    |analog_to_buttons:inst3| ; 40 (40)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 29 (29)          ; |Stoppuhr|analog_to_buttons:inst3 ; analog_to_buttons ; work         ;
-;    |stpwatch:inst5|          ; 64 (64)     ; 34 (34)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 2 (2)             ; 32 (32)          ; |Stoppuhr|stpwatch:inst5          ; stpwatch          ; work         ;
+; |Stoppuhr                    ; 154 (0)     ; 98 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 11   ; 0            ; 56 (0)       ; 11 (0)            ; 87 (0)           ; |Stoppuhr                         ; Stoppuhr          ; work         ;
+;    |adcReader:adc|           ; 58 (58)     ; 38 (38)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (20)      ; 7 (7)             ; 31 (31)          ; |Stoppuhr|adcReader:adc           ; adcReader         ; work         ;
+;    |analog_to_buttons:inst3| ; 38 (38)     ; 21 (21)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 27 (27)          ; |Stoppuhr|analog_to_buttons:inst3 ; analog_to_buttons ; work         ;
+;    |stpwatch:inst5|          ; 64 (64)     ; 39 (39)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (25)      ; 4 (4)             ; 35 (35)          ; |Stoppuhr|stpwatch:inst5          ; stpwatch          ; work         ;
 +------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -729,29 +729,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                             ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; adcReader:adc|Data0[11]~1        ; LCCOMB_X36_Y30_N14 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; adcReader:adc|active2            ; FF_X34_Y30_N7      ; 23      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; adcReader:adc|clk_spi            ; FF_X31_Y30_N5      ; 33      ; Clock                      ; yes    ; Global Clock         ; GCLK13           ; --                        ;
+; adcReader:adc|Data0[11]~1        ; LCCOMB_X30_Y30_N12 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; adcReader:adc|active2            ; FF_X30_Y30_N5      ; 23      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
+; adcReader:adc|clk_spi            ; FF_X28_Y30_N19     ; 33      ; Clock                      ; yes    ; Global Clock         ; GCLK13           ; --                        ;
 ; analog_to_buttons:inst3|Equal0~6 ; LCCOMB_X28_Y2_N10  ; 23      ; Async. clear, Latch enable ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; analog_to_buttons:inst3|b1       ; LCCOMB_X36_Y30_N30 ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; analog_to_buttons:inst3|b3       ; LCCOMB_X36_Y30_N0  ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; clk_50                           ; PIN_R8             ; 45      ; Clock                      ; no     ; --                   ; --               ; --                        ;
-; clk_50                           ; PIN_R8             ; 14      ; Clock                      ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; stpwatch:inst5|count[5]~0        ; LCCOMB_X52_Y17_N6  ; 38      ; Async. clear, Latch enable ; yes    ; Global Clock         ; GCLK9            ; --                        ;
-; stpwatch:inst5|strstp            ; FF_X52_Y17_N23     ; 34      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; analog_to_buttons:inst3|b1       ; LCCOMB_X29_Y30_N14 ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; analog_to_buttons:inst3|b3       ; LCCOMB_X29_Y30_N22 ; 6       ; Clock                      ; yes    ; Global Clock         ; GCLK11           ; --                        ;
+; clk_50                           ; PIN_R8             ; 46      ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; clk_50                           ; PIN_R8             ; 13      ; Clock                      ; yes    ; Global Clock         ; GCLK18           ; --                        ;
+; stpwatch:inst5|LessThan0~9       ; LCCOMB_X30_Y16_N26 ; 44      ; Async. clear, Latch enable ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; stpwatch:inst5|strstp            ; FF_X28_Y15_N1      ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 +----------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                 ;
-+----------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                             ; Location          ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+----------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; adcReader:adc|clk_spi            ; FF_X31_Y30_N5     ; 33      ; 11                                   ; Global Clock         ; GCLK13           ; --                        ;
-; analog_to_buttons:inst3|Equal0~6 ; LCCOMB_X28_Y2_N10 ; 23      ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
-; clk_50                           ; PIN_R8            ; 14      ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
-; stpwatch:inst5|count[5]~0        ; LCCOMB_X52_Y17_N6 ; 38      ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
-+----------------------------------+-------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                  ;
++----------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                             ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++----------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; adcReader:adc|clk_spi            ; FF_X28_Y30_N19     ; 33      ; 19                                   ; Global Clock         ; GCLK13           ; --                        ;
+; analog_to_buttons:inst3|Equal0~6 ; LCCOMB_X28_Y2_N10  ; 23      ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
+; analog_to_buttons:inst3|b3       ; LCCOMB_X29_Y30_N22 ; 6       ; 0                                    ; Global Clock         ; GCLK11           ; --                        ;
+; clk_50                           ; PIN_R8             ; 13      ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
+; stpwatch:inst5|LessThan0~9       ; LCCOMB_X30_Y16_N26 ; 44      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
++----------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +------------------------------------------------+
@@ -759,36 +760,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 143 / 71,559 ( < 1 % ) ;
-; C16 interconnects     ; 7 / 2,597 ( < 1 % )    ;
-; C4 interconnects      ; 80 / 46,848 ( < 1 % )  ;
-; Direct links          ; 45 / 71,559 ( < 1 % )  ;
-; Global clocks         ; 4 / 20 ( 20 % )        ;
-; Local interconnects   ; 116 / 24,624 ( < 1 % ) ;
+; Block interconnects   ; 157 / 71,559 ( < 1 % ) ;
+; C16 interconnects     ; 6 / 2,597 ( < 1 % )    ;
+; C4 interconnects      ; 101 / 46,848 ( < 1 % ) ;
+; Direct links          ; 55 / 71,559 ( < 1 % )  ;
+; Global clocks         ; 5 / 20 ( 25 % )        ;
+; Local interconnects   ; 104 / 24,624 ( < 1 % ) ;
 ; R24 interconnects     ; 8 / 2,496 ( < 1 % )    ;
-; R4 interconnects      ; 77 / 62,424 ( < 1 % )  ;
+; R4 interconnects      ; 96 / 62,424 ( < 1 % )  ;
 +-----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 10.93) ; Number of LABs  (Total = 14) ;
+; Number of Logic Elements  (Average = 10.27) ; Number of LABs  (Total = 15) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 2                            ;
-; 2                                           ; 0                            ;
+; 2                                           ; 1                            ;
 ; 3                                           ; 1                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 1                            ;
+; 5                                           ; 2                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 1                            ;
+; 7                                           ; 0                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
 ; 10                                          ; 0                            ;
 ; 11                                          ; 1                            ;
 ; 12                                          ; 0                            ;
-; 13                                          ; 1                            ;
-; 14                                          ; 0                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 1                            ;
 ; 15                                          ; 0                            ;
 ; 16                                          ; 7                            ;
 +---------------------------------------------+------------------------------+
@@ -797,52 +798,52 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.29) ; Number of LABs  (Total = 14) ;
+; LAB-wide Signals  (Average = 1.60) ; Number of LABs  (Total = 15) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 6                            ;
-; 1 Clock                            ; 7                            ;
-; 1 Clock enable                     ; 2                            ;
-; 2 Clocks                           ; 3                            ;
+; 1 Async. clear                     ; 8                            ;
+; 1 Clock                            ; 11                           ;
+; 1 Clock enable                     ; 3                            ;
+; 2 Clocks                           ; 2                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.57) ; Number of LABs  (Total = 14) ;
+; Number of Signals Sourced  (Average = 16.80) ; Number of LABs  (Total = 15) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 2                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 1                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 1                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
+; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 0                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 1                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 1                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 0                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 1                            ;
 ; 28                                           ; 1                            ;
 ; 29                                           ; 0                            ;
-; 30                                           ; 0                            ;
-; 31                                           ; 2                            ;
+; 30                                           ; 1                            ;
+; 31                                           ; 1                            ;
 ; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
@@ -850,51 +851,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 5.57) ; Number of LABs  (Total = 14) ;
+; Number of Signals Sourced Out  (Average = 6.33) ; Number of LABs  (Total = 15) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
 ; 1                                               ; 3                            ;
-; 2                                               ; 2                            ;
-; 3                                               ; 2                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 1                            ;
+; 2                                               ; 4                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 0                            ;
+; 6                                               ; 0                            ;
 ; 7                                               ; 1                            ;
-; 8                                               ; 1                            ;
+; 8                                               ; 2                            ;
 ; 9                                               ; 0                            ;
 ; 10                                              ; 1                            ;
 ; 11                                              ; 0                            ;
 ; 12                                              ; 0                            ;
-; 13                                              ; 1                            ;
+; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
-; 15                                              ; 0                            ;
-; 16                                              ; 1                            ;
+; 15                                              ; 1                            ;
+; 16                                              ; 2                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 7.29) ; Number of LABs  (Total = 14) ;
+; Number of Distinct Inputs  (Average = 7.87) ; Number of LABs  (Total = 15) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 2                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 0                            ;
-; 4                                           ; 5                            ;
-; 5                                           ; 1                            ;
-; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 1                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 1                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 2                            ;
+; 6                                           ; 2                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 0                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 1                            ;
-; 17                                          ; 0                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 0                            ;
+; 17                                          ; 1                            ;
 ; 18                                          ; 0                            ;
 ; 19                                          ; 0                            ;
 ; 20                                          ; 0                            ;
@@ -902,8 +903,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 22                                          ; 0                            ;
 ; 23                                          ; 0                            ;
 ; 24                                          ; 0                            ;
-; 25                                          ; 0                            ;
-; 26                                          ; 1                            ;
+; 25                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1018,13 +1018,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
-+------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary              ;
-+-----------------+----------------------+-------------------+
-; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
-+-----------------+----------------------+-------------------+
-; clk_50          ; clk_50               ; 8.7               ;
-+-----------------+----------------------+-------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                     ;
++--------------------------------------------------------------+--------------------------------+-------------------+
+; Source Clock(s)                                              ; Destination Clock(s)           ; Delay Added in ns ;
++--------------------------------------------------------------+--------------------------------+-------------------+
+; clk_50,analog_to_buttons:inst3|b3,stpwatch:inst5|counter[10] ; stpwatch:inst5|counter[10]     ; 10.2              ;
+; clk_50                                                       ; clk_50                         ; 8.6               ;
+; clk_50                                                       ; stpwatch:inst5|counter[10],I/O ; 2.2               ;
++--------------------------------------------------------------+--------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
@@ -1034,36 +1036,66 @@ This will disable optimization of problematic paths and expose them for further 
 +------------------------------------+------------------------------------+-------------------+
 ; Source Register                    ; Destination Register               ; Delay Added in ns ;
 +------------------------------------+------------------------------------+-------------------+
-; stpwatch:inst5|counter[10]         ; stpwatch:inst5|counter[30]         ; 2.646             ;
+; stpwatch:inst5|count[0]~21         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|count[0]~_emulated  ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[31]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[29]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[28]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[27]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[30]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[26]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[24]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[23]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[22]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[21]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[20]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[19]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[25]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[17]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[16]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[15]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[14]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[13]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[12]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[11]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[10]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[9]          ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[8]          ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[7]          ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[6]          ; stpwatch:inst5|count[0]~21         ; 2.752             ;
+; stpwatch:inst5|counter[18]         ; stpwatch:inst5|count[0]~21         ; 2.752             ;
 ; adcReader:adc|clk_spi              ; adcReader:adc|clk_spi              ; 2.612             ;
 ; analog_to_buttons:inst3|counter[0] ; analog_to_buttons:inst3|counter[0] ; 1.807             ;
+; stpwatch:inst5|count[4]~5          ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[5]~_emulated  ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[4]~_emulated  ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[3]~9          ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[3]~_emulated  ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[2]~13         ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[2]~_emulated  ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[1]~17         ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[1]~_emulated  ; stpwatch:inst5|count[5]~1          ; 1.638             ;
+; stpwatch:inst5|count[5]~1          ; stpwatch:inst5|count[5]~1          ; 1.638             ;
 ; adcReader:adc|clk_spi_count[0]     ; adcReader:adc|clk_spi              ; 1.306             ;
 ; adcReader:adc|clk_spi_count[1]     ; adcReader:adc|clk_spi              ; 1.306             ;
 ; adcReader:adc|clk_spi_count[2]     ; adcReader:adc|clk_spi              ; 1.306             ;
 ; adcReader:adc|clk_spi_count[3]     ; adcReader:adc|clk_spi              ; 1.306             ;
-; stpwatch:inst5|strstp              ; stpwatch:inst5|counter[0]          ; 0.200             ;
-; stpwatch:inst5|rst                 ; stpwatch:inst5|count[5]            ; 0.161             ;
-; adcReader:adc|Data0[11]            ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[9]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[8]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[10]            ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[4]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[3]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[2]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[6]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[5]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; adcReader:adc|Data0[7]             ; analog_to_buttons:inst3|b1         ; 0.134             ;
-; stpwatch:inst5|counter[0]          ; stpwatch:inst5|counter[0]          ; 0.100             ;
-; adcReader:adc|Data0[1]             ; analog_to_buttons:inst3|b3         ; 0.095             ;
-; adcReader:adc|Data0[0]             ; analog_to_buttons:inst3|b3         ; 0.095             ;
-; stpwatch:inst5|count[3]            ; stpwatch:inst5|count[3]            ; 0.080             ;
-; stpwatch:inst5|count[2]            ; stpwatch:inst5|count[3]            ; 0.080             ;
-; stpwatch:inst5|count[1]            ; stpwatch:inst5|count[3]            ; 0.080             ;
-; stpwatch:inst5|count[0]            ; stpwatch:inst5|count[3]            ; 0.080             ;
-; stpwatch:inst5|count[5]            ; stpwatch:inst5|count[5]            ; 0.054             ;
-; stpwatch:inst5|count[4]            ; stpwatch:inst5|count[5]            ; 0.054             ;
+; adcReader:adc|Data0[11]            ; analog_to_buttons:inst3|b3         ; 0.403             ;
+; adcReader:adc|Data0[5]             ; analog_to_buttons:inst3|b1         ; 0.310             ;
+; adcReader:adc|Data0[10]            ; analog_to_buttons:inst3|b3         ; 0.308             ;
+; adcReader:adc|Data0[1]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[0]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[9]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[8]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[4]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[3]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[2]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[6]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; adcReader:adc|Data0[7]             ; analog_to_buttons:inst3|b3         ; 0.294             ;
+; stpwatch:inst5|strstp              ; stpwatch:inst5|counter[0]          ; 0.247             ;
+; stpwatch:inst5|counter[0]          ; stpwatch:inst5|counter[0]          ; 0.124             ;
 +------------------------------------+------------------------------------+-------------------+
-Note: This table only shows the top 28 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 58 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1090,30 +1122,69 @@ Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Ass
 Warning (335093): The Timing Analyzer is analyzing 8 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Stoppuhr.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
+Warning (332125): Found combinational loop of 4 nodes File: c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+    Warning (332126): Node "inst5|Add1~12|combout"
+    Warning (332126): Node "inst5|count[5]~2|datad"
+    Warning (332126): Node "inst5|count[5]~2|combout"
+    Warning (332126): Node "inst5|Add1~12|dataa"
+Warning (332125): Found combinational loop of 4 nodes File: c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+    Warning (332126): Node "inst5|Add1~10|dataa"
+    Warning (332126): Node "inst5|Add1~10|combout"
+    Warning (332126): Node "inst5|count[4]~6|datad"
+    Warning (332126): Node "inst5|count[4]~6|combout"
+Warning (332125): Found combinational loop of 4 nodes File: c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+    Warning (332126): Node "inst5|Add1~8|dataa"
+    Warning (332126): Node "inst5|Add1~8|combout"
+    Warning (332126): Node "inst5|count[3]~10|datad"
+    Warning (332126): Node "inst5|count[3]~10|combout"
+Warning (332125): Found combinational loop of 4 nodes File: c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+    Warning (332126): Node "inst5|Add1~6|dataa"
+    Warning (332126): Node "inst5|Add1~6|combout"
+    Warning (332126): Node "inst5|count[2]~14|datad"
+    Warning (332126): Node "inst5|count[2]~14|combout"
+Warning (332125): Found combinational loop of 4 nodes File: c:/intelfpga_lite/18.0/quartus/libraries/vhdl/ieee/1993/numeric_std_vhdl1993.vhd Line: 1244
+    Warning (332126): Node "inst5|Add1~4|dataa"
+    Warning (332126): Node "inst5|Add1~4|combout"
+    Warning (332126): Node "inst5|count[1]~18|datad"
+    Warning (332126): Node "inst5|count[1]~18|combout"
+Warning (332125): Found combinational loop of 2 nodes File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 30
+    Warning (332126): Node "inst5|count[0]~22|combout"
+    Warning (332126): Node "inst5|count[0]~22|datad"
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node clk_50~input (placed in PIN R8 (CLK15, DIFFCLK_6p))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node stpwatch:inst5|counter[7] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[8] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[9] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[11] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[12] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[13] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[14] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[15] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[16] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
-        Info (176357): Destination node stpwatch:inst5|counter[17] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
+        Info (176357): Destination node stpwatch:inst5|counter[6] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[7] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[8] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[9] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[11] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[12] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[13] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[14] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[15] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
+        Info (176357): Destination node stpwatch:inst5|counter[16] File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 33
         Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176353): Automatically promoted node adcReader:adc|clk_spi  File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/adcReader.vhd Line: 34
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node adcReader:adc|SCLK~0 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/adcReader.vhd Line: 27
         Info (176357): Destination node adcReader:adc|clk_spi~0 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/adcReader.vhd Line: 34
-Info (176353): Automatically promoted node stpwatch:inst5|count[5]~0  File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 26
+Info (176353): Automatically promoted node analog_to_buttons:inst3|b3  File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/analog_to_buttons.vhd Line: 25
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node analog_to_buttons:inst3|b3 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/analog_to_buttons.vhd Line: 25
+Info (176353): Automatically promoted node stpwatch:inst5|LessThan0~9  File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 36
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node stpwatch:inst5|count[5]~2 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 30
+        Info (176357): Destination node stpwatch:inst5|count[4]~6 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 30
+        Info (176357): Destination node stpwatch:inst5|count[3]~10 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 30
+        Info (176357): Destination node stpwatch:inst5|count[2]~14 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 30
+        Info (176357): Destination node stpwatch:inst5|count[1]~18 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 30
+        Info (176357): Destination node stpwatch:inst5|count[0]~22 File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/stpwatch.vhd Line: 30
 Info (176353): Automatically promoted node analog_to_buttons:inst3|Equal0~6  File: C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/analog_to_buttons.vhd Line: 30
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
@@ -1128,22 +1199,22 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X43_Y11 to location X53_Y22
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.45 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.41 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/output_files/Stoppuhr.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 5553 megabytes
-    Info: Processing ended: Fri Jun 08 13:38:20 2018
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:11
+Info: Quartus Prime Fitter was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 5539 megabytes
+    Info: Processing ended: Tue Jun 12 12:36:29 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:09
 
 
 +----------------------------+

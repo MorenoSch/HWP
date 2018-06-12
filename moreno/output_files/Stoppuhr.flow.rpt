@@ -1,5 +1,5 @@
 Flow report for Stoppuhr
-Fri Jun 08 13:38:27 2018
+Tue Jun 12 12:36:35 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 08 13:38:23 2018       ;
+; Flow Status                        ; Successful - Tue Jun 12 12:36:31 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Stoppuhr                                    ;
 ; Top-level Entity Name              ; Stoppuhr                                    ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 153 / 22,320 ( < 1 % )                      ;
-;     Total combinational functions  ; 147 / 22,320 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 93 / 22,320 ( < 1 % )                       ;
-; Total registers                    ; 93                                          ;
+; Total logic elements               ; 154 / 22,320 ( < 1 % )                      ;
+;     Total combinational functions  ; 143 / 22,320 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 98 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 98                                          ;
 ; Total pins                         ; 11 / 154 ( 7 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/08/2018 13:37:56 ;
+; Start date & time ; 06/12/2018 12:36:12 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Stoppuhr            ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 190090212219486.152845787614812        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 190090212219486.152879977214164        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --         ;
@@ -91,11 +91,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4819 MB             ; 00:00:38                           ;
-; Fitter               ; 00:00:08     ; 1.0                     ; 5553 MB             ; 00:00:11                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4688 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 4795 MB             ; 00:00:03                           ;
-; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:53                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4825 MB             ; 00:00:24                           ;
+; Fitter               ; 00:00:06     ; 1.0                     ; 5539 MB             ; 00:00:08                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4688 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 4798 MB             ; 00:00:02                           ;
+; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:35                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
