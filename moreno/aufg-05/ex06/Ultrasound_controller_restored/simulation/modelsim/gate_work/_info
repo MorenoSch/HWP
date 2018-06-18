@@ -1,0 +1,143 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/moren/Desktop/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim
+Ehard_block
+Z1 w1529326379
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 U]E`hi0:`oKa5cWiFZ>hl3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 7:=`d=[QUY_aUcbj<lC000
+R0
+Z8 8Ultrasound_controller_6_1200mv_85c_slow.vho
+Z9 FUltrasound_controller_6_1200mv_85c_slow.vho
+l0
+L34
+VF25TiLjh`DQcC8Z=zbJ?Y3
+!s100 A`ID_i56<Ua56=ZD=[EG=2
+Z10 OV;C;10.5b;63
+31
+Z11 !s110 1529326416
+!i10b 1
+Z12 !s108 1529326415.000000
+Z13 !s90 -reportprogress|300|-93|-work|work|Ultrasound_controller_6_1200mv_85c_slow.vho|
+Z14 !s107 Ultrasound_controller_6_1200mv_85c_slow.vho|
+!i113 1
+Z15 o-93 -work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 F25TiLjh`DQcC8Z=zbJ?Y3
+l64
+L50
+VZ2P8e]:^NT<7Y7=;nM1Vi3
+!s100 2S?JL;LJ@<3:BHXTNcXS]3
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Emotor_controller
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+R8
+R9
+l0
+L77
+V>l1TGE83W6:g6=CO;o@391
+!s100 ==SQQ0`icS_B179C2HQo13
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 16 motor_controller 0 22 >l1TGE83W6:g6=CO;o@391
+l142
+L104
+VKeJf9ehUmGPkXE9zET6]k3
+!s100 0hc^7F2Z=R95?lFHiV`Cc3
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Emotor_controller_vhd_tst
+Z17 w1529326353
+R5
+R6
+R0
+Z18 8C:/Users/moren/Desktop/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_controller.vht
+Z19 FC:/Users/moren/Desktop/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_controller.vht
+l0
+L30
+VSE6^0g_<OXi1J?cR9QYBU1
+!s100 J9gz32^XnZRD18S4U:oed3
+R10
+31
+R11
+!i10b 1
+Z20 !s108 1529326416.000000
+Z21 !s90 -reportprogress|300|-93|-work|work|C:/Users/moren/Desktop/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_controller.vht|
+Z22 !s107 C:/Users/moren/Desktop/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_controller.vht|
+!i113 1
+R15
+R16
+Amotor_controller_arch
+R5
+R6
+DEx4 work 24 motor_controller_vhd_tst 0 22 SE6^0g_<OXi1J?cR9QYBU1
+l49
+L32
+VUQJ8AE93jAR^HS6R7ZgXA3
+!s100 [0EN`U_Y<NeE0eSV=>PEj3
+R10
+31
+R11
+!i10b 1
+R20
+R21
+R22
+!i113 1
+R15
+R16
