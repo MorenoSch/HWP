@@ -1,5 +1,5 @@
 Archive Project report for Ultrasound_controller
-Tue Jun 19 19:13:29 2018
+Tue Jun 19 20:39:44 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Tue Jun 19 19:13:29 2018 ;
+; Archive Project Status ; Successful - Tue Jun 19 20:39:44 2018 ;
 ; Revision Name          ; Ultrasound_controller                 ;
 ; Top-level Entity Name  ; ultrasound_reader                     ;
 ; Family                 ; Cyclone IV E                          ;
@@ -60,8 +60,8 @@ Info: Generated report 'Ultrasound_controller.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4841 megabytes
-    Info: Processing ended: Tue Jun 19 19:13:29 2018
-    Info: Elapsed time: 00:00:03
+    Info: Processing ended: Tue Jun 19 20:39:44 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
@@ -72,6 +72,9 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 +-------------------------------------------------+
 ; assignment_defaults.qdf                         ;
 ; block/ultrasound_reader.bdf                     ;
+; motor_controller.vhd                            ;
+; robot_controller.vhd                            ;
+; simulation/modelsim/motor_test.vht              ;
 ; simulation/modelsim/ultrasound_controller.vht   ;
 ; simulation/stp1.stp                             ;
 ; simulation/Ultrasound_controller_simulation.png ;
