@@ -1,0 +1,46 @@
+|motor_test
+motor_signal1 <= motor_controller:inst1.motor_signal1
+clk_50 => motor_controller:inst1.clk_50
+direction => motor_controller:inst1.direction
+speed[0] => motor_controller:inst1.speed[0]
+speed[1] => motor_controller:inst1.speed[1]
+speed[2] => motor_controller:inst1.speed[2]
+speed[3] => motor_controller:inst1.speed[3]
+speed[4] => motor_controller:inst1.speed[4]
+speed[5] => motor_controller:inst1.speed[5]
+speed[6] => motor_controller:inst1.speed[6]
+speed[7] => motor_controller:inst1.speed[7]
+speed[8] => motor_controller:inst1.speed[8]
+speed[9] => motor_controller:inst1.speed[9]
+motor_signal2 <= motor_controller:inst1.motor_signal2
+
+
+|motor_test|motor_controller:inst1
+clk_50 => motor_signal2~reg0.CLK
+clk_50 => motor_signal1~reg0.CLK
+clk_50 => counter[0].CLK
+clk_50 => counter[1].CLK
+clk_50 => counter[2].CLK
+clk_50 => counter[3].CLK
+clk_50 => counter[4].CLK
+clk_50 => counter[5].CLK
+clk_50 => counter[6].CLK
+clk_50 => counter[7].CLK
+clk_50 => counter[8].CLK
+clk_50 => counter[9].CLK
+speed[0] => LessThan0.IN10
+speed[1] => LessThan0.IN9
+speed[2] => LessThan0.IN8
+speed[3] => LessThan0.IN7
+speed[4] => LessThan0.IN6
+speed[5] => LessThan0.IN5
+speed[6] => LessThan0.IN4
+speed[7] => LessThan0.IN3
+speed[8] => LessThan0.IN2
+speed[9] => LessThan0.IN1
+direction => motor_signal1.DATAA
+direction => motor_signal2.DATAA
+motor_signal1 <= motor_signal1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+motor_signal2 <= motor_signal2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
