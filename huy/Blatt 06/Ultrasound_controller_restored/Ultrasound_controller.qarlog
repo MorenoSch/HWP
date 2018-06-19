@@ -1,0 +1,23 @@
+Quartus Prime Archive log --	C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/Ultrasound_controller.qarlog
+
+Archive:	C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/Ultrasound_controller.qar
+Date:		Tue Jun 19 19:13:29 2018
+Quartus Prime		18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/Ultrasound_controller.qpf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/Ultrasound_controller.qsf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/Ultrasound_controller_assignment_defaults.qdf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/assignment_defaults.qdf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/block/ultrasound_reader.bdf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/Ultrasound_controller_simulation.png
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/modelsim/ultrasound_controller.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/stp1.stp
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/controller.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/dataToLcd.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/lcd_driver2.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/ultrasound_controller.vhd
+	======= Total: 12 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -1,0 +1,217 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/modelsim
+Econtroller
+Z1 w1529427740
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/controller.vhd
+Z6 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/controller.vhd
+l0
+L6
+V;?3S69QlFadfn@fzLNTA<3
+!s100 R1R37>2C?;19ICLHkQd2F3
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1529428128
+!i10b 1
+Z9 !s108 1529428128.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/controller.vhd|
+Z11 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/controller.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+R4
+DEx4 work 10 controller 0 22 ;?3S69QlFadfn@fzLNTA<3
+l26
+L20
+V2MWJ88>b4Jjc<^^5`0G^>3
+!s100 05YZHI>jMZ;OfWhzTFL_^2
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Edatatolcd
+Z14 w1334703983
+Z15 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R3
+R4
+Z16 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R0
+Z17 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/dataToLcd.vhd
+Z18 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/dataToLcd.vhd
+l0
+L10
+VD2<2F2:eLIl2>ONK:LkaT0
+!s100 VRN`QdoPPcf1f6Pb5e6gL3
+R7
+31
+R8
+!i10b 1
+R9
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/dataToLcd.vhd|
+Z20 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/dataToLcd.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R15
+R3
+R4
+R16
+DEx4 work 9 datatolcd 0 22 D2<2F2:eLIl2>ONK:LkaT0
+l63
+L29
+V^>VRY8I_?6UQ1OZUA[6SI2
+!s100 DUH12L1a9Zf>aZkWie^G@2
+R7
+31
+R8
+!i10b 1
+R9
+R19
+R20
+!i113 1
+R12
+R13
+Elcd_driver2
+Z21 w1334791887
+R16
+R15
+R3
+R4
+R0
+Z22 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/lcd_driver2.vhd
+Z23 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/lcd_driver2.vhd
+l0
+L12
+VGGZhgn0Hcn?GWb_P2n=Yk2
+!s100 cjaCXJaFAacCFGZhV[9lc3
+R7
+31
+R8
+!i10b 1
+R9
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/lcd_driver2.vhd|
+Z25 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/lcd_driver2.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R16
+R15
+R3
+R4
+DEx4 work 11 lcd_driver2 0 22 GGZhgn0Hcn?GWb_P2n=Yk2
+l63
+L34
+VJh6:l64<P5Ng9V]0H1c?[1
+!s100 oi9:l9G=J7IlofUBGRlhU1
+R7
+31
+R8
+!i10b 1
+R9
+R24
+R25
+!i113 1
+R12
+R13
+Eultrasound_controller
+Z26 w1529423181
+R2
+R3
+R4
+R0
+Z27 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/ultrasound_controller.vhd
+Z28 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/ultrasound_controller.vhd
+l0
+L5
+VQgoV2KD[ELn`iU<?5FT>S3
+!s100 0LcjKcLIIU:XW;^BVV_@M0
+R7
+31
+R8
+!i10b 1
+R9
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/ultrasound_controller.vhd|
+Z30 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/vhdl/ultrasound_controller.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 21 ultrasound_controller 0 22 QgoV2KD[ELn`iU<?5FT>S3
+l28
+L24
+Vh>Zm3B05oEEFBREzYFYAI3
+!s100 W52FTSeF8k63Al]2Q?<K[2
+R7
+31
+R8
+!i10b 1
+R9
+R29
+R30
+!i113 1
+R12
+R13
+Eultrasound_controller_vhd_tst
+Z31 w1529339581
+R3
+R4
+R0
+Z32 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/modelsim/ultrasound_controller.vht
+Z33 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/modelsim/ultrasound_controller.vht
+l0
+L31
+Vl95kz7:?kH7o:9:i0Fc351
+!s100 ^C4PAz4CSkE3S@3kg=fOD2
+R7
+31
+R8
+!i10b 1
+R9
+Z34 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/modelsim/ultrasound_controller.vht|
+Z35 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 06/Ultrasound_controller_restored/simulation/modelsim/ultrasound_controller.vht|
+!i113 1
+R12
+R13
+Aultrasound_controller_arch
+R3
+R4
+DEx4 work 29 ultrasound_controller_vhd_tst 0 22 l95kz7:?kH7o:9:i0Fc351
+l50
+L33
+V13jg_`=5Bz6b:O?RkMQ[l3
+!s100 La=ZSz@<@oESC[HOkZW[o2
+R7
+31
+R8
+!i10b 1
+R9
+R34
+R35
+!i113 1
+R12
+R13
