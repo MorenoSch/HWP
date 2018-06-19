@@ -1,0 +1,48 @@
+# do Ultrasound_controller_run_msim_gate_vhdl.do
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work gate_work 
+# Copying /home/computer/intelFPGA_lite/18.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {Ultrasound_controller_6_1200mv_85c_slow.vho}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:53:22 on Jun 19,2018
+# vcom -reportprogress 300 -93 -work work Ultrasound_controller_6_1200mv_85c_slow.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneive_atom_pack
+# -- Loading package cycloneive_components
+# -- Compiling entity hard_block
+# -- Compiling architecture structure of hard_block
+# -- Compiling entity motor_test
+# -- Compiling architecture structure of motor_test
+# End time: 13:53:22 on Jun 19,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vcom -93 -work work {/home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:53:22 on Jun 19,2018
+# vcom -reportprogress 300 -93 -work work /home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity motor_test_vhd_tst
+# -- Compiling architecture motor_test_arch of motor_test_vhd_tst
+# ** Error: /home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht(76): near "=": (vcom-1576) expecting == or '+' or '-' or '&'.
+# ** Error: /home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht(79): Illegal sequential statement.
+# ** Error: /home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht(84): near "motor_test_arch": (vcom-1576) expecting PROCESS.
+# End time: 13:53:22 on Jun 19,2018, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+# ** Error: /home/computer/intelFPGA_lite/18.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./Ultrasound_controller_run_msim_gate_vhdl.do line 10
+# /home/computer/intelFPGA_lite/18.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {/home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht}"

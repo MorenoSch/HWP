@@ -1,0 +1,22 @@
+Quartus Prime Archive log --	C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Counter.qarlog
+
+Archive:	C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Counter.qar
+Date:		Tue Jun 12 13:07:25 2018
+Quartus Prime		18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Counter.bdf
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Counter.qpf
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Counter.qsf
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/CounterWithOutput.bdf
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/Counter_assignment_defaults.qdf
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/assignment_defaults.qdf
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/myCounter.vhd
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/simulation/modelsim/myCounter.vht
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/vhdl/adcReader.vhd
+C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/vhdl/analog_to_buttons.vhd
+C:/Users/moren/Pictures/Screenshots/counter_timing.png
+	======= Total: 11 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

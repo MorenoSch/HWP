@@ -1,0 +1,25 @@
+
+State Machine - |ultrasound_reader|dataToLcd:inst4|state
+Name state.pause state.init state.update 
+state.update 0 0 0 
+state.init 0 1 1 
+state.pause 1 0 1 
+
+State Machine - |ultrasound_reader|lcd_driver2:inst5|state
+Name state.sendingData state.sendingAddress state.ready state.createChar5 state.createChar4 state.createChar3 state.createChar2 state.createChar1 state.init7 state.init6 state.init5 state.init4 state.init3 state.init2 state.init1 state.init0 
+state.init0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.init1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.init2 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.init3 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.init4 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.init5 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.init6 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.init7 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.createChar1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.createChar2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.createChar3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.createChar4 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.createChar5 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.ready 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sendingAddress 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.sendingData 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

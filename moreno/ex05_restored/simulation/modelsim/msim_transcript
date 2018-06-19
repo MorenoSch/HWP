@@ -12,7 +12,7 @@
 # 
 # vcom -93 -work work {Counter_6_1200mv_85c_slow.vho}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:58 on Jun 07,2018
+# Start time: 13:05:06 on Jun 12,2018
 # vcom -reportprogress 300 -93 -work work Counter_6_1200mv_85c_slow.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -27,24 +27,24 @@
 # -- Loading package altera_primitives_components
 # -- Compiling entity myCounter
 # -- Compiling architecture structure of myCounter
-# End time: 13:23:58 on Jun 07,2018, Elapsed time: 0:00:00
+# End time: 13:05:06 on Jun 12,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vcom -93 -work work {C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/simulation/modelsim/myCounter.vht}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:23:58 on Jun 07,2018
+# Start time: 13:05:06 on Jun 12,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/ex05_restored/simulation/modelsim/myCounter.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity myCounter_vhd_tst
 # -- Compiling architecture myCounter_arch of myCounter_vhd_tst
-# End time: 13:23:58 on Jun 07,2018, Elapsed time: 0:00:00
+# End time: 13:05:07 on Jun 12,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /i1=Counter_6_1200mv_85c_vhd_slow.sdo -L altera -L cycloneive -L gate_work -L work -voptargs="+acc"  myCounter_vhd_tst
 # vsim -t 1ps "+transport_int_delays" "+transport_path_delays" -sdftyp /i1=Counter_6_1200mv_85c_vhd_slow.sdo -L altera -L cycloneive -L gate_work -L work -voptargs=""+acc"" myCounter_vhd_tst 
-# Start time: 13:23:58 on Jun 07,2018
+# Start time: 13:05:07 on Jun 12,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -75,5 +75,5 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# End time: 13:26:39 on Jun 07,2018, Elapsed time: 0:02:41
+# End time: 13:06:56 on Jun 12,2018, Elapsed time: 0:01:49
 # Errors: 0, Warnings: 0

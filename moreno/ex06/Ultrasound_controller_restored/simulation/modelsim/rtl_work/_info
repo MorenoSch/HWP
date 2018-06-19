@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/simulation/modelsim
+Emotor_controller
+Z1 w1529421145
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/motor_controller.vhd
+Z6 FC:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/motor_controller.vhd
+l0
+L6
+VO`eV;?zLQYbglH`1b:En?1
+!s100 o_CbYa@fHHUP3:4[im]9<1
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1529421814
+!i10b 1
+Z9 !s108 1529421814.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/motor_controller.vhd|
+Z11 !s107 C:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/motor_controller.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+R4
+DEx4 work 16 motor_controller 0 22 O`eV;?zLQYbglH`1b:En?1
+l22
+L17
+VXQQGNE0JeCUQi84>]QjDk2
+!s100 Dl@o3DM0_R[JWzgU@RN@21
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Emotor_test_vhd_tst
+Z14 w1529421779
+R3
+R4
+R0
+Z15 8C:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht
+Z16 FC:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht
+l0
+L30
+VDgBfSU0c]mB>NRhBZXG5R0
+!s100 gAIHBSKjYg?LIB7G2J3Y53
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht|
+Z18 !s107 C:/Users/moren/Desktop/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht|
+!i113 1
+R12
+R13
+Amotor_test_arch
+R3
+R4
+DEx4 work 18 motor_test_vhd_tst 0 22 DgBfSU0c]mB>NRhBZXG5R0
+l49
+L32
+VTOnP3g1Pg=RhYW[=[`ifa2
+!s100 VOJQ[SmW;9HJEHcjC8?2?3
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
