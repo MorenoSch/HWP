@@ -1,0 +1,125 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim
+Ehard_block
+Z1 w1529408431
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 U]E`hi0:`oKa5cWiFZ>hl3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 7:=`d=[QUY_aUcbj<lC000
+R0
+Z8 8Ultrasound_controller_6_1200mv_85c_slow.vho
+Z9 FUltrasound_controller_6_1200mv_85c_slow.vho
+l0
+L34
+VF25TiLjh`DQcC8Z=zbJ?Y3
+!s100 A`ID_i56<Ua56=ZD=[EG=2
+Z10 OV;C;10.5b;63
+31
+Z11 !s110 1529409202
+!i10b 1
+Z12 !s108 1529409202.000000
+Z13 !s90 -reportprogress|300|-93|-work|work|Ultrasound_controller_6_1200mv_85c_slow.vho|
+Z14 !s107 Ultrasound_controller_6_1200mv_85c_slow.vho|
+!i113 1
+Z15 o-93 -work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 F25TiLjh`DQcC8Z=zbJ?Y3
+l64
+L50
+VZ2P8e]:^NT<7Y7=;nM1Vi3
+!s100 2S?JL;LJ@<3:BHXTNcXS]3
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Emotor_test
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+R0
+R8
+R9
+l0
+L77
+V_Zc_^KcMPKdko0fGI3>d`1
+!s100 zJA8SMhZg=TBjKgDb_8201
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 motor_test 0 22 _Zc_^KcMPKdko0fGI3>d`1
+l141
+L104
+VFoOR]VASkHhe?don_bOBX1
+!s100 O;]>zBjAQ<f^4nMYl`e@e3
+R10
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Emotor_test_vhd_tst
+w1529409174
+R5
+R6
+R0
+8/home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht
+F/home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht
+l0
+L30
+VDgBfSU0c]mB>NRhBZXG5R0
+!s100 gAIHBSKjYg?LIB7G2J3Y53
+R10
+31
+R11
+!i10b 1
+R12
+!s90 -reportprogress|300|-93|-work|work|/home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht|
+!s107 /home/computer/Schreibtisch/aufg-05/ex06/Ultrasound_controller_restored/simulation/modelsim/motor_test.vht|
+!i113 1
+R15
+R16
