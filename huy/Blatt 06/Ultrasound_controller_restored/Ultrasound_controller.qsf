@@ -81,6 +81,8 @@ set_global_assignment -name SEARCH_PATH vhdl/ -tag from_archive
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_TEST_BENCH_FILE simulation/modelsim/motor_test.vht
+set_global_assignment -name VHDL_FILE motor_controller.vhd
 set_global_assignment -name SOURCE_FILE simulation/Ultrasound_controller_simulation.png
 set_global_assignment -name VHDL_TEST_BENCH_FILE simulation/modelsim/ultrasound_controller.vht
 set_global_assignment -name VHDL_FILE vhdl/lcd_driver2.vhd
@@ -88,4 +90,9 @@ set_global_assignment -name VHDL_FILE vhdl/dataToLcd.vhd
 set_global_assignment -name VHDL_FILE vhdl/ultrasound_controller.vhd
 set_global_assignment -name VHDL_FILE vhdl/controller.vhd
 set_global_assignment -name BDF_FILE block/ultrasound_reader.bdf
+set_global_assignment -name VHDL_FILE robot_controller.vhd
+set_location_assignment PIN_F9 -to motor_A1
+set_location_assignment PIN_E9 -to motor_A2
+set_location_assignment PIN_F8 -to motor_B1
+set_location_assignment PIN_E8 -to motor_B2
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
