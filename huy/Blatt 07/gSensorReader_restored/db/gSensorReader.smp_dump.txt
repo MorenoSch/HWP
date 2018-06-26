@@ -1,0 +1,24 @@
+
+State Machine - |g_reader|next_state
+Name next_state.readZ next_state.readY next_state.readX next_state.pause next_state.init4 next_state.init3 next_state.init2 next_state.init1 next_state.init0 
+next_state.init0 0 0 0 0 0 0 0 0 0 
+next_state.init1 0 0 0 0 0 0 0 1 1 
+next_state.init2 0 0 0 0 0 0 1 0 1 
+next_state.init3 0 0 0 0 0 1 0 0 1 
+next_state.init4 0 0 0 0 1 0 0 0 1 
+next_state.pause 0 0 0 1 0 0 0 0 1 
+next_state.readX 0 0 1 0 0 0 0 0 1 
+next_state.readY 0 1 0 0 0 0 0 0 1 
+next_state.readZ 1 0 0 0 0 0 0 0 1 
+
+State Machine - |g_reader|state
+Name state.readZ state.readY state.readX state.pause state.init4 state.init3 state.init2 state.init1 state.init0 
+state.init0 0 0 0 0 0 0 0 0 0 
+state.init1 0 0 0 0 0 0 0 1 1 
+state.init2 0 0 0 0 0 0 1 0 1 
+state.init3 0 0 0 0 0 1 0 0 1 
+state.init4 0 0 0 0 1 0 0 0 1 
+state.pause 0 0 0 1 0 0 0 0 1 
+state.readX 0 0 1 0 0 0 0 0 1 
+state.readY 0 1 0 0 0 0 0 0 1 
+state.readZ 1 0 0 0 0 0 0 0 1 
