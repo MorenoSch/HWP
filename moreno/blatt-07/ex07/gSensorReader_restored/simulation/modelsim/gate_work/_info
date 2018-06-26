@@ -1,0 +1,147 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/simulation/modelsim
+Eg_reader
+Z1 w1530010257
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 U]E`hi0:`oKa5cWiFZ>hl3
+Z3 DPx10 cycloneive 21 cycloneive_components 0 22 7:=`d=[QUY_aUcbj<lC000
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 Dg`GWTC`^Q8GNSMPeo22;3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 _LNC5n6B?5VN@W;M4Dg@k1
+R0
+Z10 8gSensorReader_6_1200mv_85c_slow.vho
+Z11 FgSensorReader_6_1200mv_85c_slow.vho
+l0
+L79
+V4HG<6i=6=CTa>XbhHmZzI2
+!s100 QdYNWK?6DUnj?EFR^2>Vn2
+Z12 OV;C;10.5b;63
+31
+Z13 !s110 1530010265
+!i10b 1
+Z14 !s108 1530010265.000000
+Z15 !s90 -reportprogress|300|-93|-work|work|gSensorReader_6_1200mv_85c_slow.vho|
+Z16 !s107 gSensorReader_6_1200mv_85c_slow.vho|
+!i113 1
+Z17 o-93 -work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 8 g_reader 0 22 4HG<6i=6=CTa>XbhHmZzI2
+l230
+L139
+V5djRE5XZ@PdUQGVUJ`^PI3
+!s100 >b?R78lQ29JIkUZdRS[P22
+R12
+31
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Eg_reader_vhd_tst
+Z19 w1530009468
+R7
+R8
+R0
+Z20 8C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/simulation/modelsim/g_reader.vht
+Z21 FC:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/simulation/modelsim/g_reader.vht
+l0
+L30
+V_5F9^bM1b55aGKePgL3fV2
+!s100 8e?7zdGGnkTVJ9D<6JL[P2
+R12
+31
+R13
+!i10b 1
+R14
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
+Z23 !s107 C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
+!i113 1
+R17
+R18
+Ag_reader_arch
+R7
+R8
+DEx4 work 16 g_reader_vhd_tst 0 22 _5F9^bM1b55aGKePgL3fV2
+l55
+L32
+VP2_W7Q]n8:bmPDfg;eBMM0
+!s100 zGTT4X0baME]@Pii=Pi@B2
+R12
+31
+R13
+!i10b 1
+R14
+R22
+R23
+!i113 1
+R17
+R18
+Ehard_block
+R1
+R4
+R2
+R6
+R7
+R8
+R3
+R0
+R10
+R11
+l0
+L34
+VF25TiLjh`DQcC8Z=zbJ?Y3
+!s100 A`ID_i56<Ua56=ZD=[EG=2
+R12
+31
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Astructure
+R4
+R2
+R6
+R7
+R8
+R3
+DEx4 work 10 hard_block 0 22 F25TiLjh`DQcC8Z=zbJ?Y3
+l64
+L50
+VZ2P8e]:^NT<7Y7=;nM1Vi3
+!s100 2S?JL;LJ@<3:BHXTNcXS]3
+R12
+31
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
