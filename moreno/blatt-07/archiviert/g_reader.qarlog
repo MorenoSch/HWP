@@ -1,0 +1,20 @@
+Quartus Prime Archive log --	C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/blatt-07/archiviert/g_reader.qarlog
+
+Archive:	C:/Users/moren/BoS_Informatik/Semester_2/Mobiles_Hardware_Praktikum/Abgaben/HWP/moreno/blatt-07/archiviert/g_reader.qar
+Date:		Tue Jun 26 15:34:18 2018
+Quartus Prime		18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/binaryToDecimal.vhd
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/dataToLcd.vhd
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/gSensorReader.qpf
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/gSensorReader.qsf
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/gSensorReader_assignment_defaults.qdf
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/gSensorToLCD.bdf
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/g_reader.vhd
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/lcd_driver.vhd
+C:/Users/moren/Desktop/aufg-06/ex07/gSensorReader_restored/simulation/modelsim/g_reader.vht
+	======= Total: 9 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
