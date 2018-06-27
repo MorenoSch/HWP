@@ -79,15 +79,15 @@ set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/g_reader.vht -section_id g_reader_vhd_tst
+set_global_assignment -name SEARCH_PATH block/
+set_global_assignment -name SEARCH_PATH simulation/modelsim/ -tag from_archive
+set_global_assignment -name SEARCH_PATH vhdl/
+set_global_assignment -name SEARCH_PATH output_files/ -tag from_archive
 set_global_assignment -name VHDL_TEST_BENCH_FILE simulation/modelsim/g_reader.vht
 set_global_assignment -name VHDL_FILE lcd_driver.vhd
 set_global_assignment -name VHDL_FILE binaryToDecimal.vhd
 set_global_assignment -name VHDL_FILE dataToLcd.vhd
 set_global_assignment -name VHDL_FILE g_reader.vhd
 set_global_assignment -name BDF_FILE gSensorToLCD.bdf
-set_global_assignment -name SEARCH_PATH block/
-set_global_assignment -name SEARCH_PATH simulation/modelsim/ -tag from_archive
-set_global_assignment -name SEARCH_PATH vhdl/
-set_global_assignment -name SEARCH_PATH output_files/ -tag from_archive
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/g_reader.vht -section_id g_reader_vhd_tst
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
