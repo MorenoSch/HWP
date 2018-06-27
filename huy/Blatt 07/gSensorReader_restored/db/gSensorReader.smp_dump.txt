@@ -12,13 +12,13 @@ next_state.readY 0 1 0 0 0 0 0 0 1
 next_state.readZ 1 0 0 0 0 0 0 0 1 
 
 State Machine - |g_reader|state
-Name state.readZ state.readY state.readX state.pause state.init4 state.init3 state.init2 state.init1 state.init0 
-state.init0 0 0 0 0 0 0 0 0 0 
+Name state.readZ state.readY state.readX state.init0 state.init4 state.init3 state.init2 state.init1 state.pause 
+state.pause 0 0 0 0 0 0 0 0 0 
 state.init1 0 0 0 0 0 0 0 1 1 
 state.init2 0 0 0 0 0 0 1 0 1 
 state.init3 0 0 0 0 0 1 0 0 1 
 state.init4 0 0 0 0 1 0 0 0 1 
-state.pause 0 0 0 1 0 0 0 0 1 
+state.init0 0 0 0 1 0 0 0 0 1 
 state.readX 0 0 1 0 0 0 0 0 1 
 state.readY 0 1 0 0 0 0 0 0 1 
 state.readZ 1 0 0 0 0 0 0 0 1 

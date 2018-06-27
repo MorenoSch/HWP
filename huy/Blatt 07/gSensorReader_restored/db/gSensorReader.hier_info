@@ -1,4 +1,5 @@
 |g_reader
+clk_50 => pause_entered.CLK
 clk_50 => time_count[0].CLK
 clk_50 => time_count[1].CLK
 clk_50 => time_count[2].CLK
@@ -15,7 +16,6 @@ clk_50 => time_count[12].CLK
 clk_50 => time_count[13].CLK
 clk_50 => time_count[14].CLK
 clk_50 => time_count[15].CLK
-clk_50 => pause_entered.CLK
 clk_50 => SCLK_int.CLK
 clk_50 => counter[0].CLK
 clk_50 => counter[1].CLK
@@ -42,9 +42,26 @@ reset_n => next_state.OUTPUTSELECT
 reset_n => next_state.OUTPUTSELECT
 reset_n => next_state.OUTPUTSELECT
 reset_n => next_state.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => time_count.OUTPUTSELECT
+reset_n => pause_entered.ENA
 CS_N <= CS_N.DB_MAX_OUTPUT_PORT_TYPE
-SCLK <= SCLK_int.DB_MAX_OUTPUT_PORT_TYPE
-SDIO <> <UNC>
+SCLK <= SCLK.DB_MAX_OUTPUT_PORT_TYPE
+SDIO <> SDIO
 dataX[0] <= dataX[0].DB_MAX_OUTPUT_PORT_TYPE
 dataX[1] <= dataX[1].DB_MAX_OUTPUT_PORT_TYPE
 dataX[2] <= dataX[2].DB_MAX_OUTPUT_PORT_TYPE

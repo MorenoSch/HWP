@@ -4,11 +4,23 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "CS_N",
+					"strict" : false
+				},
+				{
 					"name" : "SCLK",
 					"strict" : false
 				},
 				{
+					"name" : "SDIO",
+					"strict" : false
+				},
+				{
 					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "reset_n",
 					"strict" : false
 				}
 			]

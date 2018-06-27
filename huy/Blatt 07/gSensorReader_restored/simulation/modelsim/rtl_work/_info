@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim
+Eg_reader
+Z1 w1530034402
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/g_reader.vhd
+Z6 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/g_reader.vhd
+l0
+L7
+V:W831VUZ8DjaD_U575k7A2
+!s100 HCm_WLJk2Z9^]Yn10e55d1
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1530034985
+!i10b 1
+Z9 !s108 1530034985.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/g_reader.vhd|
+Z11 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/g_reader.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+R4
+DEx4 work 8 g_reader 0 22 :W831VUZ8DjaD_U575k7A2
+l34
+L25
+VI=o198Lzg74_>0T@[e=7a2
+!s100 ioB:`XXoGNNd0T8zA@jWa3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eg_reader_vhd_tst
+Z14 w1530030026
+R3
+R4
+R0
+Z15 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht
+Z16 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht
+l0
+L30
+V_5F9^bM1b55aGKePgL3fV2
+!s100 8e?7zdGGnkTVJ9D<6JL[P2
+R7
+31
+Z17 !s110 1530034986
+!i10b 1
+Z18 !s108 1530034986.000000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
+Z20 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
+!i113 1
+R12
+R13
+Ag_reader_arch
+R3
+R4
+DEx4 work 16 g_reader_vhd_tst 0 22 _5F9^bM1b55aGKePgL3fV2
+l55
+L32
+V2B^Kh;:UME1G1n:H=jL?90
+!s100 flO_<4Xh3]mPOIE@E^NAo2
+R7
+31
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13

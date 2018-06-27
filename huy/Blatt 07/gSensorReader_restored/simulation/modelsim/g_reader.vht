@@ -76,7 +76,28 @@ always : PROCESS
 -- (        )                                                 
 -- variable declarations                                      
 BEGIN                                                         
-        -- code executes for every event on sensitivity list  
+	-- code executes for every event on sensitivity list
 WAIT;                                                        
-END PROCESS always;                                          
+END PROCESS always;
+process
+begin
+	clk_50 <= '1';
+	wait for 10 ns;
+	clk_50 <= '0';
+	wait for 10 ns;
+end process;
+
+process
+begin
+	-- simulation 1 : during init0
+	reset_n <= '1';
+	
+	while CS_N /= '0' loop wait for 1 us; end loop;
+	while SCLK /= '0' loop wait for 1 us; end loop;
+	while CS_N /= '1' loop wait for 1 us; end loop;
+	
+	-- simulation 2 : during readX
+	wait;
+end process;
+        
 END g_reader_arch;
