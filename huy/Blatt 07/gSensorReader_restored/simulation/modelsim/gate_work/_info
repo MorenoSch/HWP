@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim
 Eg_reader
-Z1 w1530038223
+Z1 w1530094793
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 U]E`hi0:`oKa5cWiFZ>hl3
 Z3 DPx10 cycloneive 21 cycloneive_components 0 22 7:=`d=[QUY_aUcbj<lC000
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -27,9 +27,9 @@ V4HG<6i=6=CTa>XbhHmZzI2
 !s100 QdYNWK?6DUnj?EFR^2>Vn2
 Z12 OV;C;10.5b;63
 31
-Z13 !s110 1530038441
+Z13 !s110 1530094821
 !i10b 1
-Z14 !s108 1530038441.000000
+Z14 !s108 1530094820.000000
 Z15 !s90 -reportprogress|300|-93|-work|work|gSensorReader_6_1200mv_85c_slow.vho|
 Z16 !s107 gSensorReader_6_1200mv_85c_slow.vho|
 !i113 1
@@ -45,10 +45,10 @@ R7
 R8
 R9
 DEx4 work 8 g_reader 0 22 4HG<6i=6=CTa>XbhHmZzI2
-l374
+l463
 L139
-VbcEYc7^89Ph6Tihl0FzzT0
-!s100 Sb3Bb[iNDNK91aelKkfDN2
+VYeA^N1hG2D`>QSz]X^z:c1
+!s100 Y3k]IA0LAfVD3TSO8jHD61
 R12
 31
 R13
@@ -74,9 +74,9 @@ R12
 31
 R13
 !i10b 1
-R14
-Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
-Z23 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
+Z22 !s108 1530094821.000000
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
+Z24 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 07/gSensorReader_restored/simulation/modelsim/g_reader.vht|
 !i113 1
 R17
 R18
@@ -92,9 +92,9 @@ R12
 31
 R13
 !i10b 1
-R14
 R22
 R23
+R24
 !i113 1
 R17
 R18

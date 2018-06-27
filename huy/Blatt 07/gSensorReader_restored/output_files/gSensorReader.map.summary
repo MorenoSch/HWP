@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jun 26 20:36:38 2018
+Analysis & Synthesis Status : Successful - Wed Jun 27 13:03:16 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : gSensorReader
-Top-level Entity Name : g_reader
+Top-level Entity Name : gSensorToLCD
 Family : Cyclone IV E
-Total logic elements : 110
-    Total combinational functions : 110
-    Dedicated logic registers : 47
-Total registers : 47
-Total pins : 44
+Total logic elements : 1,018
+    Total combinational functions : 871
+    Dedicated logic registers : 437
+Total registers : 437
+Total pins : 15
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -31,6 +31,7 @@ architecture behavior of g_reader is
 	signal transmission_count : unsigned(4 downto 0) := (others => '0');
 	signal time_count : unsigned(15 downto 0) := (others => '0');
 	signal pause_entered : std_logic := '0';
+	signal read_temp : std_logic_vector(12 downto 0);
 begin
 process(clk_50)
 begin
@@ -127,46 +128,46 @@ begin
 	if falling_edge(SCLK_int) then
 		if state = init0 then
 			if transmission_count < 16 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 15 - transmission_count;
 				SDIO <= SDIO_init0(to_integer(index));
 			end if;
 		elsif state = init1 then
 			if transmission_count < 16 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 15 - transmission_count;
 				SDIO <= SDIO_init1(to_integer(index));
 			end if;
 		elsif state = init2 then
 			if transmission_count < 16 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 15 - transmission_count;
 				SDIO <= SDIO_init2(to_integer(index));
 			end if;
 		elsif state = init3 then
 			if transmission_count < 16 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 15 - transmission_count;
 				SDIO <= SDIO_init3(to_integer(index));
 			end if;
 		elsif state = init4 then
 			if transmission_count < 16 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 15 - transmission_count;
 				SDIO <= SDIO_init4(to_integer(index));
 			end if;
 		elsif state = readX then
 			if transmission_count < 8 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 7 - transmission_count;
 				SDIO <= SDIO_readX(to_integer(index));
-			elsif transmission_count < 24 then
+			else
 				SDIO <= 'Z';
 			end if;
 		elsif state = readY then
 			if transmission_count < 8 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 7 - transmission_count;
 				SDIO <= SDIO_readY(to_integer(index));
-			elsif transmission_count < 24 then
+			else
 				SDIO <= 'Z';
 			end if;
 		elsif state = readZ then
 			if transmission_count < 8 then
-				index := to_unsigned(15, 5) - transmission_count;
+				index := 7 - transmission_count;
 				SDIO <= SDIO_readZ(to_integer(index));
 			else
 				SDIO <= 'Z';
@@ -178,11 +179,29 @@ begin
 end process;
 
 process(SCLK_int)
+variable index : unsigned(4 downto 0);
 begin
 	if rising_edge(SCLK_int) then
 		if state = pause then
 			transmission_count <= (others => '0');
 		else
+			if state = readX or state = readY or state = readZ then
+				if transmission_count >= 8 and transmission_count < 16 then
+					index := 15 - transmission_count;
+					read_temp(to_integer(index)) <= SDIO;
+				elsif transmission_count >= 19 and transmission_count < 24 then
+					index := 31 - transmission_count;
+					read_temp(to_integer(index)) <= SDIO;
+				elsif transmission_count = 24 then
+					if state = readX then
+						dataX <= read_temp;
+					elsif state = readY then
+						dataY <= read_temp;
+					elsif state = readZ then
+						dataZ <= read_temp;
+					end if;
+				end if;
+			end if;
 			transmission_count <= transmission_count + 1;
 		end if;
 	end if;

@@ -3,63 +3,63 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk_50'
-Slack : -4.323
-TNS   : -129.581
+Slack : -4.348
+TNS   : -993.888
 
-Type  : Slow 1200mV 85C Model Setup 'SCLK_int'
-Slack : -2.157
-TNS   : -6.524
+Type  : Slow 1200mV 85C Model Setup 'g_reader:inst|SCLK_int'
+Slack : -2.149
+TNS   : -100.557
 
-Type  : Slow 1200mV 85C Model Hold 'SCLK_int'
-Slack : 0.148
+Type  : Slow 1200mV 85C Model Hold 'g_reader:inst|SCLK_int'
+Slack : 0.318
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_50'
-Slack : 0.343
+Slack : 0.342
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -43.000
+TNS   : -381.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SCLK_int'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'g_reader:inst|SCLK_int'
 Slack : -1.000
-TNS   : -7.000
+TNS   : -59.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk_50'
-Slack : -3.839
-TNS   : -113.534
+Slack : -3.835
+TNS   : -863.202
 
-Type  : Slow 1200mV 0C Model Setup 'SCLK_int'
-Slack : -1.853
-TNS   : -5.085
-
-Type  : Slow 1200mV 0C Model Hold 'SCLK_int'
-Slack : 0.240
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Setup 'g_reader:inst|SCLK_int'
+Slack : -1.877
+TNS   : -86.015
 
 Type  : Slow 1200mV 0C Model Hold 'clk_50'
 Slack : 0.298
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'g_reader:inst|SCLK_int'
+Slack : 0.311
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -43.000
+TNS   : -381.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SCLK_int'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'g_reader:inst|SCLK_int'
 Slack : -1.000
-TNS   : -7.000
+TNS   : -59.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk_50'
-Slack : -2.389
-TNS   : -61.414
+Slack : -1.996
+TNS   : -409.112
 
-Type  : Fast 1200mV 0C Model Setup 'SCLK_int'
-Slack : -1.112
-TNS   : -1.931
+Type  : Fast 1200mV 0C Model Setup 'g_reader:inst|SCLK_int'
+Slack : -1.010
+TNS   : -30.861
 
-Type  : Fast 1200mV 0C Model Hold 'SCLK_int'
-Slack : 0.110
+Type  : Fast 1200mV 0C Model Hold 'g_reader:inst|SCLK_int'
+Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_50'
@@ -68,10 +68,10 @@ TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -45.475
+TNS   : -403.885
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SCLK_int'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'g_reader:inst|SCLK_int'
 Slack : -1.000
-TNS   : -7.000
+TNS   : -59.000
 
 ------------------------------------------------------------

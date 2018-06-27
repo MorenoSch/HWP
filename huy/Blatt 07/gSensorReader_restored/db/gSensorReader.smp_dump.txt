@@ -1,5 +1,55 @@
 
-State Machine - |g_reader|next_state
+State Machine - |gSensorToLCD|dataToLcd:inst3|state
+Name state.pause state.init state.update 
+state.update 0 0 0 
+state.init 0 1 1 
+state.pause 1 0 1 
+
+State Machine - |gSensorToLCD|dataToLcd:inst3|binaryToDecimal:converterZ|state
+Name state.s5 state.s4 state.s3 state.s2 state.s1 state.s0 state.s0_s 
+state.s0_s 0 0 0 0 0 0 0 
+state.s0 0 0 0 0 0 1 1 
+state.s1 0 0 0 0 1 0 1 
+state.s2 0 0 0 1 0 0 1 
+state.s3 0 0 1 0 0 0 1 
+state.s4 0 1 0 0 0 0 1 
+state.s5 1 0 0 0 0 0 1 
+
+State Machine - |gSensorToLCD|dataToLcd:inst3|binaryToDecimal:converterY|state
+Name state.s5 state.s4 state.s3 state.s2 state.s1 state.s0 state.s0_s 
+state.s0_s 0 0 0 0 0 0 0 
+state.s0 0 0 0 0 0 1 1 
+state.s1 0 0 0 0 1 0 1 
+state.s2 0 0 0 1 0 0 1 
+state.s3 0 0 1 0 0 0 1 
+state.s4 0 1 0 0 0 0 1 
+state.s5 1 0 0 0 0 0 1 
+
+State Machine - |gSensorToLCD|dataToLcd:inst3|binaryToDecimal:converterX|state
+Name state.s5 state.s4 state.s3 state.s2 state.s1 state.s0 state.s0_s 
+state.s0_s 0 0 0 0 0 0 0 
+state.s0 0 0 0 0 0 1 1 
+state.s1 0 0 0 0 1 0 1 
+state.s2 0 0 0 1 0 0 1 
+state.s3 0 0 1 0 0 0 1 
+state.s4 0 1 0 0 0 0 1 
+state.s5 1 0 0 0 0 0 1 
+
+State Machine - |gSensorToLCD|lcd_driver:inst2|state
+Name state.sendingData state.sendingAddress state.ready state.init7 state.init6 state.init5 state.init4 state.init3 state.init2 state.init1 state.init0 
+state.init0 0 0 0 0 0 0 0 0 0 0 0 
+state.init1 0 0 0 0 0 0 0 0 0 1 1 
+state.init2 0 0 0 0 0 0 0 0 1 0 1 
+state.init3 0 0 0 0 0 0 0 1 0 0 1 
+state.init4 0 0 0 0 0 0 1 0 0 0 1 
+state.init5 0 0 0 0 0 1 0 0 0 0 1 
+state.init6 0 0 0 0 1 0 0 0 0 0 1 
+state.init7 0 0 0 1 0 0 0 0 0 0 1 
+state.ready 0 0 1 0 0 0 0 0 0 0 1 
+state.sendingAddress 0 1 0 0 0 0 0 0 0 0 1 
+state.sendingData 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |gSensorToLCD|g_reader:inst|next_state
 Name next_state.readZ next_state.readY next_state.readX next_state.pause next_state.init4 next_state.init3 next_state.init2 next_state.init1 next_state.init0 
 next_state.init0 0 0 0 0 0 0 0 0 0 
 next_state.init1 0 0 0 0 0 0 0 1 1 
@@ -11,7 +61,7 @@ next_state.readX 0 0 1 0 0 0 0 0 1
 next_state.readY 0 1 0 0 0 0 0 0 1 
 next_state.readZ 1 0 0 0 0 0 0 0 1 
 
-State Machine - |g_reader|state
+State Machine - |gSensorToLCD|g_reader:inst|state
 Name state.readZ state.readY state.readX state.init0 state.init4 state.init3 state.init2 state.init1 state.pause 
 state.pause 0 0 0 0 0 0 0 0 0 
 state.init1 0 0 0 0 0 0 0 1 1 
