@@ -20,29 +20,31 @@ LiquidCrystal lcd(11, 12, 13, A0, A1, A2);
 uint32_t time_tmp;
 uint32_t time_tmp_2;
 int32_t heading_int;
-uint32_t degree_out;
+uint32_t heading;
 // initialization
 void setup()
 {
+   Serial.begin(38400);
    // LCD has 4 lines with 20 chars
    lcd.begin(20, 4); 
    lcd.print("system ready");
    time_tmp = millis();
    time_tmp_2 = millis();
    heading_int = 0;
-   degree_out = 0;
+   heading = 0;
 }
 
 void loop()
 {  
    // read the current analog value on a3
    int16_t analogValue = analogRead(A3);
-   heading(analogValue);
+   heading_i(analogValue);
    degree();
   if (millis() - time_tmp > 150){
       time_tmp = millis();
       printvalues(analogValue);
   }
+  Serial.write(heading/2);
    // implement your code here:
    
 }
@@ -64,10 +66,10 @@ void printvalues(int16_t analogValue)
   lcd.setCursor(1,3);
   lcd.print("heading:");
   lcd.setCursor(12,3);
-  lcd.print(degree_out);
+  lcd.print(heading);
 }
 
-void heading(int16_t analogValue) 
+void heading_i(int16_t analogValue) 
 {
   if (((374 - analogValue) < -15) or ((374 - analogValue) > 15)) {
       int add = (millis() - time_tmp_2)*(374 - analogValue);
@@ -78,10 +80,10 @@ void heading(int16_t analogValue)
 
 void degree(){
   if (heading_int < 0) {
-  degree_out = 360 - (abs(heading_int/3200) % 360);
+    heading = 360 - (abs(heading_int/3200) % 360);
   }
   else {
-   degree_out = abs(heading_int/3200) % 360; 
+    heading = abs(heading_int/3200) % 360; 
   }
 }
 /* Usefull LCD functions:
