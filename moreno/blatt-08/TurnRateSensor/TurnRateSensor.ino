@@ -39,9 +39,6 @@ void loop()
    int16_t analogValue = analogRead(A3);
    heading(analogValue);
    degree();
-   if( degree_out >= 360){
-    degree_out -= 360;
-    }
   if (millis() - time_tmp > 150){
       time_tmp = millis();
       printvalues(analogValue);
@@ -80,7 +77,12 @@ void heading(int16_t analogValue)
 }
 
 void degree(){
-  degree_out = abs(heading_int/3200);
+  if (heading_int < 0) {
+  degree_out = 360 - (abs(heading_int/3200) % 360);
+  }
+  else {
+   degree_out = abs(heading_int/3200) % 360; 
+  }
 }
 /* Usefull LCD functions:
 set the current write position of the lcd to specific line and row:
