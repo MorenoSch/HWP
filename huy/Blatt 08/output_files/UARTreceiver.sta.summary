@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'clk_50'
+Slack : -3.981
+TNS   : -629.452
+
+Type  : Slow 1200mV 85C Model Setup 'UARTreceiver:inst|dataReady'
+Slack : 0.009
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_50'
+Slack : 0.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'UARTreceiver:inst|dataReady'
+Slack : 0.365
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
+Slack : -3.000
+TNS   : -252.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UARTreceiver:inst|dataReady'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Slow 1200mV 0C Model Setup 'clk_50'
+Slack : -3.514
+TNS   : -545.019
+
+Type  : Slow 1200mV 0C Model Setup 'UARTreceiver:inst|dataReady'
+Slack : 0.104
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_50'
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'UARTreceiver:inst|dataReady'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
+Slack : -3.000
+TNS   : -252.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UARTreceiver:inst|dataReady'
+Slack : -1.000
+TNS   : -8.000
+
+Type  : Fast 1200mV 0C Model Setup 'clk_50'
+Slack : -1.685
+TNS   : -244.080
+
+Type  : Fast 1200mV 0C Model Setup 'UARTreceiver:inst|dataReady'
+Slack : 0.473
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'UARTreceiver:inst|dataReady'
+Slack : 0.109
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_50'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
+Slack : -3.000
+TNS   : -266.587
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UARTreceiver:inst|dataReady'
+Slack : -1.000
+TNS   : -8.000
+
+------------------------------------------------------------

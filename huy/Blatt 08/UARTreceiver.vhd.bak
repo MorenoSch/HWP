@@ -1,0 +1,19 @@
+-- UART receiver
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity UARTreceiver is port (
+	clk_50: in std_logic;	-- 50 MHz clock
+	serial: in std_logic;    -- serial port
+	data: out std_logic_vector(7 downto 0); -- data output
+	dataReady : out std_logic; -- 1, if new data received
+);
+end UARTreceiver;
+
+architecture behavior of g_reader is
+
+begin
+
+end behavior;

@@ -1,0 +1,24 @@
+Quartus Prime Archive log --	C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.qarlog
+
+Archive:	C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.qar
+Date:		Thu Jun 28 14:30:45 2018
+Quartus Prime		18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreader.bdf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.qpf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.qsf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/binaryToDecimal.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/dataToLcd.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/headingBuffer.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/lcd_driver.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/motor_controller.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/UARTreceiver_simulation.png
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht
+c:/intelfpga_lite/18.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 13 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
