@@ -1,0 +1,90 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim
+Euartreceiver
+Z1 w1530185085
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd
+Z6 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd
+l0
+L7
+VkPXjLhR1ooUlNlM@;MGS<0
+!s100 BW<CndIElXbE0W5SFGe1C0
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1530185472
+!i10b 1
+Z9 !s108 1530185472.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd|
+Z11 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavior
+R2
+R3
+R4
+DEx4 work 12 uartreceiver 0 22 kPXjLhR1ooUlNlM@;MGS<0
+l20
+L15
+VaF=3zKY<0LBi_5@eNZJO02
+!s100 ]59B869Tk@7[BoKz;c;M`3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Euartreceiver_vhd_tst
+Z14 w1530185351
+R3
+R4
+R0
+Z15 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht
+Z16 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht
+l0
+L30
+VZamAMY98TZj^:BeP^fZE?1
+!s100 D7]XSCfKJVmFCUgd4XfDR3
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht|
+Z18 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht|
+!i113 1
+R12
+R13
+Auartreceiver_arch
+R3
+R4
+DEx4 work 20 uartreceiver_vhd_tst 0 22 ZamAMY98TZj^:BeP^fZE?1
+l47
+L32
+VGILcC]^9bOk>6WNlJWV391
+!s100 UHGE^8e5`D6F@F9m9OV>X1
+R7
+31
+!s110 1530185473
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13

@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LCD_rs",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_e",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "clk_50",
+					"strict" : false
+				},
+				{
+					"name" : "serial_in",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

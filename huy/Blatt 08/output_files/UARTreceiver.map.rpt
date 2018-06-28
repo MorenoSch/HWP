@@ -1,0 +1,563 @@
+Analysis & Synthesis report for UARTreceiver
+Thu Jun 28 14:26:40 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |UARTreader|UARTreceiver:inst|state
+  9. State Machine - |UARTreader|dataToLcd:inst5|state
+ 10. State Machine - |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|state
+ 11. State Machine - |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|state
+ 12. State Machine - |UARTreader|lcd_driver:inst8|state
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Port Connectivity Checks: "dataToLcd:inst5|binaryToDecimal:converter3"
+ 19. Port Connectivity Checks: "dataToLcd:inst5|binaryToDecimal:converter1"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jun 28 14:26:40 2018       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; UARTreceiver                                ;
+; Top-level Entity Name              ; UARTreader                                  ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 633                                         ;
+;     Total combinational functions  ; 586                                         ;
+;     Dedicated logic registers      ; 257                                         ;
+; Total registers                    ; 257                                         ;
+; Total pins                         ; 17                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; UARTreader         ; UARTreceiver       ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
+; motor_controller.vhd             ; yes             ; User VHDL File                     ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/motor_controller.vhd   ;         ;
+; lcd_driver.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/lcd_driver.vhd         ;         ;
+; dataToLcd.vhd                    ; yes             ; User VHDL File                     ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/dataToLcd.vhd          ;         ;
+; binaryToDecimal.vhd              ; yes             ; User VHDL File                     ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/binaryToDecimal.vhd    ;         ;
+; UARTreceiver.vhd                 ; yes             ; User VHDL File                     ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd       ;         ;
+; UARTreader.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreader.bdf         ;         ;
+; headingBuffer.vhd                ; yes             ; User VHDL File                     ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/headingBuffer.vhd      ;         ;
+; RobotDriveTriangle.vhd           ; yes             ; User VHDL File                     ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 633          ;
+;                                             ;              ;
+; Total combinational functions               ; 586          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 278          ;
+;     -- 3 input functions                    ; 73           ;
+;     -- <=2 input functions                  ; 235          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 428          ;
+;     -- arithmetic mode                      ; 158          ;
+;                                             ;              ;
+; Total registers                             ; 257          ;
+;     -- Dedicated logic registers            ; 257          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 17           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; clk_50~input ;
+; Maximum fan-out                             ; 249          ;
+; Total fan-out                               ; 2587         ;
+; Average fan-out                             ; 2.95         ;
++---------------------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                    ; Entity Name     ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-----------------+--------------+
+; |UARTreader                        ; 586 (1)             ; 257 (0)                   ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |UARTreader                                            ; UARTreader      ; work         ;
+;    |UARTreceiver:inst|             ; 64 (64)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|UARTreceiver:inst                          ; UARTreceiver    ; work         ;
+;    |dataToLcd:inst5|               ; 411 (243)           ; 165 (87)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5                            ; dataToLcd       ; work         ;
+;       |binaryToDecimal:converter1| ; 88 (88)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1 ; binaryToDecimal ; work         ;
+;       |binaryToDecimal:converter3| ; 80 (80)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3 ; binaryToDecimal ; work         ;
+;    |headingBuffer:inst3|           ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|headingBuffer:inst3                        ; headingBuffer   ; work         ;
+;    |lcd_driver:inst8|              ; 110 (110)           ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|lcd_driver:inst8                           ; lcd_driver      ; work         ;
++------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------+
+; State Machine - |UARTreader|UARTreceiver:inst|state                                           ;
++----------------+---------------+---------------+----------------+----------------+------------+
+; Name           ; state.timeout ; state.stopBit ; state.dataBits ; state.startBit ; state.idle ;
++----------------+---------------+---------------+----------------+----------------+------------+
+; state.idle     ; 0             ; 0             ; 0              ; 0              ; 0          ;
+; state.startBit ; 0             ; 0             ; 0              ; 1              ; 1          ;
+; state.dataBits ; 0             ; 0             ; 1              ; 0              ; 1          ;
+; state.stopBit  ; 0             ; 1             ; 0              ; 0              ; 1          ;
+; state.timeout  ; 1             ; 0             ; 0              ; 0              ; 1          ;
++----------------+---------------+---------------+----------------+----------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------+
+; State Machine - |UARTreader|dataToLcd:inst5|state      ;
++--------------+-------------+------------+--------------+
+; Name         ; state.pause ; state.init ; state.update ;
++--------------+-------------+------------+--------------+
+; state.update ; 0           ; 0          ; 0            ;
+; state.init   ; 0           ; 1          ; 1            ;
+; state.pause  ; 1           ; 0          ; 1            ;
++--------------+-------------+------------+--------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------+
+; State Machine - |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|state ;
++----------+----------+----------+----------+----------+----------+------------+
+; Name     ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s0 ; state.s1   ;
++----------+----------+----------+----------+----------+----------+------------+
+; state.s1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0          ;
+; state.s0 ; 0        ; 0        ; 0        ; 0        ; 1        ; 1          ;
+; state.s2 ; 0        ; 0        ; 0        ; 1        ; 0        ; 1          ;
+; state.s3 ; 0        ; 0        ; 1        ; 0        ; 0        ; 1          ;
+; state.s4 ; 0        ; 1        ; 0        ; 0        ; 0        ; 1          ;
+; state.s5 ; 1        ; 0        ; 0        ; 0        ; 0        ; 1          ;
++----------+----------+----------+----------+----------+----------+------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------+
+; State Machine - |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|state ;
++----------+----------+----------+----------+----------+----------+------------+
+; Name     ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s0 ; state.s1   ;
++----------+----------+----------+----------+----------+----------+------------+
+; state.s1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0          ;
+; state.s0 ; 0        ; 0        ; 0        ; 0        ; 1        ; 1          ;
+; state.s2 ; 0        ; 0        ; 0        ; 1        ; 0        ; 1          ;
+; state.s3 ; 0        ; 0        ; 1        ; 0        ; 0        ; 1          ;
+; state.s4 ; 0        ; 1        ; 0        ; 0        ; 0        ; 1          ;
+; state.s5 ; 1        ; 0        ; 0        ; 0        ; 0        ; 1          ;
++----------+----------+----------+----------+----------+----------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |UARTreader|lcd_driver:inst8|state                                                                                                                                            ;
++----------------------+-------------------+----------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; Name                 ; state.sendingData ; state.sendingAddress ; state.ready ; state.init7 ; state.init6 ; state.init5 ; state.init4 ; state.init3 ; state.init2 ; state.init1 ; state.init0 ;
++----------------------+-------------------+----------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+; state.init0          ; 0                 ; 0                    ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ;
+; state.init1          ; 0                 ; 0                    ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 1           ;
+; state.init2          ; 0                 ; 0                    ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 1           ;
+; state.init3          ; 0                 ; 0                    ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 1           ;
+; state.init4          ; 0                 ; 0                    ; 0           ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 1           ;
+; state.init5          ; 0                 ; 0                    ; 0           ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.init6          ; 0                 ; 0                    ; 0           ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.init7          ; 0                 ; 0                    ; 0           ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.ready          ; 0                 ; 0                    ; 1           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.sendingAddress ; 0                 ; 1                    ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
+; state.sendingData    ; 1                 ; 0                    ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 0           ; 1           ;
++----------------------+-------------------+----------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++-----------------------------------------------------------+------------------------------------------+
+; Register name                                             ; Reason for Removal                       ;
++-----------------------------------------------------------+------------------------------------------+
+; headingBuffer:inst3|heading_out[0]                        ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter1|number[0]      ; Stuck at GND due to stuck port data_in   ;
+; motor_controller:inst7|cc[4]                              ; Merged with motor_controller:inst6|cc[4] ;
+; motor_controller:inst7|cc[3]                              ; Merged with motor_controller:inst6|cc[3] ;
+; motor_controller:inst7|cc[2]                              ; Merged with motor_controller:inst6|cc[2] ;
+; motor_controller:inst7|cc[1]                              ; Merged with motor_controller:inst6|cc[1] ;
+; motor_controller:inst7|cc[0]                              ; Merged with motor_controller:inst6|cc[0] ;
+; dataToLcd:inst5|lcd_data[7]                               ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[0] ; Stuck at GND due to stuck port data_in   ;
+; lcd_driver:inst8|dataStorage[7]                           ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter1|digit_out_0[0] ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter3|number[0]      ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[0] ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter3|digit_out_0[0] ; Stuck at GND due to stuck port data_in   ;
+; motor_controller:inst6|pc[0..10]                          ; Lost fanout                              ;
+; motor_controller:inst7|pc[0..10]                          ; Lost fanout                              ;
+; motor_controller:inst6|pc[11..30]                         ; Lost fanout                              ;
+; motor_controller:inst6|c                                  ; Lost fanout                              ;
+; motor_controller:inst7|pc[11..30]                         ; Lost fanout                              ;
+; motor_controller:inst7|c                                  ; Lost fanout                              ;
+; motor_controller:inst6|cc[0..4]                           ; Lost fanout                              ;
+; dataToLcd:inst5|state.init                                ; Stuck at GND due to stuck port data_in   ;
+; Total Number of Removed Registers = 84                    ;                                          ;
++-----------------------------------------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                              ;
++------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+; Register name                                        ; Reason for Removal        ; Registers Removed due to This Register                                                ;
++------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+; motor_controller:inst6|pc[0]                         ; Lost Fanouts              ; motor_controller:inst6|pc[2], motor_controller:inst6|pc[3],                           ;
+;                                                      ;                           ; motor_controller:inst6|pc[4], motor_controller:inst6|pc[5],                           ;
+;                                                      ;                           ; motor_controller:inst6|pc[6], motor_controller:inst6|pc[7],                           ;
+;                                                      ;                           ; motor_controller:inst6|pc[8], motor_controller:inst6|pc[9],                           ;
+;                                                      ;                           ; motor_controller:inst6|pc[16], motor_controller:inst6|pc[15],                         ;
+;                                                      ;                           ; motor_controller:inst6|pc[14], motor_controller:inst6|pc[13],                         ;
+;                                                      ;                           ; motor_controller:inst6|pc[12], motor_controller:inst6|pc[11]                          ;
+; motor_controller:inst7|pc[0]                         ; Lost Fanouts              ; motor_controller:inst7|pc[2], motor_controller:inst7|pc[3],                           ;
+;                                                      ;                           ; motor_controller:inst7|pc[4], motor_controller:inst7|pc[5],                           ;
+;                                                      ;                           ; motor_controller:inst7|pc[6], motor_controller:inst7|pc[7],                           ;
+;                                                      ;                           ; motor_controller:inst7|pc[8], motor_controller:inst7|pc[9],                           ;
+;                                                      ;                           ; motor_controller:inst7|pc[16], motor_controller:inst7|pc[15],                         ;
+;                                                      ;                           ; motor_controller:inst7|pc[14], motor_controller:inst7|pc[13],                         ;
+;                                                      ;                           ; motor_controller:inst7|pc[12], motor_controller:inst7|pc[11]                          ;
+; motor_controller:inst6|pc[10]                        ; Lost Fanouts              ; motor_controller:inst6|c, motor_controller:inst6|cc[0], motor_controller:inst6|cc[1], ;
+;                                                      ;                           ; motor_controller:inst6|cc[2], motor_controller:inst6|cc[3],                           ;
+;                                                      ;                           ; motor_controller:inst6|cc[4]                                                          ;
+; headingBuffer:inst3|heading_out[0]                   ; Stuck at GND              ; dataToLcd:inst5|binaryToDecimal:converter1|number[0],                                 ;
+;                                                      ; due to stuck port data_in ; dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[0],                            ;
+;                                                      ;                           ; dataToLcd:inst5|binaryToDecimal:converter1|digit_out_0[0]                             ;
+; dataToLcd:inst5|binaryToDecimal:converter3|number[0] ; Stuck at GND              ; dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[0],                            ;
+;                                                      ; due to stuck port data_in ; dataToLcd:inst5|binaryToDecimal:converter3|digit_out_0[0]                             ;
+; dataToLcd:inst5|lcd_data[7]                          ; Stuck at GND              ; lcd_driver:inst8|dataStorage[7]                                                       ;
+;                                                      ; due to stuck port data_in ;                                                                                       ;
+; motor_controller:inst7|pc[10]                        ; Lost Fanouts              ; motor_controller:inst7|c                                                              ;
++------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 257   ;
+; Number of registers using Synchronous Clear  ; 96    ;
+; Number of registers using Synchronous Load   ; 41    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 99    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; lcd_driver:inst8|dataStorage[6]        ; 1       ;
+; lcd_driver:inst8|dataStorage[5]        ; 1       ;
+; lcd_driver:inst8|dataStorage[2]        ; 1       ;
+; lcd_driver:inst8|dataStorage[1]        ; 1       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|UARTreceiver:inst|data_index[0]                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|digit_int_1[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_1[2] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_2[1] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[1] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|digit_int_2[2] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[3] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|lineCount[0]                              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|number[9]      ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|number[3]      ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|number[11]     ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|number[6]      ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |UARTreader|dataToLcd:inst5|charCount[0]                              ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 31 LEs               ; 93 LEs                 ; Yes        ; |UARTreader|dataToLcd:inst5|counter[8]                                ;
+; 7:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |UARTreader|UARTreceiver:inst|time_count[0]                           ;
+; 12:1               ; 31 bits   ; 248 LEs       ; 31 LEs               ; 217 LEs                ; Yes        ; |UARTreader|lcd_driver:inst8|counter[4]                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |UARTreader|dataToLcd:inst5|lcd_data                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |UARTreader|dataToLcd:inst5|lcd_data                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |UARTreader|dataToLcd:inst5|state                                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UARTreader|UARTreceiver:inst|state                                   ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|state          ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|state          ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 49 LEs               ; 0 LEs                  ; No         ; |UARTreader|lcd_driver:inst8|dataOut[5]                               ;
+; 12:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |UARTreader|lcd_driver:inst8|state                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dataToLcd:inst5|binaryToDecimal:converter3"                                                    ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; binaryin[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; d3              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dataToLcd:inst5|binaryToDecimal:converter1"                                                    ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; binaryin[11..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; d3              ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 17                          ;
+; cycloneiii_ff         ; 257                         ;
+;     ENA               ; 59                          ;
+;     ENA SCLR          ; 34                          ;
+;     ENA SLD           ; 6                           ;
+;     SCLR              ; 62                          ;
+;     SLD               ; 35                          ;
+;     plain             ; 61                          ;
+; cycloneiii_lcell_comb ; 586                         ;
+;     arith             ; 158                         ;
+;         2 data inputs ; 158                         ;
+;     normal            ; 428                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 60                          ;
+;         3 data inputs ; 73                          ;
+;         4 data inputs ; 278                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.87                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu Jun 28 14:26:15 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UARTreceiver -c UARTreceiver
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file motor_controller.vhd
+    Info (12022): Found design unit 1: motor_controller-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/motor_controller.vhd Line: 22
+    Info (12023): Found entity 1: motor_controller File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/motor_controller.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_driver.vhd
+    Info (12022): Found design unit 1: lcd_driver-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/lcd_driver.vhd Line: 32
+    Info (12023): Found entity 1: lcd_driver File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/lcd_driver.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file datatolcd.vhd
+    Info (12022): Found design unit 1: dataToLcd-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/dataToLcd.vhd Line: 35
+    Info (12023): Found entity 1: dataToLcd File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/dataToLcd.vhd Line: 10
+Info (12021): Found 2 design units, including 1 entities, in source file binarytodecimal.vhd
+    Info (12022): Found design unit 1: binaryToDecimal-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/binaryToDecimal.vhd Line: 25
+    Info (12023): Found entity 1: binaryToDecimal File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/binaryToDecimal.vhd Line: 12
+Info (12021): Found 2 design units, including 1 entities, in source file uartreceiver.vhd
+    Info (12022): Found design unit 1: UARTreceiver-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd Line: 15
+    Info (12023): Found entity 1: UARTreceiver File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/UARTreceiver.vhd Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file uartreader.bdf
+    Info (12023): Found entity 1: UARTreader
+Info (12021): Found 2 design units, including 1 entities, in source file headingbuffer.vhd
+    Info (12022): Found design unit 1: headingBuffer-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/headingBuffer.vhd Line: 12
+    Info (12023): Found entity 1: headingBuffer File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/headingBuffer.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file robotdrivetriangle.vhd
+    Info (12022): Found design unit 1: RobotDriveTriangle-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 16
+    Info (12023): Found entity 1: RobotDriveTriangle File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 5
+Info (12127): Elaborating entity "UARTreader" for the top level hierarchy
+Info (12128): Elaborating entity "lcd_driver" for hierarchy "lcd_driver:inst8"
+Info (12128): Elaborating entity "dataToLcd" for hierarchy "dataToLcd:inst5"
+Info (12128): Elaborating entity "binaryToDecimal" for hierarchy "dataToLcd:inst5|binaryToDecimal:converter1" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/dataToLcd.vhd Line: 93
+Info (12128): Elaborating entity "headingBuffer" for hierarchy "headingBuffer:inst3"
+Info (12128): Elaborating entity "UARTreceiver" for hierarchy "UARTreceiver:inst"
+Info (12128): Elaborating entity "RobotDriveTriangle" for hierarchy "RobotDriveTriangle:inst4"
+Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(8): used implicit default value for signal "targetHeadingOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 8
+Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(9): used implicit default value for signal "motorAspeed" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 9
+Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(10): used implicit default value for signal "motorAdirection" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 10
+Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(11): used implicit default value for signal "motorBspeed" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 11
+Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(12): used implicit default value for signal "motorBdirection" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 12
+Info (12128): Elaborating entity "motor_controller" for hierarchy "motor_controller:inst6"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LCD_rw" is stuck at GND
+    Warning (13410): Pin "motorA1" is stuck at GND
+    Warning (13410): Pin "motorA2" is stuck at GND
+    Warning (13410): Pin "motorB1" is stuck at GND
+    Warning (13410): Pin "motorB2" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 69 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 653 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 636 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Thu Jun 28 14:26:40 2018
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:55
+
+
