@@ -1,0 +1,100 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim
+Euartreceiver
+Z1 w1530280699
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 U]E`hi0:`oKa5cWiFZ>hl3
+Z3 DPx10 cycloneive 21 cycloneive_components 0 22 7:=`d=[QUY_aUcbj<lC000
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 Dg`GWTC`^Q8GNSMPeo22;3
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z9 DPx6 altera 28 altera_primitives_components 0 22 _LNC5n6B?5VN@W;M4Dg@k1
+R0
+Z10 8UARTreceiver_6_1200mv_85c_slow.vho
+Z11 FUARTreceiver_6_1200mv_85c_slow.vho
+l0
+L36
+V`GTB1^ZfOWdAFXUII73^z2
+!s100 UA9Olz:jV`l^AlzUb0^S;3
+Z12 OV;C;10.5b;63
+31
+Z13 !s110 1530280772
+!i10b 1
+Z14 !s108 1530280771.000000
+Z15 !s90 -reportprogress|300|-93|-work|work|UARTreceiver_6_1200mv_85c_slow.vho|
+Z16 !s107 UARTreceiver_6_1200mv_85c_slow.vho|
+!i113 1
+Z17 o-93 -work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 12 uartreceiver 0 22 `GTB1^ZfOWdAFXUII73^z2
+l1070
+L67
+VD=hAS2RUm@mINKi5E16[h3
+!s100 Rj0NzmQ]H?9VVc_HJWJ_d0
+R12
+31
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 1
+R17
+R18
+Euartreceiver_vhd_tst
+Z19 w1530274798
+R7
+R8
+R0
+Z20 8C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht
+Z21 FC:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht
+l0
+L30
+VZamAMY98TZj^:BeP^fZE?1
+!s100 D7]XSCfKJVmFCUgd4XfDR3
+R12
+31
+R13
+!i10b 1
+Z22 !s108 1530280772.000000
+Z23 !s90 -reportprogress|300|-93|-work|work|C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht|
+Z24 !s107 C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/simulation/modelsim/UARTreceiver.vht|
+!i113 1
+R17
+R18
+Auartreceiver_arch
+R7
+R8
+DEx4 work 20 uartreceiver_vhd_tst 0 22 ZamAMY98TZj^:BeP^fZE?1
+l47
+L32
+VGILcC]^9bOk>6WNlJWV391
+!s100 UHGE^8e5`D6F@F9m9OV>X1
+R12
+31
+R13
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R17
+R18

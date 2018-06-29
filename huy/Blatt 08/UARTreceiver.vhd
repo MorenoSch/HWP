@@ -17,14 +17,17 @@ type state_type is (idle, startBit, dataBits, stopBit, timeout);
 signal state : state_type := idle;
 signal time_count : unsigned(10 downto 0) := (others => '0');
 signal data_index : unsigned(2 downto 0) := (others => '0');
+signal starting : std_logic := '0';
+signal last_starting : std_logic := '0';
 begin
 process(clk_50)
 begin
 	if rising_edge(clk_50) then
 		if state = idle then
 			dataReady <= '0'; -- to initialize dataReady
-			if serial = '0' then
+			if starting /= last_starting then
 				state <= startBit;
+				last_starting <= starting;
 				time_count <= (others => '0');
 			end if;
 		elsif state = startBit then
@@ -37,21 +40,19 @@ begin
 		elsif state = dataBits then
 			time_count <= time_count + 1;
 			if time_count > 1302 then -- wait 1302 ticks ~ 26 us
+				time_count <= (others => '0');
+				data(to_integer(data_index)) <= serial;
 				if data_index = "111" then
 					state <= stopBit;
 				end if;
-				time_count <= (others => '0');
-				data(to_integer(data_index)) <= serial;
 				data_index <= data_index + 1;
 			end if;
 		elsif state = stopBit then
 			time_count <= time_count + 1;
 			if time_count > 1302 then -- wait 1302 ticks ~ 26 us
 				time_count <= (others => '0');
-				if serial = '1' then
-					state <= timeout;
-					dataReady <= '1';
-				end if;
+				state <= timeout;
+				dataReady <= serial;
 			end if;
 		elsif state = timeout then
 			time_count <= time_count + 1;
@@ -64,5 +65,13 @@ begin
 	end if;
 end process;
 
+process(serial)
+begin
+	if falling_edge(serial) then
+		if state = idle then
+			starting <= not starting;
+		end if;
+	end if;
+end process;
 
 end behavior;

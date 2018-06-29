@@ -2,76 +2,64 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clk_50'
-Slack : -3.981
-TNS   : -629.452
-
-Type  : Slow 1200mV 85C Model Setup 'UARTreceiver:inst|dataReady'
-Slack : 0.009
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 45.111
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clk_50'
-Slack : 0.343
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.358
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'UARTreceiver:inst|dataReady'
-Slack : 0.365
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 95.992
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
-Slack : -3.000
-TNS   : -252.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UARTreceiver:inst|dataReady'
-Slack : -1.000
-TNS   : -8.000
-
-Type  : Slow 1200mV 0C Model Setup 'clk_50'
-Slack : -3.514
-TNS   : -545.019
-
-Type  : Slow 1200mV 0C Model Setup 'UARTreceiver:inst|dataReady'
-Slack : 0.104
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.885
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clk_50'
-Slack : 0.298
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.582
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'UARTreceiver:inst|dataReady'
-Slack : 0.355
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 45.669
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
-Slack : -3.000
-TNS   : -252.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UARTreceiver:inst|dataReady'
-Slack : -1.000
-TNS   : -8.000
-
-Type  : Fast 1200mV 0C Model Setup 'clk_50'
-Slack : -1.685
-TNS   : -244.080
-
-Type  : Fast 1200mV 0C Model Setup 'UARTreceiver:inst|dataReady'
-Slack : 0.473
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.311
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'UARTreceiver:inst|dataReady'
-Slack : 0.109
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 96.435
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clk_50'
-Slack : 0.178
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.790
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
-Slack : -3.000
-TNS   : -266.587
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.548
+TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UARTreceiver:inst|dataReady'
-Slack : -1.000
-TNS   : -8.000
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 47.333
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.187
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 97.594
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.494
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.466
+TNS   : 0.000
 
 ------------------------------------------------------------
