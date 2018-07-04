@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UARTreceiver
-Fri Jun 29 16:43:19 2018
+Wed Jul 04 12:24:09 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -59,15 +59,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 29 16:43:19 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 04 12:24:09 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; UARTreceiver                                ;
 ; Top-level Entity Name              ; UARTreader                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,297                                       ;
-;     Total combinational functions  ; 1,034                                       ;
-;     Dedicated logic registers      ; 741                                         ;
-; Total registers                    ; 741                                         ;
+; Total logic elements               ; 1,517                                       ;
+;     Total combinational functions  ; 1,251                                       ;
+;     Dedicated logic registers      ; 850                                         ;
+; Total registers                    ; 850                                         ;
 ; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,280                                       ;
@@ -255,20 +255,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 1,297        ;
+; Estimated Total logic elements              ; 1,517        ;
 ;                                             ;              ;
-; Total combinational functions               ; 1034         ;
+; Total combinational functions               ; 1251         ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 459          ;
-;     -- 3 input functions                    ; 207          ;
-;     -- <=2 input functions                  ; 368          ;
+;     -- 4 input functions                    ; 514          ;
+;     -- 3 input functions                    ; 227          ;
+;     -- <=2 input functions                  ; 510          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 803          ;
-;     -- arithmetic mode                      ; 231          ;
+;     -- normal mode                          ; 895          ;
+;     -- arithmetic mode                      ; 356          ;
 ;                                             ;              ;
-; Total registers                             ; 741          ;
-;     -- Dedicated logic registers            ; 741          ;
+; Total registers                             ; 850          ;
+;     -- Dedicated logic registers            ; 850          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 17           ;
@@ -277,9 +277,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; clk_50~input ;
-; Maximum fan-out                             ; 440          ;
-; Total fan-out                               ; 5729         ;
-; Average fan-out                             ; 3.13         ;
+; Maximum fan-out                             ; 487          ;
+; Total fan-out                               ; 6562         ;
+; Average fan-out                             ; 3.05         ;
 +---------------------------------------------+--------------+
 
 
@@ -288,13 +288,16 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                    ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |UARTreader                                                                                                                             ; 1034 (1)            ; 741 (0)                   ; 1280        ; 0            ; 0       ; 0         ; 17   ; 0            ; |UARTreader                                                                                                                                                                                                                                                                                                                                            ; UARTreader                        ; work         ;
-;    |UARTreceiver:inst|                                                                                                                  ; 63 (63)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|UARTreceiver:inst                                                                                                                                                                                                                                                                                                                          ; UARTreceiver                      ; work         ;
-;    |dataToLcd:inst5|                                                                                                                    ; 410 (242)           ; 165 (87)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5                                                                                                                                                                                                                                                                                                                            ; dataToLcd                         ; work         ;
+; |UARTreader                                                                                                                             ; 1251 (1)            ; 850 (0)                   ; 1280        ; 0            ; 0       ; 0         ; 17   ; 0            ; |UARTreader                                                                                                                                                                                                                                                                                                                                            ; UARTreader                        ; work         ;
+;    |RobotDriveTriangle:inst4|                                                                                                           ; 90 (90)             ; 40 (40)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|RobotDriveTriangle:inst4                                                                                                                                                                                                                                                                                                                   ; RobotDriveTriangle                ; work         ;
+;    |UARTreceiver:inst|                                                                                                                  ; 60 (60)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|UARTreceiver:inst                                                                                                                                                                                                                                                                                                                          ; UARTreceiver                      ; work         ;
+;    |dataToLcd:inst5|                                                                                                                    ; 419 (243)           ; 165 (87)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5                                                                                                                                                                                                                                                                                                                            ; dataToLcd                         ; work         ;
 ;       |binaryToDecimal:converter1|                                                                                                      ; 88 (88)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1                                                                                                                                                                                                                                                                                                 ; binaryToDecimal                   ; work         ;
-;       |binaryToDecimal:converter3|                                                                                                      ; 80 (80)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3                                                                                                                                                                                                                                                                                                 ; binaryToDecimal                   ; work         ;
+;       |binaryToDecimal:converter3|                                                                                                      ; 88 (88)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3                                                                                                                                                                                                                                                                                                 ; binaryToDecimal                   ; work         ;
 ;    |headingBuffer:inst3|                                                                                                                ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|headingBuffer:inst3                                                                                                                                                                                                                                                                                                                        ; headingBuffer                     ; work         ;
-;    |lcd_driver:inst8|                                                                                                                   ; 110 (110)           ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|lcd_driver:inst8                                                                                                                                                                                                                                                                                                                           ; lcd_driver                        ; work         ;
+;    |lcd_driver:inst8|                                                                                                                   ; 113 (113)           ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|lcd_driver:inst8                                                                                                                                                                                                                                                                                                                           ; lcd_driver                        ; work         ;
+;    |motor_controller:inst6|                                                                                                             ; 62 (62)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|motor_controller:inst6                                                                                                                                                                                                                                                                                                                     ; motor_controller                  ; work         ;
+;    |motor_controller:inst7|                                                                                                             ; 56 (56)             ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|motor_controller:inst7                                                                                                                                                                                                                                                                                                                     ; motor_controller                  ; work         ;
 ;    |sld_hub:auto_hub|                                                                                                                   ; 128 (1)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld   ;
 ;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 127 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld   ;
 ;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 127 (0)             ; 91 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UARTreader|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab  ;
@@ -454,63 +457,42 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------------+------------------------------------------+
 ; Register name                                             ; Reason for Removal                       ;
 +-----------------------------------------------------------+------------------------------------------+
-; headingBuffer:inst3|heading[0]                            ; Stuck at GND due to stuck port data_in   ;
+; headingBuffer:inst3|heading_out[0]                        ; Stuck at GND due to stuck port data_in   ;
 ; dataToLcd:inst5|binaryToDecimal:converter1|number[0]      ; Stuck at GND due to stuck port data_in   ;
+; RobotDriveTriangle:inst4|speed[0..4,7,9]                  ; Stuck at GND due to stuck port data_in   ;
+; RobotDriveTriangle:inst4|target_heading[0]                ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter3|number[0]      ; Stuck at GND due to stuck port data_in   ;
 ; motor_controller:inst7|cc[4]                              ; Merged with motor_controller:inst6|cc[4] ;
 ; motor_controller:inst7|cc[3]                              ; Merged with motor_controller:inst6|cc[3] ;
 ; motor_controller:inst7|cc[2]                              ; Merged with motor_controller:inst6|cc[2] ;
 ; motor_controller:inst7|cc[1]                              ; Merged with motor_controller:inst6|cc[1] ;
 ; motor_controller:inst7|cc[0]                              ; Merged with motor_controller:inst6|cc[0] ;
 ; dataToLcd:inst5|lcd_data[7]                               ; Stuck at GND due to stuck port data_in   ;
+; dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[0] ; Stuck at GND due to stuck port data_in   ;
 ; dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[0] ; Stuck at GND due to stuck port data_in   ;
 ; lcd_driver:inst8|dataStorage[7]                           ; Stuck at GND due to stuck port data_in   ;
-; dataToLcd:inst5|binaryToDecimal:converter1|digit_out_0[0] ; Stuck at GND due to stuck port data_in   ;
-; dataToLcd:inst5|binaryToDecimal:converter3|number[0]      ; Stuck at GND due to stuck port data_in   ;
-; dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[0] ; Stuck at GND due to stuck port data_in   ;
 ; dataToLcd:inst5|binaryToDecimal:converter3|digit_out_0[0] ; Stuck at GND due to stuck port data_in   ;
-; motor_controller:inst6|pc[0..10]                          ; Lost fanout                              ;
-; motor_controller:inst7|pc[0..10]                          ; Lost fanout                              ;
-; motor_controller:inst6|pc[11..30]                         ; Lost fanout                              ;
-; motor_controller:inst6|c                                  ; Lost fanout                              ;
-; motor_controller:inst7|pc[11..30]                         ; Lost fanout                              ;
-; motor_controller:inst7|c                                  ; Lost fanout                              ;
-; motor_controller:inst6|cc[0..4]                           ; Lost fanout                              ;
+; dataToLcd:inst5|binaryToDecimal:converter1|digit_out_0[0] ; Stuck at GND due to stuck port data_in   ;
 ; dataToLcd:inst5|state.init                                ; Stuck at GND due to stuck port data_in   ;
-; Total Number of Removed Registers = 84                    ;                                          ;
+; Total Number of Removed Registers = 23                    ;                                          ;
 +-----------------------------------------------------------+------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                              ;
-+------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
-; Register name                                        ; Reason for Removal        ; Registers Removed due to This Register                                                ;
-+------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
-; motor_controller:inst6|pc[0]                         ; Lost Fanouts              ; motor_controller:inst6|pc[2], motor_controller:inst6|pc[3],                           ;
-;                                                      ;                           ; motor_controller:inst6|pc[4], motor_controller:inst6|pc[5],                           ;
-;                                                      ;                           ; motor_controller:inst6|pc[6], motor_controller:inst6|pc[7],                           ;
-;                                                      ;                           ; motor_controller:inst6|pc[8], motor_controller:inst6|pc[9],                           ;
-;                                                      ;                           ; motor_controller:inst6|pc[16], motor_controller:inst6|pc[15],                         ;
-;                                                      ;                           ; motor_controller:inst6|pc[14], motor_controller:inst6|pc[13],                         ;
-;                                                      ;                           ; motor_controller:inst6|pc[12], motor_controller:inst6|pc[11]                          ;
-; motor_controller:inst7|pc[0]                         ; Lost Fanouts              ; motor_controller:inst7|pc[2], motor_controller:inst7|pc[3],                           ;
-;                                                      ;                           ; motor_controller:inst7|pc[4], motor_controller:inst7|pc[5],                           ;
-;                                                      ;                           ; motor_controller:inst7|pc[6], motor_controller:inst7|pc[7],                           ;
-;                                                      ;                           ; motor_controller:inst7|pc[8], motor_controller:inst7|pc[9],                           ;
-;                                                      ;                           ; motor_controller:inst7|pc[16], motor_controller:inst7|pc[15],                         ;
-;                                                      ;                           ; motor_controller:inst7|pc[14], motor_controller:inst7|pc[13],                         ;
-;                                                      ;                           ; motor_controller:inst7|pc[12], motor_controller:inst7|pc[11]                          ;
-; motor_controller:inst6|pc[10]                        ; Lost Fanouts              ; motor_controller:inst6|c, motor_controller:inst6|cc[0], motor_controller:inst6|cc[1], ;
-;                                                      ;                           ; motor_controller:inst6|cc[2], motor_controller:inst6|cc[3],                           ;
-;                                                      ;                           ; motor_controller:inst6|cc[4]                                                          ;
-; headingBuffer:inst3|heading[0]                       ; Stuck at GND              ; dataToLcd:inst5|binaryToDecimal:converter1|number[0],                                 ;
-;                                                      ; due to stuck port data_in ; dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[0],                            ;
-;                                                      ;                           ; dataToLcd:inst5|binaryToDecimal:converter1|digit_out_0[0]                             ;
-; dataToLcd:inst5|binaryToDecimal:converter3|number[0] ; Stuck at GND              ; dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[0],                            ;
-;                                                      ; due to stuck port data_in ; dataToLcd:inst5|binaryToDecimal:converter3|digit_out_0[0]                             ;
-; dataToLcd:inst5|lcd_data[7]                          ; Stuck at GND              ; lcd_driver:inst8|dataStorage[7]                                                       ;
-;                                                      ; due to stuck port data_in ;                                                                                       ;
-; motor_controller:inst7|pc[10]                        ; Lost Fanouts              ; motor_controller:inst7|c                                                              ;
-+------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                 ;
++------------------------------------+---------------------------+------------------------------------------------------------+
+; Register name                      ; Reason for Removal        ; Registers Removed due to This Register                     ;
++------------------------------------+---------------------------+------------------------------------------------------------+
+; headingBuffer:inst3|heading_out[0] ; Stuck at GND              ; dataToLcd:inst5|binaryToDecimal:converter1|number[0],      ;
+;                                    ; due to stuck port data_in ; RobotDriveTriangle:inst4|target_heading[0],                ;
+;                                    ;                           ; dataToLcd:inst5|binaryToDecimal:converter3|number[0],      ;
+;                                    ;                           ; dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[0], ;
+;                                    ;                           ; dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[0], ;
+;                                    ;                           ; dataToLcd:inst5|binaryToDecimal:converter3|digit_out_0[0], ;
+;                                    ;                           ; dataToLcd:inst5|binaryToDecimal:converter1|digit_out_0[0]  ;
+; dataToLcd:inst5|lcd_data[7]        ; Stuck at GND              ; lcd_driver:inst8|dataStorage[7]                            ;
+;                                    ; due to stuck port data_in ;                                                            ;
++------------------------------------+---------------------------+------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -518,12 +500,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 741   ;
-; Number of registers using Synchronous Clear  ; 145   ;
-; Number of registers using Synchronous Load   ; 103   ;
+; Total registers                              ; 850   ;
+; Number of registers using Synchronous Clear  ; 172   ;
+; Number of registers using Synchronous Load   ; 105   ;
 ; Number of registers using Asynchronous Clear ; 169   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 397   ;
+; Number of registers using Clock Enable       ; 425   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -557,28 +539,30 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|UARTreceiver:inst|data_index[1]                           ;
+; 3:1                ; 28 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; Yes        ; |UARTreader|RobotDriveTriangle:inst4|time_count[21]                   ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|digit_int_1[2] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_1[1] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_2[2] ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_1[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_2[1] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|digit_int_0[1] ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|digit_int_2[2] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|digit_int_0[2] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|lineCount[0]                              ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|lineCount[1]                              ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|number[11]     ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|number[4]      ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|number[8]      ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|number[11]     ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|number[7]      ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |UARTreader|dataToLcd:inst5|charCount[4]                              ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 31 LEs               ; 93 LEs                 ; Yes        ; |UARTreader|dataToLcd:inst5|counter[9]                                ;
-; 7:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |UARTreader|UARTreceiver:inst|time_count[0]                           ;
-; 12:1               ; 31 bits   ; 248 LEs       ; 31 LEs               ; 217 LEs                ; Yes        ; |UARTreader|lcd_driver:inst8|counter[3]                               ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|number[3]      ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |UARTreader|dataToLcd:inst5|charCount[2]                              ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 31 LEs               ; 93 LEs                 ; Yes        ; |UARTreader|dataToLcd:inst5|counter[25]                               ;
+; 7:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |UARTreader|UARTreceiver:inst|time_count[1]                           ;
+; 12:1               ; 31 bits   ; 248 LEs       ; 31 LEs               ; 217 LEs                ; Yes        ; |UARTreader|lcd_driver:inst8|counter[30]                              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |UARTreader|dataToLcd:inst5|lcd_data                                  ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |UARTreader|dataToLcd:inst5|lcd_data                                  ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |UARTreader|dataToLcd:inst5|state                                     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UARTreader|UARTreceiver:inst|state                                   ;
 ; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter3|state          ;
 ; 10:1               ; 5 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |UARTreader|dataToLcd:inst5|binaryToDecimal:converter1|state          ;
-; 11:1               ; 7 bits    ; 49 LEs        ; 49 LEs               ; 0 LEs                  ; No         ; |UARTreader|lcd_driver:inst8|dataOut[4]                               ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |UARTreader|UARTreceiver:inst|state                                   ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 49 LEs               ; 0 LEs                  ; No         ; |UARTreader|lcd_driver:inst8|dataOut[0]                               ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 4 LEs                ; 10 LEs                 ; No         ; |UARTreader|UARTreceiver:inst|state                                   ;
 ; 12:1               ; 11 bits   ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |UARTreader|lcd_driver:inst8|state                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
 
@@ -693,25 +677,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 26                          ;
-; cycloneiii_ff         ; 259                         ;
-;     ENA               ; 59                          ;
-;     ENA SCLR          ; 34                          ;
-;     ENA SLD           ; 6                           ;
-;     SCLR              ; 63                          ;
+; cycloneiii_ff         ; 368                         ;
+;     ENA               ; 68                          ;
+;     ENA SCLR          ; 51                          ;
+;     ENA SLD           ; 8                           ;
+;     SCLR              ; 73                          ;
 ;     SLD               ; 35                          ;
-;     plain             ; 62                          ;
-; cycloneiii_lcell_comb ; 584                         ;
-;     arith             ; 158                         ;
-;         2 data inputs ; 158                         ;
-;     normal            ; 426                         ;
+;     plain             ; 133                         ;
+; cycloneiii_lcell_comb ; 801                         ;
+;     arith             ; 283                         ;
+;         2 data inputs ; 261                         ;
+;         3 data inputs ; 22                          ;
+;     normal            ; 518                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 16                          ;
-;         2 data inputs ; 61                          ;
-;         3 data inputs ; 77                          ;
-;         4 data inputs ; 271                         ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 90                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 326                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.91                        ;
+; Max LUT depth         ; 7.50                        ;
+; Average LUT depth     ; 3.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -791,7 +776,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Fri Jun 29 16:42:39 2018
+    Info: Processing started: Wed Jul 04 12:23:29 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UARTreceiver -c UARTreceiver
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -825,11 +810,6 @@ Info (12128): Elaborating entity "binaryToDecimal" for hierarchy "dataToLcd:inst
 Info (12128): Elaborating entity "headingBuffer" for hierarchy "headingBuffer:inst3"
 Info (12128): Elaborating entity "UARTreceiver" for hierarchy "UARTreceiver:inst"
 Info (12128): Elaborating entity "RobotDriveTriangle" for hierarchy "RobotDriveTriangle:inst4"
-Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(8): used implicit default value for signal "targetHeadingOut" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 8
-Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(9): used implicit default value for signal "motorAspeed" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 9
-Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(10): used implicit default value for signal "motorAdirection" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 10
-Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(11): used implicit default value for signal "motorBspeed" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 11
-Warning (10541): VHDL Signal Declaration warning at RobotDriveTriangle.vhd(12): used implicit default value for signal "motorBdirection" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/RobotDriveTriangle.vhd Line: 12
 Info (12128): Elaborating entity "motor_controller" for hierarchy "motor_controller:inst6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_o424.tdf
     Info (12023): Found entity 1: altsyncram_o424 File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/db/altsyncram_o424.tdf Line: 27
@@ -851,7 +831,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/db/cmpr_ngc.tdf Line: 22
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2018.06.29.16:43:05 Progress: Loading sld4675d887/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2018.07.04.12:23:54 Progress: Loading sld4675d887/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -876,24 +856,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Blatt 08/db/ip/sld4675d887/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LCD_rw" is stuck at GND
-    Warning (13410): Pin "motorA1" is stuck at GND
     Warning (13410): Pin "motorA2" is stuck at GND
-    Warning (13410): Pin "motorB1" is stuck at GND
-    Warning (13410): Pin "motorB2" is stuck at GND
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (17049): 69 registers lost all their fanouts during netlist optimizations.
 Info (35024): Successfully connected in-system debug instance "auto_signaltap_0" to all 53 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1345 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1565 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 1313 logic cells
+    Info (21061): Implemented 1533 logic cells
     Info (21064): Implemented 10 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Fri Jun 29 16:43:19 2018
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4863 megabytes
+    Info: Processing ended: Wed Jul 04 12:24:09 2018
     Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:01:17
+    Info: Total CPU time (on all processors): 00:01:15
 
 

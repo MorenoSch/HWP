@@ -1,5 +1,5 @@
 Archive Project report for UARTreceiver
-Fri Jun 29 16:48:38 2018
+Wed Jul 04 12:28:47 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Fri Jun 29 16:48:38 2018 ;
+; Archive Project Status ; Successful - Wed Jul 04 12:28:47 2018 ;
 ; Revision Name          ; UARTreceiver                          ;
 ; Top-level Entity Name  ; UARTreader                            ;
 ; Family                 ; Cyclone IV E                          ;
@@ -59,8 +59,8 @@ Info: ----------------------------------------------------------
 Info: Generated report 'UARTreceiver.archive.rpt'
 Info (23030): Evaluation of Tcl script c:/intelfpga_lite/18.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4840 megabytes
-    Info: Processing ended: Fri Jun 29 16:48:38 2018
+    Info: Peak virtual memory: 4841 megabytes
+    Info: Processing ended: Wed Jul 04 12:28:47 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

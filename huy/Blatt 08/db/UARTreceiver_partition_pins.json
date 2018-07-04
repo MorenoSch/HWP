@@ -12,6 +12,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "motorA1",
+					"strict" : false
+				},
+				{
+					"name" : "motorB1",
+					"strict" : false
+				},
+				{
+					"name" : "motorB2",
+					"strict" : false
+				},
+				{
 					"name" : "LCD_data[7]",
 					"strict" : false
 				},

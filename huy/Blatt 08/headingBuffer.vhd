@@ -10,21 +10,19 @@ entity headingBuffer is port (
 end headingBuffer;
 
 architecture behavior of headingBuffer is
-signal heading : std_logic_vector(8 downto 0) := (others => '0');
 begin
 process(dataReady)
 begin
 	if rising_edge(dataReady) then
-		heading(0) <= '0';
-		heading(1) <= heading_in(0);
-		heading(2) <= heading_in(1);
-		heading(3) <= heading_in(2);
-		heading(4) <= heading_in(3);
-		heading(5) <= heading_in(4);
-		heading(6) <= heading_in(5);
-		heading(7) <= heading_in(6);
-		heading(8) <= heading_in(7);
+		heading_out(0) <= '0';
+		heading_out(1) <= heading_in(0);
+		heading_out(2) <= heading_in(1);
+		heading_out(3) <= heading_in(2);
+		heading_out(4) <= heading_in(3);
+		heading_out(5) <= heading_in(4);
+		heading_out(6) <= heading_in(5);
+		heading_out(7) <= heading_in(6);
+		heading_out(8) <= heading_in(7);
 	end if;
 end process;
-heading_out <= heading;
 end behavior;

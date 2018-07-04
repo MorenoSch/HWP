@@ -17,10 +17,12 @@
 
 // define the LCD screen
 LiquidCrystal lcd(11, 12, 13, A0, A1, A2);
-uint32_t time_tmp;
-uint32_t time_tmp_2;
+uint64_t time_tmp;
+uint64_t time_tmp_2;
+uint64_t time_tmp_3;
 int32_t heading_int;
 uint32_t heading;
+uint32_t start_analog_value;
 // initialization
 void setup()
 {
@@ -28,8 +30,11 @@ void setup()
    // LCD has 4 lines with 20 chars
    lcd.begin(20, 4); 
    lcd.print("system ready");
+   delay(2000);
+   start_analog_value = analogRead(A3);
    time_tmp = millis();
    time_tmp_2 = millis();
+   time_tmp_3 = millis();
    heading_int = 0;
    heading = 0;
 }
@@ -43,6 +48,9 @@ void loop()
   if (millis() - time_tmp > 150){
       time_tmp = millis();
       printvalues(analogValue);
+  }
+  if (millis() - time_tmp_3 > 2) {
+      time_tmp_3 = millis();
       byte heading_in = heading/2;
       Serial.write(heading_in);
   }
@@ -59,9 +67,9 @@ void printvalues(int16_t analogValue)
   lcd.setCursor(1,1);
   lcd.print("turn-rate:");
   lcd.setCursor(12,1);
-  lcd.print(374 - analogValue);
+  lcd.print(start_analog_value - analogValue);
   lcd.setCursor(1,2);
-  lcd.print("heading:");
+  lcd.print("heading_int:");
   lcd.setCursor(12,2);
   lcd.print(heading_int);
   lcd.setCursor(1,3);
@@ -72,8 +80,8 @@ void printvalues(int16_t analogValue)
 
 void heading_i(int16_t analogValue) 
 {
-  if (((374 - analogValue) < -15) or ((374 - analogValue) > 15)) {
-      int add = (millis() - time_tmp_2)*(374 - analogValue);
+  if (((start_analog_value - analogValue) < -15) or ((start_analog_value - analogValue) > 15)) {
+      int add = (millis() - time_tmp_2)*(start_analog_value - analogValue);
       time_tmp_2 = millis();
       heading_int += add;
   }  
@@ -81,7 +89,7 @@ void heading_i(int16_t analogValue)
 
 void degree(){
   if (heading_int < 0) {
-    heading = 360 - (abs(heading_int/3200) % 360);
+    heading = (360 - (abs(heading_int/3200) % 360)) % 360;
   }
   else {
     heading = abs(heading_int/3200) % 360; 

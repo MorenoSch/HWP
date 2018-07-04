@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Jun 29 16:43:19 2018
+Analysis & Synthesis Status : Successful - Wed Jul 04 12:24:09 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : UARTreceiver
 Top-level Entity Name : UARTreader
 Family : Cyclone IV E
-Total logic elements : 1,297
-    Total combinational functions : 1,034
-    Dedicated logic registers : 741
-Total registers : 741
+Total logic elements : 1,517
+    Total combinational functions : 1,251
+    Dedicated logic registers : 850
+Total registers : 850
 Total pins : 17
 Total virtual pins : 0
 Total memory bits : 1,280
