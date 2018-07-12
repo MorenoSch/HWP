@@ -1,0 +1,1740 @@
+Analysis & Synthesis report for escape_room
+Wed Jul 11 13:26:05 2018
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |bruteForce|partialBruteForce:bf7|state
+  9. State Machine - |bruteForce|partialBruteForce:bf7|des:partialBruteForce|state
+ 10. State Machine - |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|state
+ 11. State Machine - |bruteForce|partialBruteForce:bf6|state
+ 12. State Machine - |bruteForce|partialBruteForce:bf6|des:partialBruteForce|state
+ 13. State Machine - |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|state
+ 14. State Machine - |bruteForce|partialBruteForce:bf5|state
+ 15. State Machine - |bruteForce|partialBruteForce:bf5|des:partialBruteForce|state
+ 16. State Machine - |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|state
+ 17. State Machine - |bruteForce|partialBruteForce:bf4|state
+ 18. State Machine - |bruteForce|partialBruteForce:bf4|des:partialBruteForce|state
+ 19. State Machine - |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|state
+ 20. State Machine - |bruteForce|partialBruteForce:bf3|state
+ 21. State Machine - |bruteForce|partialBruteForce:bf3|des:partialBruteForce|state
+ 22. State Machine - |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|state
+ 23. State Machine - |bruteForce|partialBruteForce:bf2|state
+ 24. State Machine - |bruteForce|partialBruteForce:bf2|des:partialBruteForce|state
+ 25. State Machine - |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|state
+ 26. State Machine - |bruteForce|partialBruteForce:bf1|state
+ 27. State Machine - |bruteForce|partialBruteForce:bf1|des:partialBruteForce|state
+ 28. State Machine - |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|state
+ 29. State Machine - |bruteForce|partialBruteForce:bf0|state
+ 30. State Machine - |bruteForce|partialBruteForce:bf0|des:partialBruteForce|state
+ 31. State Machine - |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|state
+ 32. Registers Removed During Synthesis
+ 33. Removed Registers Triggering Further Register Optimizations
+ 34. General Register Statistics
+ 35. Inverted Register Statistics
+ 36. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 37. Parameter Settings for User Entity Instance: Top-level Entity: |bruteForce
+ 38. Parameter Settings for User Entity Instance: partialBruteForce:bf0
+ 39. Parameter Settings for User Entity Instance: partialBruteForce:bf0|des:partialBruteForce
+ 40. Parameter Settings for User Entity Instance: partialBruteForce:bf0|des:partialBruteForce|des_loop:des
+ 41. Parameter Settings for User Entity Instance: partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer
+ 42. Parameter Settings for User Entity Instance: partialBruteForce:bf1
+ 43. Parameter Settings for User Entity Instance: partialBruteForce:bf1|des:partialBruteForce
+ 44. Parameter Settings for User Entity Instance: partialBruteForce:bf1|des:partialBruteForce|des_loop:des
+ 45. Parameter Settings for User Entity Instance: partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer
+ 46. Parameter Settings for User Entity Instance: partialBruteForce:bf2
+ 47. Parameter Settings for User Entity Instance: partialBruteForce:bf2|des:partialBruteForce
+ 48. Parameter Settings for User Entity Instance: partialBruteForce:bf2|des:partialBruteForce|des_loop:des
+ 49. Parameter Settings for User Entity Instance: partialBruteForce:bf2|des:partialBruteForce|des_loop:des|get_key:keyer
+ 50. Parameter Settings for User Entity Instance: partialBruteForce:bf3
+ 51. Parameter Settings for User Entity Instance: partialBruteForce:bf3|des:partialBruteForce
+ 52. Parameter Settings for User Entity Instance: partialBruteForce:bf3|des:partialBruteForce|des_loop:des
+ 53. Parameter Settings for User Entity Instance: partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer
+ 54. Parameter Settings for User Entity Instance: partialBruteForce:bf4
+ 55. Parameter Settings for User Entity Instance: partialBruteForce:bf4|des:partialBruteForce
+ 56. Parameter Settings for User Entity Instance: partialBruteForce:bf4|des:partialBruteForce|des_loop:des
+ 57. Parameter Settings for User Entity Instance: partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer
+ 58. Parameter Settings for User Entity Instance: partialBruteForce:bf5
+ 59. Parameter Settings for User Entity Instance: partialBruteForce:bf5|des:partialBruteForce
+ 60. Parameter Settings for User Entity Instance: partialBruteForce:bf5|des:partialBruteForce|des_loop:des
+ 61. Parameter Settings for User Entity Instance: partialBruteForce:bf5|des:partialBruteForce|des_loop:des|get_key:keyer
+ 62. Parameter Settings for User Entity Instance: partialBruteForce:bf6
+ 63. Parameter Settings for User Entity Instance: partialBruteForce:bf6|des:partialBruteForce
+ 64. Parameter Settings for User Entity Instance: partialBruteForce:bf6|des:partialBruteForce|des_loop:des
+ 65. Parameter Settings for User Entity Instance: partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer
+ 66. Parameter Settings for User Entity Instance: partialBruteForce:bf7
+ 67. Parameter Settings for User Entity Instance: partialBruteForce:bf7|des:partialBruteForce
+ 68. Parameter Settings for User Entity Instance: partialBruteForce:bf7|des:partialBruteForce|des_loop:des
+ 69. Parameter Settings for User Entity Instance: partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer
+ 70. Port Connectivity Checks: "partialBruteForce:bf7"
+ 71. Port Connectivity Checks: "partialBruteForce:bf6"
+ 72. Port Connectivity Checks: "partialBruteForce:bf5"
+ 73. Port Connectivity Checks: "partialBruteForce:bf4"
+ 74. Port Connectivity Checks: "partialBruteForce:bf3"
+ 75. Port Connectivity Checks: "partialBruteForce:bf2"
+ 76. Port Connectivity Checks: "partialBruteForce:bf1"
+ 77. Port Connectivity Checks: "partialBruteForce:bf0|des:partialBruteForce"
+ 78. Port Connectivity Checks: "partialBruteForce:bf0"
+ 79. Post-Synthesis Netlist Statistics for Top Partition
+ 80. Elapsed Time Per Partition
+ 81. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jul 11 13:26:05 2018       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; escape_room                                 ;
+; Top-level Entity Name              ; bruteForce                                  ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 2,724                                       ;
+;     Total combinational functions  ; 1,757                                       ;
+;     Dedicated logic registers      ; 1,592                                       ;
+; Total registers                    ; 1592                                        ;
+; Total pins                         ; 100                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; bruteForce         ; escape_room        ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; des.vhd                          ; yes             ; User VHDL File  ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd        ;         ;
+; bruteForce.vhd                   ; yes             ; User VHDL File  ; C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 2,724        ;
+;                                             ;              ;
+; Total combinational functions               ; 1757         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 1168         ;
+;     -- 3 input functions                    ; 195          ;
+;     -- <=2 input functions                  ; 394          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 1581         ;
+;     -- arithmetic mode                      ; 176          ;
+;                                             ;              ;
+; Total registers                             ; 1592         ;
+;     -- Dedicated logic registers            ; 1592         ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 100          ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; clk_50~input ;
+; Maximum fan-out                             ; 1592         ;
+; Total fan-out                               ; 12027        ;
+; Average fan-out                             ; 3.39         ;
++---------------------------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                       ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name       ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+-------------------+--------------+
+; |bruteForce                   ; 1757 (103)          ; 1592 (34)                 ; 0           ; 0            ; 0       ; 0         ; 100  ; 0            ; |bruteForce                                                                                 ; bruteForce        ; work         ;
+;    |partialBruteForce:bf0|    ; 207 (68)            ; 193 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf0                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 139 (5)             ; 130 (73)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 134 (32)            ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 20 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 82 (82)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
+;    |partialBruteForce:bf1|    ; 206 (68)            ; 195 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf1                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 138 (5)             ; 132 (74)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 133 (32)            ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 24 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 77 (77)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
+;    |partialBruteForce:bf2|    ; 204 (68)            ; 195 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf2                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 136 (5)             ; 132 (74)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 131 (32)            ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 20 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 79 (79)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
+;    |partialBruteForce:bf3|    ; 207 (68)            ; 195 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf3                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 139 (5)             ; 132 (74)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 134 (32)            ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 21 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 81 (81)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
+;    |partialBruteForce:bf4|    ; 206 (68)            ; 195 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf4                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 138 (5)             ; 132 (74)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 133 (32)            ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 23 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 78 (78)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
+;    |partialBruteForce:bf5|    ; 205 (68)            ; 195 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf5                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 137 (5)             ; 132 (74)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 132 (32)            ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 20 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 80 (80)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
+;    |partialBruteForce:bf6|    ; 207 (68)            ; 195 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf6                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 139 (5)             ; 132 (74)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 134 (32)            ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 22 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 80 (80)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
+;    |partialBruteForce:bf7|    ; 212 (68)            ; 195 (63)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf7                                                           ; partialBruteForce ; work         ;
+;       |des:partialBruteForce| ; 144 (5)             ; 132 (74)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce                                     ; des               ; work         ;
+;          |des_loop:des|       ; 139 (32)            ; 58 (58)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des                        ; des_loop          ; work         ;
+;             |des_round:des|   ; 20 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des          ; des_round         ; work         ;
+;                |sbox1:s1|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1 ; sbox1             ; work         ;
+;                |sbox2:s2|     ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2 ; sbox2             ; work         ;
+;             |get_key:keyer|   ; 87 (87)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer          ; get_key           ; work         ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf7|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf7|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf6|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf6|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf5|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf5|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf4|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf4|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf3|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf3|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf2|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf2|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf1|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf1|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf0|state                                                                            ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; Name              ; state.decoded ; state.decode3 ; state.decode2 ; state.decode1 ; state.decode0 ; state.beginDecode ; state.init ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+; state.init        ; 0             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 0          ;
+; state.beginDecode ; 0             ; 0             ; 0             ; 0             ; 0             ; 1                 ; 1          ;
+; state.decode0     ; 0             ; 0             ; 0             ; 0             ; 1             ; 0                 ; 1          ;
+; state.decode1     ; 0             ; 0             ; 0             ; 1             ; 0             ; 0                 ; 1          ;
+; state.decode2     ; 0             ; 0             ; 1             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decode3     ; 0             ; 1             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
+; state.decoded     ; 1             ; 0             ; 0             ; 0             ; 0             ; 0                 ; 1          ;
++-------------------+---------------+---------------+---------------+---------------+---------------+-------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf0|des:partialBruteForce|state                ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; Name                  ; state.output ; state.waitForBlk ; state.computeBlkInput ; state.init ;
++-----------------------+--------------+------------------+-----------------------+------------+
+; state.init            ; 0            ; 0                ; 0                     ; 0          ;
+; state.computeBlkInput ; 0            ; 0                ; 1                     ; 1          ;
+; state.waitForBlk      ; 0            ; 1                ; 0                     ; 1          ;
+; state.output          ; 1            ; 0                ; 0                     ; 1          ;
++-----------------------+--------------+------------------+-----------------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|state ;
++--------------------+---------------+--------------------+----------------------------------+
+; Name               ; state.compute ; state.computeRound ; state.init                       ;
++--------------------+---------------+--------------------+----------------------------------+
+; state.init         ; 0             ; 0                  ; 0                                ;
+; state.computeRound ; 0             ; 1                  ; 1                                ;
+; state.compute      ; 1             ; 0                  ; 1                                ;
++--------------------+---------------+--------------------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal                                                                  ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+; partialBruteForce:bf6|des:partialBruteForce|int_key_in[19]                  ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|des:partialBruteForce|des_loop:des|int_key_in[19]     ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|des:partialBruteForce|int_key_in[20]                  ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|des:partialBruteForce|des_loop:des|int_key_in[20]     ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|des:partialBruteForce|int_key_in[19,20]               ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|des:partialBruteForce|des_loop:des|int_key_in[19,20]  ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|des:partialBruteForce|int_key_in[21]                  ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|des:partialBruteForce|des_loop:des|int_key_in[21]     ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|des:partialBruteForce|int_key_in[19,21]               ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|des:partialBruteForce|des_loop:des|int_key_in[19,21]  ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|des:partialBruteForce|int_key_in[20,21]               ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|des:partialBruteForce|des_loop:des|int_key_in[20,21]  ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|des:partialBruteForce|int_key_in[19..21]              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|des:partialBruteForce|des_loop:des|int_key_in[19..21] ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|des:partialBruteForce|int_key_in[19]                  ; Merged with partialBruteForce:bf3|des:partialBruteForce|int_key_in[20]              ;
+; partialBruteForce:bf5|des:partialBruteForce|int_key_in[19]                  ; Merged with partialBruteForce:bf5|des:partialBruteForce|int_key_in[21]              ;
+; partialBruteForce:bf6|des:partialBruteForce|int_key_in[20]                  ; Merged with partialBruteForce:bf6|des:partialBruteForce|int_key_in[21]              ;
+; partialBruteForce:bf7|des:partialBruteForce|int_key_in[19]                  ; Merged with partialBruteForce:bf7|des:partialBruteForce|int_key_in[20]              ;
+; partialBruteForce:bf7|des:partialBruteForce|int_key_in[20]                  ; Merged with partialBruteForce:bf7|des:partialBruteForce|int_key_in[21]              ;
+; partialBruteForce:bf7|des:partialBruteForce|des_loop:des|int_key_in[19,20]  ; Merged with partialBruteForce:bf7|des:partialBruteForce|des_loop:des|int_key_in[21] ;
+; partialBruteForce:bf6|des:partialBruteForce|des_loop:des|int_key_in[20]     ; Merged with partialBruteForce:bf6|des:partialBruteForce|des_loop:des|int_key_in[21] ;
+; partialBruteForce:bf5|des:partialBruteForce|des_loop:des|int_key_in[19]     ; Merged with partialBruteForce:bf5|des:partialBruteForce|des_loop:des|int_key_in[21] ;
+; partialBruteForce:bf3|des:partialBruteForce|des_loop:des|int_key_in[19]     ; Merged with partialBruteForce:bf3|des:partialBruteForce|des_loop:des|int_key_in[20] ;
+; partialBruteForce:bf7|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|des:partialBruteForce|int_mode                        ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[24]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[25]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[26]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[27]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[28]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[29]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[30]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[31]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[32]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[33]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[34]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[35]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[36]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[37]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[38]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[39]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[40]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[41]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[42]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[43]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[44]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[45]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[46]                                              ; Stuck at VCC due to stuck port data_in                                              ;
+; partialBruteForce:bf2|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf1|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf5|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf4|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf6|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf3|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf0|data[47]                                              ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[24]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[25]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[26]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[27]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[29]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[31]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[35]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[37]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[39]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[40]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[41]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[42]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[44]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[45]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; plain_out[47]~reg0                                                          ; Stuck at GND due to stuck port data_in                                              ;
+; partialBruteForce:bf7|state.decoded                                         ; Lost fanout                                                                         ;
+; partialBruteForce:bf6|state.decoded                                         ; Lost fanout                                                                         ;
+; partialBruteForce:bf5|state.decoded                                         ; Lost fanout                                                                         ;
+; partialBruteForce:bf4|state.decoded                                         ; Lost fanout                                                                         ;
+; partialBruteForce:bf3|state.decoded                                         ; Lost fanout                                                                         ;
+; partialBruteForce:bf2|state.decoded                                         ; Lost fanout                                                                         ;
+; partialBruteForce:bf1|state.decoded                                         ; Lost fanout                                                                         ;
+; partialBruteForce:bf0|state.decoded                                         ; Lost fanout                                                                         ;
+; Total Number of Removed Registers = 257                                     ;                                                                                     ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
++------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name                                              ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; partialBruteForce:bf6|des:partialBruteForce|int_key_in[19] ; Stuck at GND              ; partialBruteForce:bf6|des:partialBruteForce|des_loop:des|int_key_in[19] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf5|des:partialBruteForce|int_key_in[20] ; Stuck at GND              ; partialBruteForce:bf5|des:partialBruteForce|des_loop:des|int_key_in[20] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf4|des:partialBruteForce|int_key_in[20] ; Stuck at GND              ; partialBruteForce:bf4|des:partialBruteForce|des_loop:des|int_key_in[20] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf4|des:partialBruteForce|int_key_in[19] ; Stuck at GND              ; partialBruteForce:bf4|des:partialBruteForce|des_loop:des|int_key_in[19] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf3|des:partialBruteForce|int_key_in[21] ; Stuck at GND              ; partialBruteForce:bf3|des:partialBruteForce|des_loop:des|int_key_in[21] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|des:partialBruteForce|int_key_in[21] ; Stuck at GND              ; partialBruteForce:bf2|des:partialBruteForce|des_loop:des|int_key_in[21] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|des:partialBruteForce|int_key_in[19] ; Stuck at GND              ; partialBruteForce:bf2|des:partialBruteForce|des_loop:des|int_key_in[19] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf1|des:partialBruteForce|int_key_in[21] ; Stuck at GND              ; partialBruteForce:bf1|des:partialBruteForce|des_loop:des|int_key_in[21] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf1|des:partialBruteForce|int_key_in[20] ; Stuck at GND              ; partialBruteForce:bf1|des:partialBruteForce|des_loop:des|int_key_in[20] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf0|des:partialBruteForce|int_key_in[21] ; Stuck at GND              ; partialBruteForce:bf0|des:partialBruteForce|des_loop:des|int_key_in[21] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf0|des:partialBruteForce|int_key_in[20] ; Stuck at GND              ; partialBruteForce:bf0|des:partialBruteForce|des_loop:des|int_key_in[20] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf0|des:partialBruteForce|int_key_in[19] ; Stuck at GND              ; partialBruteForce:bf0|des:partialBruteForce|des_loop:des|int_key_in[19] ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[24]                             ; Stuck at GND              ; plain_out[24]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[25]                             ; Stuck at GND              ; plain_out[25]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[26]                             ; Stuck at GND              ; plain_out[26]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[27]                             ; Stuck at GND              ; plain_out[27]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[29]                             ; Stuck at GND              ; plain_out[29]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[31]                             ; Stuck at GND              ; plain_out[31]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[35]                             ; Stuck at GND              ; plain_out[35]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[37]                             ; Stuck at GND              ; plain_out[37]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[39]                             ; Stuck at GND              ; plain_out[39]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[40]                             ; Stuck at GND              ; plain_out[40]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[41]                             ; Stuck at GND              ; plain_out[41]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[42]                             ; Stuck at GND              ; plain_out[42]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[44]                             ; Stuck at GND              ; plain_out[44]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[45]                             ; Stuck at GND              ; plain_out[45]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
+; partialBruteForce:bf2|data[47]                             ; Stuck at GND              ; plain_out[47]~reg0                                                      ;
+;                                                            ; due to stuck port data_in ;                                                                         ;
++------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1592  ;
+; Number of registers using Synchronous Clear  ; 185   ;
+; Number of registers using Synchronous Load   ; 66    ;
+; Number of registers using Asynchronous Clear ; 958   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1431  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                  ;
++---------------------------------------------------------------------+---------+
+; Inverted Register                                                   ; Fan out ;
++---------------------------------------------------------------------+---------+
+; partialBruteForce:bf2|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf3|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf5|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf6|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf7|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf4|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf1|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf0|des:partialBruteForce|des_loop:des|round[0]   ; 6       ;
+; partialBruteForce:bf2|des:partialBruteForce|des_loop:des|round_i[0] ; 42      ;
+; partialBruteForce:bf3|des:partialBruteForce|des_loop:des|round_i[0] ; 44      ;
+; partialBruteForce:bf5|des:partialBruteForce|des_loop:des|round_i[0] ; 41      ;
+; partialBruteForce:bf6|des:partialBruteForce|des_loop:des|round_i[0] ; 43      ;
+; partialBruteForce:bf7|des:partialBruteForce|des_loop:des|round_i[0] ; 43      ;
+; partialBruteForce:bf4|des:partialBruteForce|des_loop:des|round_i[0] ; 42      ;
+; partialBruteForce:bf1|des:partialBruteForce|des_loop:des|round_i[0] ; 42      ;
+; partialBruteForce:bf0|des:partialBruteForce|des_loop:des|round_i[0] ; 42      ;
+; Total number of inverted registers = 16                             ;         ;
++---------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|round_i[1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|round_i[4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|round_i[4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|round_i[1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|round_i[1]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|round_i[3]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|round_i[4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|round_i[4]                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|round[4]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|r_i_min_1[1]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|round[4]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|r_i_min_1[5]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|round[1]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|l_i_min_1[0]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|round[2]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|r_i_min_1[3]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|round[4]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|l_i_min_1[2]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|round[1]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|r_i_min_1[1]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|round[3]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|r_i_min_1[3]              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|round[4]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|r_i_min_1[5]              ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf7|key_suffix[18]                                               ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf6|key_suffix[16]                                               ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf5|key_suffix[4]                                                ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf4|key_suffix[1]                                                ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf3|key_suffix[12]                                               ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf2|key_suffix[5]                                                ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf1|key_suffix[16]                                               ;
+; 4:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf0|key_suffix[10]                                               ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf7|block_data_in[2]                                             ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf6|block_data_in[11]                                            ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf5|block_data_in[10]                                            ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf4|block_data_in[2]                                             ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf3|block_data_in[10]                                            ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf2|block_data_in[9]                                             ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf1|block_data_in[4]                                             ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |bruteForce|partialBruteForce:bf0|block_data_in[6]                                             ;
+; 9:1                ; 48 bits   ; 288 LEs       ; 240 LEs              ; 48 LEs                 ; Yes        ; |bruteForce|plain_out[40]~reg0                                                                 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|state                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf6|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf5|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf4|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf3|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf2|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf1|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|state                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer|RotateLeft0 ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf7|state                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf6|state                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf5|state                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf4|state                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf3|state                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf2|state                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf1|state                                                        ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; No         ; |bruteForce|partialBruteForce:bf0|state                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |bruteForce ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; dataWidth      ; 48    ; Signed Integer                                    ;
+; keyWidth       ; 22    ; Signed Integer                                    ;
+; blockWidth     ; 12    ; Signed Integer                                    ;
+; keyPrefixWidth ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf0 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf0|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf0|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf1 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf1|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf1|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf2 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf2|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf2|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf2|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf3 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf3|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf3|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf4 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf4|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf4|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf5 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf5|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf5|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf5|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf6 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf6|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf6|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf7 ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; datawidth      ; 48    ; Signed Integer                            ;
+; keywidth       ; 22    ; Signed Integer                            ;
+; blockwidth     ; 12    ; Signed Integer                            ;
+; keyprefixwidth ; 3     ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf7|des:partialBruteForce ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; datawidth      ; 12    ; Signed Integer                                                  ;
+; keywidth       ; 22    ; Signed Integer                                                  ;
+; reversed       ; '0'   ; Enumerated                                                      ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf7|des:partialBruteForce|des_loop:des ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; totalrounds    ; 22    ; Signed Integer                                                               ;
+; keywidth       ; 22    ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                       ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+; keywidth       ; 22    ; Signed Integer                                                                             ;
++----------------+-------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf7" ;
++------------+-------+----------+-------------------+
+; Port       ; Type  ; Severity ; Details           ;
++------------+-------+----------+-------------------+
+; key_prefix ; Input ; Info     ; Stuck at VCC      ;
++------------+-------+----------+-------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf6"  ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; key_prefix[2..1] ; Input ; Info     ; Stuck at VCC ;
+; key_prefix[0]    ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf5" ;
++---------------+-------+----------+----------------+
+; Port          ; Type  ; Severity ; Details        ;
++---------------+-------+----------+----------------+
+; key_prefix[2] ; Input ; Info     ; Stuck at VCC   ;
+; key_prefix[1] ; Input ; Info     ; Stuck at GND   ;
+; key_prefix[0] ; Input ; Info     ; Stuck at VCC   ;
++---------------+-------+----------+----------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf4"  ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; key_prefix[1..0] ; Input ; Info     ; Stuck at GND ;
+; key_prefix[2]    ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf3"  ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; key_prefix[1..0] ; Input ; Info     ; Stuck at VCC ;
+; key_prefix[2]    ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf2" ;
++---------------+-------+----------+----------------+
+; Port          ; Type  ; Severity ; Details        ;
++---------------+-------+----------+----------------+
+; key_prefix[2] ; Input ; Info     ; Stuck at GND   ;
+; key_prefix[1] ; Input ; Info     ; Stuck at VCC   ;
+; key_prefix[0] ; Input ; Info     ; Stuck at GND   ;
++---------------+-------+----------+----------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf1"  ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; key_prefix[2..1] ; Input ; Info     ; Stuck at GND ;
+; key_prefix[0]    ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf0|des:partialBruteForce"                                         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "partialBruteForce:bf0" ;
++------------+-------+----------+-------------------+
+; Port       ; Type  ; Severity ; Details           ;
++------------+-------+----------+-------------------+
+; key_prefix ; Input ; Info     ; Stuck at GND      ;
++------------+-------+----------+-------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 100                         ;
+; cycloneiii_ff         ; 1592                        ;
+;     CLR               ; 48                          ;
+;     CLR SCLR          ; 16                          ;
+;     CLR SLD           ; 32                          ;
+;     ENA               ; 384                         ;
+;     ENA CLR           ; 862                         ;
+;     ENA SCLR          ; 152                         ;
+;     ENA SLD           ; 33                          ;
+;     SCLR              ; 16                          ;
+;     SCLR SLD          ; 1                           ;
+;     plain             ; 48                          ;
+; cycloneiii_lcell_comb ; 1758                        ;
+;     arith             ; 176                         ;
+;         2 data inputs ; 176                         ;
+;     normal            ; 1582                        ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 202                         ;
+;         3 data inputs ; 195                         ;
+;         4 data inputs ; 1168                        ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 3.67                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Wed Jul 11 13:25:42 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off escape_room -c escape_room
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file uartsender.vhd
+    Info (12022): Found design unit 1: UARTsender-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTsender.vhd Line: 24
+    Info (12023): Found entity 1: UARTsender File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTsender.vhd Line: 13
+Info (12021): Found 2 design units, including 1 entities, in source file uartreceiver.vhd
+    Info (12022): Found design unit 1: UARTreceiver-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTreceiver.vhd Line: 16
+    Info (12023): Found entity 1: UARTreceiver File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTreceiver.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file uartfifo.vhd
+    Info (12022): Found design unit 1: UARTfifo-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTfifo.vhd Line: 27
+    Info (12023): Found entity 1: UARTfifo File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTfifo.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
+    Info (12022): Found design unit 1: flipFlop-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/flipFlop.vhd Line: 19
+    Info (12023): Found entity 1: flipFlop File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/flipFlop.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file desdummy.vhd
+    Info (12022): Found design unit 1: desDummy-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/desDummy.vhd Line: 16
+    Info (12023): Found entity 1: desDummy File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/desDummy.vhd Line: 7
+Info (12021): Found 14 design units, including 7 entities, in source file des.vhd
+    Info (12022): Found design unit 1: sbox1-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 12
+    Info (12022): Found design unit 2: sbox2-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 40
+    Info (12022): Found design unit 3: expander-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 67
+    Info (12022): Found design unit 4: get_key-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 91
+    Info (12022): Found design unit 5: des_round-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 114
+    Info (12022): Found design unit 6: des_loop-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 176
+    Info (12022): Found design unit 7: des-Behavioral File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 321
+    Info (12023): Found entity 1: sbox1 File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 5
+    Info (12023): Found entity 2: sbox2 File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 33
+    Info (12023): Found entity 3: expander File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 60
+    Info (12023): Found entity 4: get_key File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 79
+    Info (12023): Found entity 5: des_round File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 103
+    Info (12023): Found entity 6: des_loop File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 159
+    Info (12023): Found entity 7: des File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 303
+Info (12021): Found 2 design units, including 1 entities, in source file dataaccumulator.vhd
+    Info (12022): Found design unit 1: dataAccumulator-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/dataAccumulator.vhd Line: 18
+    Info (12023): Found entity 1: dataAccumulator File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/dataAccumulator.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file adcreader.vhd
+    Info (12022): Found design unit 1: adcReader-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/adcReader.vhd Line: 33
+    Info (12023): Found entity 1: adcReader File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/adcReader.vhd Line: 10
+Info (12021): Found 4 design units, including 2 entities, in source file bruteforce.vhd
+    Info (12022): Found design unit 1: partialBruteForce-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 23
+    Info (12022): Found design unit 2: bruteForce-behavior File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 164
+    Info (12023): Found entity 1: partialBruteForce File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 5
+    Info (12023): Found entity 2: bruteForce File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 147
+Info (12021): Found 1 design units, including 1 entities, in source file bruteforceattack.bdf
+    Info (12023): Found entity 1: bruteForceAttack
+Info (12127): Elaborating entity "bruteForce" for the top level hierarchy
+Info (12128): Elaborating entity "partialBruteForce" for hierarchy "partialBruteForce:bf0" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 231
+Warning (10541): VHDL Signal Declaration warning at bruteForce.vhd(42): used implicit default value for signal "mode" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 42
+Info (12128): Elaborating entity "des" for hierarchy "partialBruteForce:bf0|des:partialBruteForce" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 122
+Info (12128): Elaborating entity "des_loop" for hierarchy "partialBruteForce:bf0|des:partialBruteForce|des_loop:des" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 423
+Warning (10036): Verilog HDL or VHDL warning at des.vhd(206): object "int_mode" assigned a value but never read File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 206
+Warning (10036): Verilog HDL or VHDL warning at des.vhd(208): object "int_blk_in" assigned a value but never read File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 208
+Info (12128): Elaborating entity "get_key" for hierarchy "partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 271
+Info (12128): Elaborating entity "des_round" for hierarchy "partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 282
+Info (12128): Elaborating entity "expander" for hierarchy "partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|expander:exp" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 142
+Info (12128): Elaborating entity "sbox1" for hierarchy "partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 145
+Info (12128): Elaborating entity "sbox2" for hierarchy "partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2" File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 146
+Info (13000): Registers with preset signals will power-up high File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "plain_out[24]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[25]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[26]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[27]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[29]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[31]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[35]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[37]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[39]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[40]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[41]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[42]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[44]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[45]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+    Warning (13410): Pin "plain_out[47]" is stuck at GND File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd Line: 198
+Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register partialBruteForce:bf2|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf3|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf5|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf6|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf7|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf4|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf1|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf0|des:partialBruteForce|des_loop:des|round[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf2|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf3|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf5|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf6|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf7|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf4|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf1|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+    Critical Warning (18010): Register partialBruteForce:bf0|des:partialBruteForce|des_loop:des|round_i[0] will power up to High File: C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd Line: 224
+Info (17049): 8 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2849 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 51 input pins
+    Info (21059): Implemented 49 output pins
+    Info (21061): Implemented 2749 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 4820 megabytes
+    Info: Processing ended: Wed Jul 11 13:26:05 2018
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:43
+
+
