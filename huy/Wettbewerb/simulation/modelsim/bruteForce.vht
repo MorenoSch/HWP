@@ -30,15 +30,25 @@ USE ieee.std_logic_1164.all;
 ENTITY bruteForce_vhd_tst IS
 END bruteForce_vhd_tst;
 ARCHITECTURE bruteForce_arch OF bruteForce_vhd_tst IS
--- constants                                                 
+-- constants
+constant dataWidth : natural := 48;
+constant keyWidth : natural := 22;
+constant blockWidth : natural := 12;
+constant keyPrefixWidth : natural := 3;                                                
 -- signals                                                   
-SIGNAL clk_50 : STD_LOGIC;
+SIGNAL clk_50 : STD_LOGIC := '0';
 SIGNAL cypher_in : STD_LOGIC_VECTOR(47 DOWNTO 0);
 SIGNAL plain_out : STD_LOGIC_VECTOR(47 DOWNTO 0);
 SIGNAL plain_out_ready : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
 SIGNAL start : STD_LOGIC;
 COMPONENT bruteForce
+	generic (
+		dataWidth : natural := 48;
+		keyWidth : natural := 22;
+		blockWidth : natural := 12;
+		keyPrefixWidth : natural := 3
+	);
 	PORT (
 	clk_50 : IN STD_LOGIC;
 	cypher_in : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
@@ -50,6 +60,12 @@ COMPONENT bruteForce
 END COMPONENT;
 BEGIN
 	i1 : bruteForce
+	GENERIC MAP (
+		dataWidth => dataWidth,
+		keyWidth => keyWidth,
+		blockWidth => blockWidth,
+		keyPrefixWidth => keyPrefixWidth
+	)
 	PORT MAP (
 -- list connections between master ports and signals
 	clk_50 => clk_50,
@@ -62,15 +78,19 @@ BEGIN
 init : PROCESS                                               
 -- variable declarations                                     
 BEGIN                                                        
-        -- code that executes only once 
-	cypher_in <= "011000100101011100101110101100101100101111100100";
+        -- code that executes only once
+	--cypher_in <= "011000100101011100101110101100101100101111100100";
+	cypher_in <= "111010000101001101100101001000010000010000001101";
 	reset <= '1';
 	start <= '0';
 	wait for 20 ns;
 	reset <= '0';
+	wait for 20 ns;
 	start <= '1';
 	wait for 20 ns;
-	start <= '0';
+	--start <= '0';
+	--wait until plain_out_ready = '1';
+	wait for 1 ms;
 WAIT;                                                       
 END PROCESS init;                                           
 always : PROCESS                                              

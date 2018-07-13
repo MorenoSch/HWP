@@ -73,16 +73,16 @@ set_global_assignment -name VHDL_FILE adcReader.vhd
 set_global_assignment -name VHDL_FILE bruteForce.vhd
 set_global_assignment -name BDF_FILE bruteForceAttack.bdf
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH brute_force_vhd_tst -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH bruteForce_vhd_tst -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME des_vhd_tst -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id des_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME des_vhd_tst -section_id des_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_NAME bruteForce_vhd_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id bruteForce_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME bruteForce_vhd_tst -section_id bruteForce_vhd_tst
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name EDA_TEST_BENCH_FILE simulation/des.vht -section_id des_vhd_tst
-set_global_assignment -name EDA_TEST_BENCH_NAME brute_force_vhd_tst -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id brute_force_vhd_tst
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME brute_force_vhd_tst -section_id brute_force_vhd_tst
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/bruteForce.vht -section_id brute_force_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/bruteForce.vht -section_id bruteForce_vhd_tst
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

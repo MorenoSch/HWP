@@ -505,55 +505,55 @@ start => partialBruteForce:bf4.start
 start => partialBruteForce:bf5.start
 start => partialBruteForce:bf6.start
 start => partialBruteForce:bf7.start
-plain_out[0] << plain_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[1] << plain_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[2] << plain_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[3] << plain_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[4] << plain_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[5] << plain_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[6] << plain_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[7] << plain_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[8] << plain_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[9] << plain_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[10] << plain_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[11] << plain_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[12] << plain_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[13] << plain_out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[14] << plain_out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[15] << plain_out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[16] << plain_out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[17] << plain_out[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[18] << plain_out[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[19] << plain_out[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[20] << plain_out[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[21] << plain_out[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[22] << plain_out[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[23] << plain_out[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[24] << plain_out[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[25] << plain_out[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[26] << plain_out[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[27] << plain_out[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[28] << plain_out[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[29] << plain_out[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[30] << plain_out[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[31] << plain_out[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[32] << plain_out[32]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[33] << plain_out[33]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[34] << plain_out[34]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[35] << plain_out[35]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[36] << plain_out[36]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[37] << plain_out[37]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[38] << plain_out[38]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[39] << plain_out[39]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[40] << plain_out[40]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[41] << plain_out[41]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[42] << plain_out[42]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[43] << plain_out[43]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[44] << plain_out[44]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[45] << plain_out[45]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[46] << plain_out[46]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out[47] << plain_out[47]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-plain_out_ready << plain_out_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[0] <= plain_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[1] <= plain_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[2] <= plain_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[3] <= plain_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[4] <= plain_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[5] <= plain_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[6] <= plain_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[7] <= plain_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[8] <= plain_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[9] <= plain_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[10] <= plain_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[11] <= plain_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[12] <= plain_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[13] <= plain_out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[14] <= plain_out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[15] <= plain_out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[16] <= plain_out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[17] <= plain_out[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[18] <= plain_out[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[19] <= plain_out[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[20] <= plain_out[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[21] <= plain_out[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[22] <= plain_out[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[23] <= plain_out[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[24] <= plain_out[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[25] <= plain_out[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[26] <= plain_out[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[27] <= plain_out[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[28] <= plain_out[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[29] <= plain_out[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[30] <= plain_out[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[31] <= plain_out[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[32] <= plain_out[32]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[33] <= plain_out[33]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[34] <= plain_out[34]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[35] <= plain_out[35]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[36] <= plain_out[36]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[37] <= plain_out[37]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[38] <= plain_out[38]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[39] <= plain_out[39]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[40] <= plain_out[40]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[41] <= plain_out[41]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[42] <= plain_out[42]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[43] <= plain_out[43]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[44] <= plain_out[44]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[45] <= plain_out[45]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[46] <= plain_out[46]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out[47] <= plain_out[47]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+plain_out_ready <= plain_out_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf0
@@ -606,7 +606,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -619,6 +618,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -639,7 +639,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -667,6 +669,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -716,7 +727,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -777,6 +787,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -1046,7 +1057,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -1104,7 +1114,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -1151,6 +1161,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -1164,11 +1175,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -1222,7 +1229,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -1261,7 +1267,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -1407,7 +1412,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -1420,6 +1424,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -1440,7 +1445,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -1468,6 +1475,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -1517,7 +1533,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -1578,6 +1593,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -1847,7 +1863,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -1905,7 +1920,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -1952,6 +1967,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -1965,11 +1981,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -2023,7 +2035,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -2062,7 +2073,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -2208,7 +2218,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -2221,6 +2230,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -2241,7 +2251,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -2269,6 +2281,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -2318,7 +2339,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -2379,6 +2399,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -2648,7 +2669,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -2706,7 +2726,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -2753,6 +2773,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -2766,11 +2787,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -2824,7 +2841,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -2863,7 +2879,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -3009,7 +3024,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -3022,6 +3036,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -3042,7 +3057,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -3070,6 +3087,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -3119,7 +3145,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -3180,6 +3205,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -3449,7 +3475,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -3507,7 +3532,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -3554,6 +3579,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -3567,11 +3593,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -3625,7 +3647,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -3664,7 +3685,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -3810,7 +3830,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -3823,6 +3842,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -3843,7 +3863,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -3871,6 +3893,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -3920,7 +3951,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -3981,6 +4011,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -4250,7 +4281,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -4308,7 +4338,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -4355,6 +4385,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -4368,11 +4399,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -4426,7 +4453,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -4465,7 +4491,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -4611,7 +4636,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -4624,6 +4648,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -4644,7 +4669,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -4672,6 +4699,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -4721,7 +4757,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -4782,6 +4817,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -5051,7 +5087,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -5109,7 +5144,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -5156,6 +5191,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -5169,11 +5205,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -5227,7 +5259,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -5266,7 +5297,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -5412,7 +5442,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -5425,6 +5454,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -5445,7 +5475,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -5473,6 +5505,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -5522,7 +5563,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -5583,6 +5623,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -5852,7 +5893,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -5910,7 +5950,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -5957,6 +5997,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -5970,11 +6011,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -6028,7 +6065,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -6067,7 +6103,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -6213,7 +6248,6 @@ clk_50 => data[44].CLK
 clk_50 => data[45].CLK
 clk_50 => data[46].CLK
 clk_50 => data[47].CLK
-clk_50 => enable.CLK
 clk_50 => block_data_in[0].CLK
 clk_50 => block_data_in[1].CLK
 clk_50 => block_data_in[2].CLK
@@ -6226,6 +6260,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
 clk_50 => key_suffix[1].CLK
@@ -6246,7 +6281,9 @@ clk_50 => key_suffix[15].CLK
 clk_50 => key_suffix[16].CLK
 clk_50 => key_suffix[17].CLK
 clk_50 => key_suffix[18].CLK
-clk_50 => state~8.DATAIN
+clk_50 => next_state~9.DATAIN
+clk_50 => state~9.DATAIN
+reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
 reset => state.OUTPUTSELECT
@@ -6274,6 +6311,15 @@ reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => key_suffix.OUTPUTSELECT
 reset => plain_out_ready.OUTPUTSELECT
+reset => enable.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
+reset => next_state.OUTPUTSELECT
 reset => des:partialBruteForce.rst
 reset => data[0].ENA
 reset => data[1].ENA
@@ -6323,7 +6369,6 @@ reset => data[44].ENA
 reset => data[45].ENA
 reset => data[46].ENA
 reset => data[47].ENA
-reset => enable.ENA
 reset => block_data_in[0].ENA
 reset => block_data_in[1].ENA
 reset => block_data_in[2].ENA
@@ -6384,6 +6429,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
+start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
 start => state.OUTPUTSELECT
@@ -6653,7 +6699,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des
-clk_50 => get_key:keyer.clk_50
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -6711,7 +6756,7 @@ clk_50 => int_key_in[18].CLK
 clk_50 => int_key_in[19].CLK
 clk_50 => int_key_in[20].CLK
 clk_50 => int_key_in[21].CLK
-clk_50 => des_round:des.clk_50
+clk_50 => int_mode.CLK
 clk_50 => state~4.DATAIN
 rst => ready~reg0.ACLR
 rst => round_i[0].PRESET
@@ -6758,6 +6803,7 @@ rst => int_key_in[18].ACLR
 rst => int_key_in[19].ACLR
 rst => int_key_in[20].ACLR
 rst => int_key_in[21].ACLR
+rst => int_mode.ACLR
 rst => state~6.DATAIN
 rst => r_i_min_1[0].ENA
 rst => l_i_min_1[5].ENA
@@ -6771,11 +6817,7 @@ rst => r_i_min_1[4].ENA
 rst => r_i_min_1[3].ENA
 rst => r_i_min_1[2].ENA
 rst => r_i_min_1[1].ENA
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
-mode => round_i.OUTPUTSELECT
+mode => int_mode.DATAIN
 key_in[0] => int_key_in[0].DATAIN
 key_in[1] => int_key_in[1].DATAIN
 key_in[2] => int_key_in[2].DATAIN
@@ -6829,7 +6871,6 @@ ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer
-clk_50 => ~NO_FANOUT~
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -6868,7 +6909,6 @@ key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des
-clk_50 => ~NO_FANOUT~
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1

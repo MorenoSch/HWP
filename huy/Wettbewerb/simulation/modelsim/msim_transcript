@@ -12,7 +12,7 @@
 # 
 # vcom -93 -work work {C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:50 on Jul 11,2018
+# Start time: 14:11:14 on Jul 12,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -24,20 +24,20 @@
 # -- Compiling architecture Behavioral of sbox2
 # -- Compiling entity expander
 # -- Compiling architecture Behavioral of expander
+# -- Loading package MATH_REAL
 # -- Compiling entity get_key
 # -- Compiling architecture Behavioral of get_key
 # -- Compiling entity des_round
 # -- Compiling architecture Behavioral of des_round
 # -- Compiling entity des_loop
 # -- Compiling architecture Behavioral of des_loop
-# -- Loading package MATH_REAL
 # -- Compiling entity des
 # -- Compiling architecture Behavioral of des
-# End time: 13:26:50 on Jul 11,2018, Elapsed time: 0:00:00
+# End time: 14:11:14 on Jul 12,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:50 on Jul 11,2018
+# Start time: 14:11:14 on Jul 12,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -47,37 +47,79 @@
 # -- Compiling architecture behavior of partialBruteForce
 # -- Compiling entity bruteForce
 # -- Compiling architecture behavior of bruteForce
-# End time: 13:26:50 on Jul 11,2018, Elapsed time: 0:00:00
+# End time: 14:11:14 on Jul 12,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vcom -93 -work work {C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/modelsim/bruteForce.vht}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 13:26:50 on Jul 11,2018
+# Start time: 14:11:14 on Jul 12,2018
 # vcom -reportprogress 300 -93 -work work C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/modelsim/bruteForce.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity bruteForce_vhd_tst
 # -- Compiling architecture bruteForce_arch of bruteForce_vhd_tst
-# End time: 13:26:50 on Jul 11,2018, Elapsed time: 0:00:00
+# End time: 14:11:14 on Jul 12,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  brute_force_vhd_tst
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" brute_force_vhd_tst 
-# Start time: 13:26:50 on Jul 11,2018
-# ** Error: (vsim-3170) Could not find 'brute_force_vhd_tst'.
-#         Searched libraries:
-#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/vhdl/altera
-#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/vhdl/220model
-#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/vhdl/sgate
-#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/vhdl/altera_mf
-#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/vhdl/altera_lnsim
-#             C:/intelFPGA_lite/18.0/modelsim_ase/altera/vhdl/cycloneive
-#             C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/modelsim/rtl_work
-#             C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/modelsim/rtl_work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./escape_room_run_msim_rtl_vhdl.do PAUSED at line 13
-# End time: 13:27:07 on Jul 11,2018, Elapsed time: 0:00:17
-# Errors: 1, Warnings: 0
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  bruteForce_vhd_tst
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" bruteForce_vhd_tst 
+# Start time: 14:11:14 on Jul 12,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.bruteforce_vhd_tst(bruteforce_arch)
+# Loading ieee.numeric_std(body)
+# Loading work.bruteforce(behavior)
+# Loading work.partialbruteforce(behavior)
+# Loading ieee.math_real(body)
+# Loading work.des(behavioral)
+# Loading work.des_loop(behavioral)
+# Loading work.get_key(behavioral)
+# Loading work.des_round(behavioral)
+# Loading work.expander(behavioral)
+# Loading work.sbox1(behavioral)
+# Loading work.sbox2(behavioral)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf7/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf7/partialBruteForce/des/des/s2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf6/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf6/partialBruteForce/des/des/s2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf5/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf5/partialBruteForce/des/des/s2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf4/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf4/partialBruteForce/des/des/s2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf3/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf3/partialBruteForce/des/des/s2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf2/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf2/partialBruteForce/des/des/s2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf1/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf1/partialBruteForce/des/des/s2
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf0/partialBruteForce/des/des/s1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /bruteforce_vhd_tst/i1/bf0/partialBruteForce/des/des/s2
+# Break key hit
+# Simulation stop requested.
+# End time: 14:13:19 on Jul 12,2018, Elapsed time: 0:02:05
+# Errors: 0, Warnings: 16

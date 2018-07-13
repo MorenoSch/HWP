@@ -39,8 +39,8 @@ component des is
 	);
 end component;
 
-signal mode   : std_logic; -- 0 encrypt, 1 decrypt
-signal enable  : std_logic;
+signal mode   : std_logic := '1'; -- 0 encrypt, 1 decrypt
+signal enable  : std_logic := '0';
 signal block_data_in: std_logic_vector(blockWidth - 1 downto 0);
 signal block_data_out: std_logic_vector(blockWidth - 1 downto 0);
 signal data : std_logic_vector(dataWidth - 1 downto 0);
@@ -49,8 +49,9 @@ signal key_suffix : std_logic_vector(keyWidth - keyPrefixWidth - 1 downto 0) := 
 signal key : std_logic_vector(keyWidth - 1 downto 0);
 constant reversed : std_logic := '0';
 
-type state_type is (init, beginDecode, decode0, decode1, decode2, decode3, decoded);
+type state_type is (init, beginDecode, decode0, decode1, decode2, decode3, decoded, timeout);
 signal state : state_type := init;
+signal next_state : state_type := beginDecode;
 
 begin
 
@@ -66,20 +67,23 @@ begin
 			state <= init;
 			key_suffix <= (others => '0');
 			plain_out_ready <= '0';
+			enable <= '0';
 		elsif state = init then
 			if start = '1' then
 				state <= beginDecode;
 			end if;
 		elsif state = beginDecode then
 			block_data_in <= cypher_in(dataWidth - 1 downto dataWidth - 12);
-			state <= decode0;
+			next_state <= decode0;
+			state <= timeout;
 			enable <= '1';
 		elsif state = decode0 then
 			enable <= '0';
-			if ready <= '1' then
+			if ready = '1' then
 				if block_data_out = "010010000101" then -- 8 bits of H and first 4 bits of W
 					data(dataWidth - 1 downto dataWidth - 12) <= block_data_out;
-					state <= decode1;
+					next_state <= decode1;
+					state <= timeout;
 					block_data_in <= cypher_in(dataWidth - 13 downto dataWidth - 24);
 					enable <= '1';
 				else
@@ -89,10 +93,11 @@ begin
 			end if;
 		elsif state = decode1 then
 			enable <= '0';
-			if ready <= '1' then
+			if ready = '1' then
 				if block_data_out = "011101010000" then -- last 4 bits of W and 8 bits of P
 					data(dataWidth - 13 downto dataWidth - 24) <= block_data_out;
-					state <= decode2;
+					next_state <= decode2;
+					state <= timeout;
 					block_data_in <= cypher_in(dataWidth - 25 downto dataWidth - 36);
 					enable <= '1';
 				else
@@ -102,19 +107,22 @@ begin
 			end if;
 		elsif state = decode2 then
 			enable <= '0';
-			if ready <= '1' then
+			if ready = '1' then
 				data(dataWidth - 25 downto dataWidth - 36) <= block_data_out;
-				state <= decode3;
+				next_state <= decode3;
+				state <= timeout;
 				block_data_in <= cypher_in(dataWidth - 37 downto dataWidth - 48);
 				enable <= '1';
 			end if;
 		elsif state = decode3 then
 			enable <= '0';
-			if ready <= '1' then
+			if ready = '1' then
 				data(dataWidth - 37 downto dataWidth - 48) <= block_data_out;
 				state <= decoded;
 				plain_out_ready <= '1';
 			end if;
+		elsif state = timeout then
+			state <= next_state;
 		end if;
 	end if;
 end process;
