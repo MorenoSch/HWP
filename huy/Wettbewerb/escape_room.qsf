@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY bruteForce
+set_global_assignment -name TOP_LEVEL_ENTITY bruteForceAttack
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:50:17  JULY 06, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
@@ -80,9 +80,13 @@ set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME des_vhd_tst -section_id d
 set_global_assignment -name EDA_TEST_BENCH_NAME bruteForce_vhd_tst -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME i1 -section_id bruteForce_vhd_tst
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME bruteForce_vhd_tst -section_id bruteForce_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/des.vht -section_id des_vhd_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/bruteForce.vht -section_id bruteForce_vhd_tst
+set_location_assignment PIN_R8 -to clk_50
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/des.vht -section_id des_vhd_tst
-set_global_assignment -name EDA_TEST_BENCH_FILE simulation/modelsim/bruteForce.vht -section_id bruteForce_vhd_tst
+set_location_assignment PIN_C16 -to Serial_in
+set_location_assignment PIN_E16 -to reset_in
+set_location_assignment PIN_B12 -to Serial_out
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

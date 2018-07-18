@@ -1,15 +1,15 @@
-Fitter Status : Successful - Thu Jul 12 14:10:20 2018
+Fitter Status : Successful - Wed Jul 18 18:09:51 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : escape_room
-Top-level Entity Name : bruteForce
+Top-level Entity Name : bruteForceAttack
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 2,615 / 22,320 ( 12 % )
-    Total combinational functions : 1,886 / 22,320 ( 8 % )
-    Dedicated logic registers : 1,650 / 22,320 ( 7 % )
-Total registers : 1650
-Total pins : 100 / 154 ( 65 % )
+Total logic elements : 2,955 / 22,320 ( 13 % )
+    Total combinational functions : 2,135 / 22,320 ( 10 % )
+    Dedicated logic registers : 1,885 / 22,320 ( 8 % )
+Total registers : 1885
+Total pins : 9 / 154 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 0 / 608,256 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )

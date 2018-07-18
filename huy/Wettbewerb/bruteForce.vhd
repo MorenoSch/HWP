@@ -47,6 +47,8 @@ signal data : std_logic_vector(dataWidth - 1 downto 0);
 signal ready : std_logic := '0';
 signal key_suffix : std_logic_vector(keyWidth - keyPrefixWidth - 1 downto 0) := (others => '0');
 signal key : std_logic_vector(keyWidth - 1 downto 0);
+signal starting : std_logic := '0';
+signal last_starting : std_logic := '0';
 constant reversed : std_logic := '0';
 
 type state_type is (init, beginDecode, decode0, decode1, decode2, decode3, decoded, timeout);
@@ -68,8 +70,9 @@ begin
 			key_suffix <= (others => '0');
 			plain_out_ready <= '0';
 			enable <= '0';
+			last_starting <= starting;
 		elsif state = init then
-			if start = '1' then
+			if starting /= last_starting then
 				state <= beginDecode;
 			end if;
 		elsif state = beginDecode then
@@ -124,6 +127,13 @@ begin
 		elsif state = timeout then
 			state <= next_state;
 		end if;
+	end if;
+end process;
+
+process(start)
+begin
+	if rising_edge(start) then
+		starting <= not last_starting;
 	end if;
 end process;
 
@@ -198,38 +208,65 @@ signal data4_out : std_logic_vector(dataWidth - 1 downto 0);
 signal data5_out : std_logic_vector(dataWidth - 1 downto 0);
 signal data6_out : std_logic_vector(dataWidth - 1 downto 0);
 signal data7_out : std_logic_vector(dataWidth - 1 downto 0);
+signal ready : std_logic := '0';
+signal starting : std_logic := '0';
+signal last_starting : std_logic := '0';
 
 begin
+
+--plain_out_ready <= starting;
+--plain_out <= "010010000101011101010000010111110011000100111000";
+--
+process(start)
+begin
+	if rising_edge(start) then
+		starting <= not last_starting;
+	end if;
+end process;
 
 process(clk_50)
 begin
 	if rising_edge(clk_50) then
 		if reset = '1' then
 			plain_out_ready <= '0';
-		elsif correct(0) = '1' then
-			plain_out <= data0_out;
-			plain_out_ready <= '1';
-		elsif correct(1) = '1' then
-			plain_out <= data1_out;
-			plain_out_ready <= '1';
-		elsif correct(2) = '1' then
-			plain_out <= data2_out;
-			plain_out_ready <= '1';
-		elsif correct(3) = '1' then
-			plain_out <= data3_out;
-			plain_out_ready <= '1';
-		elsif correct(4) = '1' then
-			plain_out <= data4_out;
-			plain_out_ready <= '1';
-		elsif correct(5) = '1' then
-			plain_out <= data5_out;
-			plain_out_ready <= '1';
-		elsif correct(6) = '1' then
-			plain_out <= data6_out;
-			plain_out_ready <= '1';
-		elsif correct(7) = '1' then
-			plain_out <= data7_out;
-			plain_out_ready <= '1';
+			last_starting <= starting;
+		end if;
+		if starting /= last_starting then
+			if correct(0) = '1' then
+				plain_out <= data0_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			elsif correct(1) = '1' then
+				plain_out <= data1_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			elsif correct(2) = '1' then
+				plain_out <= data2_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			elsif correct(3) = '1' then
+				plain_out <= data3_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			elsif correct(4) = '1' then
+				plain_out <= data4_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			elsif correct(5) = '1' then
+				plain_out <= data5_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			elsif correct(6) = '1' then
+				plain_out <= data6_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			elsif correct(7) = '1' then
+				plain_out <= data7_out;
+				plain_out_ready <= '1';
+				last_starting <= starting;
+			else
+				plain_out_ready <= '0';
+			end if;
 		else
 			plain_out_ready <= '0';
 		end if;

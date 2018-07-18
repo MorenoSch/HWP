@@ -1,4 +1,27 @@
-|bruteForce
+|bruteForceAttack
+reset_out <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+reset_in => inst1.IN0
+plain_out <= flipFlop:inst7.data_out[0]
+clk_50 => bruteForce:inst3.clk_50
+clk_50 => dataAccumulator:inst2.clk_50
+clk_50 => UARTreceiver:inst.clk_50
+clk_50 => UARTfifo:inst4.clk_50
+clk_50 => UARTsender:inst5.clk_50
+Serial_in => UARTreceiver:inst.serial
+LED <= UARTfifo:inst4.ready
+Serial_out <= UARTsender:inst5.serial
+OutputAcc <= dataAccumulator:inst2.data_out_ready
+START_OUT <= flipFlop:inst6.data_out[0]
+
+
+|bruteForceAttack|flipFlop:inst7
+reset => data_in_int[0].ACLR
+set => data_in_int[0].LATCH_ENABLE
+data_in[0] => data_in_int[0].DATAIN
+data_out[0] <= data_in_int[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bruteForceAttack|bruteForce:inst3
 clk_50 => partialBruteForce:bf0.clk_50
 clk_50 => plain_out[0]~reg0.CLK
 clk_50 => plain_out[1]~reg0.CLK
@@ -48,6 +71,7 @@ clk_50 => plain_out[44]~reg0.CLK
 clk_50 => plain_out[45]~reg0.CLK
 clk_50 => plain_out[46]~reg0.CLK
 clk_50 => plain_out[47]~reg0.CLK
+clk_50 => last_starting.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => partialBruteForce:bf1.clk_50
 clk_50 => partialBruteForce:bf2.clk_50
@@ -56,7 +80,7 @@ clk_50 => partialBruteForce:bf4.clk_50
 clk_50 => partialBruteForce:bf5.clk_50
 clk_50 => partialBruteForce:bf6.clk_50
 clk_50 => partialBruteForce:bf7.clk_50
-reset => plain_out_ready.OUTPUTSELECT
+reset => last_starting.OUTPUTSELECT
 reset => partialBruteForce:bf0.reset
 reset => partialBruteForce:bf1.reset
 reset => partialBruteForce:bf2.reset
@@ -65,54 +89,6 @@ reset => partialBruteForce:bf4.reset
 reset => partialBruteForce:bf5.reset
 reset => partialBruteForce:bf6.reset
 reset => partialBruteForce:bf7.reset
-reset => plain_out[0]~reg0.ENA
-reset => plain_out[1]~reg0.ENA
-reset => plain_out[2]~reg0.ENA
-reset => plain_out[3]~reg0.ENA
-reset => plain_out[4]~reg0.ENA
-reset => plain_out[5]~reg0.ENA
-reset => plain_out[6]~reg0.ENA
-reset => plain_out[7]~reg0.ENA
-reset => plain_out[8]~reg0.ENA
-reset => plain_out[9]~reg0.ENA
-reset => plain_out[10]~reg0.ENA
-reset => plain_out[11]~reg0.ENA
-reset => plain_out[12]~reg0.ENA
-reset => plain_out[13]~reg0.ENA
-reset => plain_out[14]~reg0.ENA
-reset => plain_out[15]~reg0.ENA
-reset => plain_out[16]~reg0.ENA
-reset => plain_out[17]~reg0.ENA
-reset => plain_out[18]~reg0.ENA
-reset => plain_out[19]~reg0.ENA
-reset => plain_out[20]~reg0.ENA
-reset => plain_out[21]~reg0.ENA
-reset => plain_out[22]~reg0.ENA
-reset => plain_out[23]~reg0.ENA
-reset => plain_out[24]~reg0.ENA
-reset => plain_out[25]~reg0.ENA
-reset => plain_out[26]~reg0.ENA
-reset => plain_out[27]~reg0.ENA
-reset => plain_out[28]~reg0.ENA
-reset => plain_out[29]~reg0.ENA
-reset => plain_out[30]~reg0.ENA
-reset => plain_out[31]~reg0.ENA
-reset => plain_out[32]~reg0.ENA
-reset => plain_out[33]~reg0.ENA
-reset => plain_out[34]~reg0.ENA
-reset => plain_out[35]~reg0.ENA
-reset => plain_out[36]~reg0.ENA
-reset => plain_out[37]~reg0.ENA
-reset => plain_out[38]~reg0.ENA
-reset => plain_out[39]~reg0.ENA
-reset => plain_out[40]~reg0.ENA
-reset => plain_out[41]~reg0.ENA
-reset => plain_out[42]~reg0.ENA
-reset => plain_out[43]~reg0.ENA
-reset => plain_out[44]~reg0.ENA
-reset => plain_out[45]~reg0.ENA
-reset => plain_out[46]~reg0.ENA
-reset => plain_out[47]~reg0.ENA
 cypher_in[0] => partialBruteForce:bf0.cypher_in[0]
 cypher_in[0] => partialBruteForce:bf1.cypher_in[0]
 cypher_in[0] => partialBruteForce:bf2.cypher_in[0]
@@ -498,6 +474,7 @@ cypher_in[47] => partialBruteForce:bf5.cypher_in[47]
 cypher_in[47] => partialBruteForce:bf6.cypher_in[47]
 cypher_in[47] => partialBruteForce:bf7.cypher_in[47]
 start => partialBruteForce:bf0.start
+start => starting.CLK
 start => partialBruteForce:bf1.start
 start => partialBruteForce:bf2.start
 start => partialBruteForce:bf3.start
@@ -556,7 +533,7 @@ plain_out[47] <= plain_out[47]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 plain_out_ready <= plain_out_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf0
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -618,6 +595,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -739,6 +717,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -787,14 +766,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -849,7 +821,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf0|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -1056,7 +1028,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -1228,7 +1200,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -1266,7 +1238,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -1307,7 +1279,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -1326,7 +1298,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -1344,7 +1316,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf0|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -1362,7 +1334,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -1424,6 +1396,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -1545,6 +1518,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -1593,14 +1567,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -1655,7 +1622,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf1|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -1862,7 +1829,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -2034,7 +2001,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -2072,7 +2039,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -2113,7 +2080,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -2132,7 +2099,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -2150,7 +2117,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf1|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -2168,7 +2135,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -2230,6 +2197,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -2351,6 +2319,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -2399,14 +2368,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -2461,7 +2423,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf2|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -2668,7 +2630,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -2840,7 +2802,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -2878,7 +2840,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -2919,7 +2881,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -2938,7 +2900,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -2956,7 +2918,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf2|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -2974,7 +2936,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf3
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -3036,6 +2998,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -3157,6 +3120,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -3205,14 +3169,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -3267,7 +3224,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf3|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -3474,7 +3431,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -3646,7 +3603,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -3684,7 +3641,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -3725,7 +3682,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -3744,7 +3701,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -3762,7 +3719,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf3|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -3780,7 +3737,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf4
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -3842,6 +3799,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -3963,6 +3921,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -4011,14 +3970,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -4073,7 +4025,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf4|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -4280,7 +4232,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -4452,7 +4404,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -4490,7 +4442,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -4531,7 +4483,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -4550,7 +4502,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -4568,7 +4520,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf4|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -4586,7 +4538,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf5
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -4648,6 +4600,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -4769,6 +4722,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -4817,14 +4771,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -4879,7 +4826,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf5|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -5086,7 +5033,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -5258,7 +5205,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -5296,7 +5243,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -5337,7 +5284,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -5356,7 +5303,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -5374,7 +5321,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf5|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -5392,7 +5339,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf6
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -5454,6 +5401,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -5575,6 +5523,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -5623,14 +5572,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -5685,7 +5627,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf6|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -5892,7 +5834,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -6064,7 +6006,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -6102,7 +6044,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -6143,7 +6085,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -6162,7 +6104,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -6180,7 +6122,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf6|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -6198,7 +6140,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf7
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7
 clk_50 => des:partialBruteForce.clk_50
 clk_50 => data[0].CLK
 clk_50 => data[1].CLK
@@ -6260,6 +6202,7 @@ clk_50 => block_data_in[8].CLK
 clk_50 => block_data_in[9].CLK
 clk_50 => block_data_in[10].CLK
 clk_50 => block_data_in[11].CLK
+clk_50 => last_starting.CLK
 clk_50 => enable.CLK
 clk_50 => plain_out_ready~reg0.CLK
 clk_50 => key_suffix[0].CLK
@@ -6381,6 +6324,7 @@ reset => block_data_in[8].ENA
 reset => block_data_in[9].ENA
 reset => block_data_in[10].ENA
 reset => block_data_in[11].ENA
+reset => last_starting.ENA
 cypher_in[0] => block_data_in.DATAB
 cypher_in[1] => block_data_in.DATAB
 cypher_in[2] => block_data_in.DATAB
@@ -6429,14 +6373,7 @@ cypher_in[44] => block_data_in.DATAB
 cypher_in[45] => block_data_in.DATAB
 cypher_in[46] => block_data_in.DATAB
 cypher_in[47] => block_data_in.DATAB
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
-start => state.OUTPUTSELECT
+start => starting.CLK
 plain_out[0] <= data[0].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[1] <= data[1].DB_MAX_OUTPUT_PORT_TYPE
 plain_out[2] <= data[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -6491,7 +6428,7 @@ key_prefix[1] => des:partialBruteForce.key_in[20]
 key_prefix[2] => des:partialBruteForce.key_in[21]
 
 
-|bruteForce|partialBruteForce:bf7|des:partialBruteForce
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7|des:partialBruteForce
 clk_50 => des_loop:des.clk_50
 clk_50 => blk_enable.CLK
 clk_50 => blk_in[0].CLK
@@ -6698,7 +6635,7 @@ data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7|des:partialBruteForce|des_loop:des
 clk_50 => r_i_min_1[0].CLK
 clk_50 => r_i_min_1[1].CLK
 clk_50 => r_i_min_1[2].CLK
@@ -6870,7 +6807,7 @@ blk_out[11] <= blk_out_int[11].DB_MAX_OUTPUT_PORT_TYPE
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|get_key:keyer
 key_in[0] => RotateLeft0.IN26
 key_in[1] => RotateLeft0.IN25
 key_in[2] => RotateLeft0.IN24
@@ -6908,7 +6845,7 @@ key_out[6] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 key_out[7] <= RotateLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des
 l_i_min_1[0] => r_i.IN1
 l_i_min_1[1] => r_i.IN1
 l_i_min_1[2] => r_i.IN1
@@ -6949,7 +6886,7 @@ r_i[4] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 r_i[5] <= r_i.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|expander:exp
 in_vector[0] => out_vector[0].DATAIN
 in_vector[1] => out_vector[1].DATAIN
 in_vector[2] => out_vector[3].DATAIN
@@ -6968,7 +6905,7 @@ out_vector[6] <= in_vector[4].DB_MAX_OUTPUT_PORT_TYPE
 out_vector[7] <= in_vector[5].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|sbox1:s1
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -6986,7 +6923,7 @@ output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|bruteForce|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
+|bruteForceAttack|bruteForce:inst3|partialBruteForce:bf7|des:partialBruteForce|des_loop:des|des_round:des|sbox2:s2
 input[0] => Mux0.IN19
 input[0] => Mux1.IN19
 input[0] => Mux2.IN19
@@ -7002,5 +6939,699 @@ input[3] => Mux2.IN16
 output[0] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 output[1] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bruteForceAttack|dataAccumulator:inst2
+clk_50 => dataCount[0].CLK
+clk_50 => dataCount[1].CLK
+clk_50 => dataCount[2].CLK
+clk_50 => data[8].CLK
+clk_50 => data[9].CLK
+clk_50 => data[10].CLK
+clk_50 => data[11].CLK
+clk_50 => data[12].CLK
+clk_50 => data[13].CLK
+clk_50 => data[14].CLK
+clk_50 => data[15].CLK
+clk_50 => data[16].CLK
+clk_50 => data[17].CLK
+clk_50 => data[18].CLK
+clk_50 => data[19].CLK
+clk_50 => data[20].CLK
+clk_50 => data[21].CLK
+clk_50 => data[22].CLK
+clk_50 => data[23].CLK
+clk_50 => data[24].CLK
+clk_50 => data[25].CLK
+clk_50 => data[26].CLK
+clk_50 => data[27].CLK
+clk_50 => data[28].CLK
+clk_50 => data[29].CLK
+clk_50 => data[30].CLK
+clk_50 => data[31].CLK
+clk_50 => data[32].CLK
+clk_50 => data[33].CLK
+clk_50 => data[34].CLK
+clk_50 => data[35].CLK
+clk_50 => data[36].CLK
+clk_50 => data[37].CLK
+clk_50 => data[38].CLK
+clk_50 => data[39].CLK
+clk_50 => data[40].CLK
+clk_50 => data[41].CLK
+clk_50 => data[42].CLK
+clk_50 => data[43].CLK
+clk_50 => data[44].CLK
+clk_50 => data[45].CLK
+clk_50 => data[46].CLK
+clk_50 => data[47].CLK
+clk_50 => data_out[0]~reg0.CLK
+clk_50 => data_out[1]~reg0.CLK
+clk_50 => data_out[2]~reg0.CLK
+clk_50 => data_out[3]~reg0.CLK
+clk_50 => data_out[4]~reg0.CLK
+clk_50 => data_out[5]~reg0.CLK
+clk_50 => data_out[6]~reg0.CLK
+clk_50 => data_out[7]~reg0.CLK
+clk_50 => data_out[8]~reg0.CLK
+clk_50 => data_out[9]~reg0.CLK
+clk_50 => data_out[10]~reg0.CLK
+clk_50 => data_out[11]~reg0.CLK
+clk_50 => data_out[12]~reg0.CLK
+clk_50 => data_out[13]~reg0.CLK
+clk_50 => data_out[14]~reg0.CLK
+clk_50 => data_out[15]~reg0.CLK
+clk_50 => data_out[16]~reg0.CLK
+clk_50 => data_out[17]~reg0.CLK
+clk_50 => data_out[18]~reg0.CLK
+clk_50 => data_out[19]~reg0.CLK
+clk_50 => data_out[20]~reg0.CLK
+clk_50 => data_out[21]~reg0.CLK
+clk_50 => data_out[22]~reg0.CLK
+clk_50 => data_out[23]~reg0.CLK
+clk_50 => data_out[24]~reg0.CLK
+clk_50 => data_out[25]~reg0.CLK
+clk_50 => data_out[26]~reg0.CLK
+clk_50 => data_out[27]~reg0.CLK
+clk_50 => data_out[28]~reg0.CLK
+clk_50 => data_out[29]~reg0.CLK
+clk_50 => data_out[30]~reg0.CLK
+clk_50 => data_out[31]~reg0.CLK
+clk_50 => data_out[32]~reg0.CLK
+clk_50 => data_out[33]~reg0.CLK
+clk_50 => data_out[34]~reg0.CLK
+clk_50 => data_out[35]~reg0.CLK
+clk_50 => data_out[36]~reg0.CLK
+clk_50 => data_out[37]~reg0.CLK
+clk_50 => data_out[38]~reg0.CLK
+clk_50 => data_out[39]~reg0.CLK
+clk_50 => data_out[40]~reg0.CLK
+clk_50 => data_out[41]~reg0.CLK
+clk_50 => data_out[42]~reg0.CLK
+clk_50 => data_out[43]~reg0.CLK
+clk_50 => data_out[44]~reg0.CLK
+clk_50 => data_out[45]~reg0.CLK
+clk_50 => data_out[46]~reg0.CLK
+clk_50 => data_out[47]~reg0.CLK
+clk_50 => uart_enable.CLK
+clk_50 => data_out_ready~reg0.CLK
+reset => dataCount[0].PRESET
+reset => dataCount[1].ACLR
+reset => dataCount[2].PRESET
+reset => data[8].ACLR
+reset => data[9].ACLR
+reset => data[10].ACLR
+reset => data[11].ACLR
+reset => data[12].ACLR
+reset => data[13].ACLR
+reset => data[14].ACLR
+reset => data[15].ACLR
+reset => data[16].ACLR
+reset => data[17].ACLR
+reset => data[18].ACLR
+reset => data[19].ACLR
+reset => data[20].ACLR
+reset => data[21].ACLR
+reset => data[22].ACLR
+reset => data[23].ACLR
+reset => data[24].ACLR
+reset => data[25].ACLR
+reset => data[26].ACLR
+reset => data[27].ACLR
+reset => data[28].ACLR
+reset => data[29].ACLR
+reset => data[30].ACLR
+reset => data[31].ACLR
+reset => data[32].ACLR
+reset => data[33].ACLR
+reset => data[34].ACLR
+reset => data[35].ACLR
+reset => data[36].ACLR
+reset => data[37].ACLR
+reset => data[38].ACLR
+reset => data[39].ACLR
+reset => data[40].ACLR
+reset => data[41].ACLR
+reset => data[42].ACLR
+reset => data[43].ACLR
+reset => data[44].ACLR
+reset => data[45].ACLR
+reset => data[46].ACLR
+reset => data[47].ACLR
+reset => data_out[0]~reg0.ACLR
+reset => data_out[1]~reg0.ACLR
+reset => data_out[2]~reg0.ACLR
+reset => data_out[3]~reg0.ACLR
+reset => data_out[4]~reg0.ACLR
+reset => data_out[5]~reg0.ACLR
+reset => data_out[6]~reg0.ACLR
+reset => data_out[7]~reg0.ACLR
+reset => data_out[8]~reg0.ACLR
+reset => data_out[9]~reg0.ACLR
+reset => data_out[10]~reg0.ACLR
+reset => data_out[11]~reg0.ACLR
+reset => data_out[12]~reg0.ACLR
+reset => data_out[13]~reg0.ACLR
+reset => data_out[14]~reg0.ACLR
+reset => data_out[15]~reg0.ACLR
+reset => data_out[16]~reg0.ACLR
+reset => data_out[17]~reg0.ACLR
+reset => data_out[18]~reg0.ACLR
+reset => data_out[19]~reg0.ACLR
+reset => data_out[20]~reg0.ACLR
+reset => data_out[21]~reg0.ACLR
+reset => data_out[22]~reg0.ACLR
+reset => data_out[23]~reg0.ACLR
+reset => data_out[24]~reg0.ACLR
+reset => data_out[25]~reg0.ACLR
+reset => data_out[26]~reg0.ACLR
+reset => data_out[27]~reg0.ACLR
+reset => data_out[28]~reg0.ACLR
+reset => data_out[29]~reg0.ACLR
+reset => data_out[30]~reg0.ACLR
+reset => data_out[31]~reg0.ACLR
+reset => data_out[32]~reg0.ACLR
+reset => data_out[33]~reg0.ACLR
+reset => data_out[34]~reg0.ACLR
+reset => data_out[35]~reg0.ACLR
+reset => data_out[36]~reg0.ACLR
+reset => data_out[37]~reg0.ACLR
+reset => data_out[38]~reg0.ACLR
+reset => data_out[39]~reg0.ACLR
+reset => data_out[40]~reg0.ACLR
+reset => data_out[41]~reg0.ACLR
+reset => data_out[42]~reg0.ACLR
+reset => data_out[43]~reg0.ACLR
+reset => data_out[44]~reg0.ACLR
+reset => data_out[45]~reg0.ACLR
+reset => data_out[46]~reg0.ACLR
+reset => data_out[47]~reg0.ACLR
+reset => uart_enable.ACLR
+reset => data_out_ready~reg0.ACLR
+data_in[0] => data_out.DATAB
+data_in[0] => data.DATAB
+data_in[0] => data.DATAB
+data_in[0] => data.DATAB
+data_in[0] => data.DATAB
+data_in[0] => data.DATAB
+data_in[1] => data_out.DATAB
+data_in[1] => data.DATAB
+data_in[1] => data.DATAB
+data_in[1] => data.DATAB
+data_in[1] => data.DATAB
+data_in[1] => data.DATAB
+data_in[2] => data_out.DATAB
+data_in[2] => data.DATAB
+data_in[2] => data.DATAB
+data_in[2] => data.DATAB
+data_in[2] => data.DATAB
+data_in[2] => data.DATAB
+data_in[3] => data_out.DATAB
+data_in[3] => data.DATAB
+data_in[3] => data.DATAB
+data_in[3] => data.DATAB
+data_in[3] => data.DATAB
+data_in[3] => data.DATAB
+data_in[4] => data_out.DATAB
+data_in[4] => data.DATAB
+data_in[4] => data.DATAB
+data_in[4] => data.DATAB
+data_in[4] => data.DATAB
+data_in[4] => data.DATAB
+data_in[5] => data_out.DATAB
+data_in[5] => data.DATAB
+data_in[5] => data.DATAB
+data_in[5] => data.DATAB
+data_in[5] => data.DATAB
+data_in[5] => data.DATAB
+data_in[6] => data.DATAB
+data_in[6] => data_out.DATAB
+data_in[6] => data.DATAB
+data_in[6] => data.DATAB
+data_in[6] => data.DATAB
+data_in[6] => data.DATAB
+data_in[7] => data.DATAA
+data_in[7] => data.DATAB
+data_in[7] => data_out.DATAB
+data_in[7] => data.DATAB
+data_in[7] => data.DATAB
+data_in[7] => data.DATAB
+data_in[7] => data.DATAB
+data_in_ready => pr.IN1
+data_in_ready => pr.IN1
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[8] <= data_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[9] <= data_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[10] <= data_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[11] <= data_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[12] <= data_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[13] <= data_out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[14] <= data_out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[15] <= data_out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[16] <= data_out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[17] <= data_out[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[18] <= data_out[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[19] <= data_out[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[20] <= data_out[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[21] <= data_out[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[22] <= data_out[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[23] <= data_out[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[24] <= data_out[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[25] <= data_out[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[26] <= data_out[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[27] <= data_out[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[28] <= data_out[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[29] <= data_out[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[30] <= data_out[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[31] <= data_out[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[32] <= data_out[32]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[33] <= data_out[33]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[34] <= data_out[34]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[35] <= data_out[35]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[36] <= data_out[36]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[37] <= data_out[37]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[38] <= data_out[38]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[39] <= data_out[39]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[40] <= data_out[40]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[41] <= data_out[41]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[42] <= data_out[42]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[43] <= data_out[43]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[44] <= data_out[44]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[45] <= data_out[45]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[46] <= data_out[46]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[47] <= data_out[47]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out_ready <= data_out_ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bruteForceAttack|UARTreceiver:inst
+clk_50 => stopOk.CLK
+clk_50 => data[0]~reg0.CLK
+clk_50 => data[1]~reg0.CLK
+clk_50 => data[2]~reg0.CLK
+clk_50 => data[3]~reg0.CLK
+clk_50 => data[4]~reg0.CLK
+clk_50 => data[5]~reg0.CLK
+clk_50 => data[6]~reg0.CLK
+clk_50 => data[7]~reg0.CLK
+clk_50 => dataCount[0].CLK
+clk_50 => dataCount[1].CLK
+clk_50 => dataCount[2].CLK
+clk_50 => timeCount[0].CLK
+clk_50 => timeCount[1].CLK
+clk_50 => timeCount[2].CLK
+clk_50 => timeCount[3].CLK
+clk_50 => timeCount[4].CLK
+clk_50 => timeCount[5].CLK
+clk_50 => timeCount[6].CLK
+clk_50 => timeCount[7].CLK
+clk_50 => timeCount[8].CLK
+clk_50 => timeCount[9].CLK
+clk_50 => timeCount[10].CLK
+clk_50 => timeCount[11].CLK
+clk_50 => timeCount[12].CLK
+clk_50 => timeCount[13].CLK
+clk_50 => state~5.DATAIN
+serial => data.DATAB
+serial => data.DATAB
+serial => data.DATAB
+serial => data.DATAB
+serial => data.DATAB
+serial => data.DATAB
+serial => data.DATAB
+serial => data.DATAB
+serial => stopOk.DATAB
+serial => state.OUTPUTSELECT
+serial => state.OUTPUTSELECT
+serial => state.OUTPUTSELECT
+serial => state.OUTPUTSELECT
+data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dataReady <= dataReady.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bruteForceAttack|UARTfifo:inst4
+clk_50 => dataCount[0].CLK
+clk_50 => dataCount[1].CLK
+clk_50 => dataCount[2].CLK
+clk_50 => data_int[0].CLK
+clk_50 => data_int[1].CLK
+clk_50 => data_int[2].CLK
+clk_50 => data_int[3].CLK
+clk_50 => data_int[4].CLK
+clk_50 => data_int[5].CLK
+clk_50 => data_int[6].CLK
+clk_50 => data_int[7].CLK
+clk_50 => data_int[8].CLK
+clk_50 => data_int[9].CLK
+clk_50 => data_int[10].CLK
+clk_50 => data_int[11].CLK
+clk_50 => data_int[12].CLK
+clk_50 => data_int[13].CLK
+clk_50 => data_int[14].CLK
+clk_50 => data_int[15].CLK
+clk_50 => data_int[16].CLK
+clk_50 => data_int[17].CLK
+clk_50 => data_int[18].CLK
+clk_50 => data_int[19].CLK
+clk_50 => data_int[20].CLK
+clk_50 => data_int[21].CLK
+clk_50 => data_int[22].CLK
+clk_50 => data_int[23].CLK
+clk_50 => data_int[24].CLK
+clk_50 => data_int[25].CLK
+clk_50 => data_int[26].CLK
+clk_50 => data_int[27].CLK
+clk_50 => data_int[28].CLK
+clk_50 => data_int[29].CLK
+clk_50 => data_int[30].CLK
+clk_50 => data_int[31].CLK
+clk_50 => data_int[32].CLK
+clk_50 => data_int[33].CLK
+clk_50 => data_int[34].CLK
+clk_50 => data_int[35].CLK
+clk_50 => data_int[36].CLK
+clk_50 => data_int[37].CLK
+clk_50 => data_int[38].CLK
+clk_50 => data_int[39].CLK
+clk_50 => data_int[40].CLK
+clk_50 => data_int[41].CLK
+clk_50 => data_int[42].CLK
+clk_50 => data_int[43].CLK
+clk_50 => data_int[44].CLK
+clk_50 => data_int[45].CLK
+clk_50 => data_int[46].CLK
+clk_50 => data_int[47].CLK
+clk_50 => data_int[48].CLK
+clk_50 => data_int[49].CLK
+clk_50 => data_int[50].CLK
+clk_50 => data_int[51].CLK
+clk_50 => data_int[52].CLK
+clk_50 => data_int[53].CLK
+clk_50 => data_int[54].CLK
+clk_50 => data_int[55].CLK
+clk_50 => uart_byte_out[0]~reg0.CLK
+clk_50 => uart_byte_out[1]~reg0.CLK
+clk_50 => uart_byte_out[2]~reg0.CLK
+clk_50 => uart_byte_out[3]~reg0.CLK
+clk_50 => uart_byte_out[4]~reg0.CLK
+clk_50 => uart_byte_out[5]~reg0.CLK
+clk_50 => uart_byte_out[6]~reg0.CLK
+clk_50 => uart_byte_out[7]~reg0.CLK
+clk_50 => uart_start~reg0.CLK
+clk_50 => uart_enable.CLK
+clk_50 => start_int.CLK
+clk_50 => ready~reg0.CLK
+data_in[0] => data_int[8].DATAIN
+data_in[1] => data_int[9].DATAIN
+data_in[2] => data_int[10].DATAIN
+data_in[3] => data_int[11].DATAIN
+data_in[4] => data_int[12].DATAIN
+data_in[5] => data_int[13].DATAIN
+data_in[6] => data_int[14].DATAIN
+data_in[7] => data_int[15].DATAIN
+data_in[8] => data_int[16].DATAIN
+data_in[9] => data_int[17].DATAIN
+data_in[10] => data_int[18].DATAIN
+data_in[11] => data_int[19].DATAIN
+data_in[12] => data_int[20].DATAIN
+data_in[13] => data_int[21].DATAIN
+data_in[14] => data_int[22].DATAIN
+data_in[15] => data_int[23].DATAIN
+data_in[16] => data_int[24].DATAIN
+data_in[17] => data_int[25].DATAIN
+data_in[18] => data_int[26].DATAIN
+data_in[19] => data_int[27].DATAIN
+data_in[20] => data_int[28].DATAIN
+data_in[21] => data_int[29].DATAIN
+data_in[22] => data_int[30].DATAIN
+data_in[23] => data_int[31].DATAIN
+data_in[24] => data_int[32].DATAIN
+data_in[25] => data_int[33].DATAIN
+data_in[26] => data_int[34].DATAIN
+data_in[27] => data_int[35].DATAIN
+data_in[28] => data_int[36].DATAIN
+data_in[29] => data_int[37].DATAIN
+data_in[30] => data_int[38].DATAIN
+data_in[31] => data_int[39].DATAIN
+data_in[32] => data_int[40].DATAIN
+data_in[33] => data_int[41].DATAIN
+data_in[34] => data_int[42].DATAIN
+data_in[35] => data_int[43].DATAIN
+data_in[36] => data_int[44].DATAIN
+data_in[37] => data_int[45].DATAIN
+data_in[38] => data_int[46].DATAIN
+data_in[39] => data_int[47].DATAIN
+data_in[40] => data_int[48].DATAIN
+data_in[41] => data_int[49].DATAIN
+data_in[42] => data_int[50].DATAIN
+data_in[43] => data_int[51].DATAIN
+data_in[44] => data_int[52].DATAIN
+data_in[45] => data_int[53].DATAIN
+data_in[46] => data_int[54].DATAIN
+data_in[47] => data_int[55].DATAIN
+reset => dataCount[0].ACLR
+reset => dataCount[1].ACLR
+reset => dataCount[2].ACLR
+reset => data_int[0].ACLR
+reset => data_int[1].ACLR
+reset => data_int[2].ACLR
+reset => data_int[3].ACLR
+reset => data_int[4].ACLR
+reset => data_int[5].ACLR
+reset => data_int[6].ACLR
+reset => data_int[7].ACLR
+reset => data_int[8].ACLR
+reset => data_int[9].ACLR
+reset => data_int[10].ACLR
+reset => data_int[11].ACLR
+reset => data_int[12].ACLR
+reset => data_int[13].ACLR
+reset => data_int[14].ACLR
+reset => data_int[15].ACLR
+reset => data_int[16].ACLR
+reset => data_int[17].ACLR
+reset => data_int[18].ACLR
+reset => data_int[19].ACLR
+reset => data_int[20].ACLR
+reset => data_int[21].ACLR
+reset => data_int[22].ACLR
+reset => data_int[23].ACLR
+reset => data_int[24].ACLR
+reset => data_int[25].ACLR
+reset => data_int[26].ACLR
+reset => data_int[27].ACLR
+reset => data_int[28].ACLR
+reset => data_int[29].ACLR
+reset => data_int[30].ACLR
+reset => data_int[31].ACLR
+reset => data_int[32].ACLR
+reset => data_int[33].ACLR
+reset => data_int[34].ACLR
+reset => data_int[35].ACLR
+reset => data_int[36].ACLR
+reset => data_int[37].ACLR
+reset => data_int[38].ACLR
+reset => data_int[39].ACLR
+reset => data_int[40].ACLR
+reset => data_int[41].ACLR
+reset => data_int[42].ACLR
+reset => data_int[43].ACLR
+reset => data_int[44].ACLR
+reset => data_int[45].ACLR
+reset => data_int[46].ACLR
+reset => data_int[47].ACLR
+reset => data_int[48].ACLR
+reset => data_int[49].ACLR
+reset => data_int[50].ACLR
+reset => data_int[51].ACLR
+reset => data_int[52].ACLR
+reset => data_int[53].ACLR
+reset => data_int[54].ACLR
+reset => data_int[55].ACLR
+reset => uart_byte_out[0]~reg0.ACLR
+reset => uart_byte_out[1]~reg0.ACLR
+reset => uart_byte_out[2]~reg0.ACLR
+reset => uart_byte_out[3]~reg0.ACLR
+reset => uart_byte_out[4]~reg0.ACLR
+reset => uart_byte_out[5]~reg0.ACLR
+reset => uart_byte_out[6]~reg0.ACLR
+reset => uart_byte_out[7]~reg0.ACLR
+reset => uart_start~reg0.ACLR
+reset => uart_enable.ACLR
+reset => start_int.ACLR
+reset => ready~reg0.ACLR
+start => pr.IN1
+uart_ready_in => pr.IN1
+uart_ready_in => pr.IN1
+uart_ready_in => pr.IN1
+uart_start <= uart_start~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[0] <= uart_byte_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[1] <= uart_byte_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[2] <= uart_byte_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[3] <= uart_byte_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[4] <= uart_byte_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[5] <= uart_byte_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[6] <= uart_byte_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+uart_byte_out[7] <= uart_byte_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bruteForceAttack|UARTsender:inst5
+clk_50 => ready~reg0.CLK
+clk_50 => serialClk.CLK
+clk_50 => serialClkTimer[0].CLK
+clk_50 => serialClkTimer[1].CLK
+clk_50 => serialClkTimer[2].CLK
+clk_50 => serialClkTimer[3].CLK
+clk_50 => serialClkTimer[4].CLK
+clk_50 => serialClkTimer[5].CLK
+clk_50 => serialClkTimer[6].CLK
+clk_50 => serialClkTimer[7].CLK
+clk_50 => serialClkTimer[8].CLK
+clk_50 => serialClkTimer[9].CLK
+clk_50 => serialClkTimer[10].CLK
+clk_50 => serialClkTimer[11].CLK
+clk_50 => serialClkTimer[12].CLK
+clk_50 => serialClkTimer[13].CLK
+clk_50 => serialClkTimer[14].CLK
+clk_50 => serialClkTimer[15].CLK
+clk_50 => serialClkTimer[16].CLK
+clk_50 => serialClkTimer[17].CLK
+clk_50 => serialClkTimer[18].CLK
+clk_50 => serialClkTimer[19].CLK
+clk_50 => serialClkTimer[20].CLK
+clk_50 => serialClkTimer[21].CLK
+clk_50 => serialClkTimer[22].CLK
+clk_50 => serialClkTimer[23].CLK
+clk_50 => serialClkTimer[24].CLK
+clk_50 => serialClkTimer[25].CLK
+clk_50 => serialClkTimer[26].CLK
+clk_50 => serialClkTimer[27].CLK
+clk_50 => serialClkTimer[28].CLK
+clk_50 => serialClkTimer[29].CLK
+clk_50 => serialClkTimer[30].CLK
+clk_50 => data_int[0].CLK
+clk_50 => data_int[1].CLK
+clk_50 => data_int[2].CLK
+clk_50 => data_int[3].CLK
+clk_50 => data_int[4].CLK
+clk_50 => data_int[5].CLK
+clk_50 => data_int[6].CLK
+clk_50 => data_int[7].CLK
+clk_50 => start_int.CLK
+data[0] => data_int[0].DATAIN
+data[1] => data_int[1].DATAIN
+data[2] => data_int[2].DATAIN
+data[3] => data_int[3].DATAIN
+data[4] => data_int[4].DATAIN
+data[5] => data_int[5].DATAIN
+data[6] => data_int[6].DATAIN
+data[7] => data_int[7].DATAIN
+reset => running.ACLR
+reset => serialState[0].ACLR
+reset => serialState[1].PRESET
+reset => serialState[2].ACLR
+reset => serialState[3].PRESET
+reset => serialState[4].ACLR
+reset => serialState[5].ACLR
+reset => serialState[6].ACLR
+reset => serialState[7].ACLR
+reset => serialState[8].ACLR
+reset => serialState[9].ACLR
+reset => serialState[10].ACLR
+reset => serialState[11].ACLR
+reset => serialState[12].ACLR
+reset => serialState[13].ACLR
+reset => serialState[14].ACLR
+reset => serialState[15].ACLR
+reset => serialState[16].ACLR
+reset => serialState[17].ACLR
+reset => serialState[18].ACLR
+reset => serialState[19].ACLR
+reset => serialState[20].ACLR
+reset => serialState[21].ACLR
+reset => serialState[22].ACLR
+reset => serialState[23].ACLR
+reset => serialState[24].ACLR
+reset => serialState[25].ACLR
+reset => serialState[26].ACLR
+reset => serialState[27].ACLR
+reset => serialState[28].ACLR
+reset => serialState[29].ACLR
+reset => serialState[30].ACLR
+reset => serialClk.PRESET
+reset => serialClkTimer[0].PRESET
+reset => serialClkTimer[1].ACLR
+reset => serialClkTimer[2].ACLR
+reset => serialClkTimer[3].ACLR
+reset => serialClkTimer[4].ACLR
+reset => serialClkTimer[5].ACLR
+reset => serialClkTimer[6].ACLR
+reset => serialClkTimer[7].ACLR
+reset => serialClkTimer[8].ACLR
+reset => serialClkTimer[9].ACLR
+reset => serialClkTimer[10].ACLR
+reset => serialClkTimer[11].ACLR
+reset => serialClkTimer[12].ACLR
+reset => serialClkTimer[13].ACLR
+reset => serialClkTimer[14].ACLR
+reset => serialClkTimer[15].ACLR
+reset => serialClkTimer[16].ACLR
+reset => serialClkTimer[17].ACLR
+reset => serialClkTimer[18].ACLR
+reset => serialClkTimer[19].ACLR
+reset => serialClkTimer[20].ACLR
+reset => serialClkTimer[21].ACLR
+reset => serialClkTimer[22].ACLR
+reset => serialClkTimer[23].ACLR
+reset => serialClkTimer[24].ACLR
+reset => serialClkTimer[25].ACLR
+reset => serialClkTimer[26].ACLR
+reset => serialClkTimer[27].ACLR
+reset => serialClkTimer[28].ACLR
+reset => serialClkTimer[29].ACLR
+reset => serialClkTimer[30].ACLR
+reset => data_int[0].ACLR
+reset => data_int[1].ACLR
+reset => data_int[2].ACLR
+reset => data_int[3].ACLR
+reset => data_int[4].ACLR
+reset => data_int[5].ACLR
+reset => data_int[6].ACLR
+reset => data_int[7].ACLR
+reset => start_int.ACLR
+reset => serial~reg0.ENA
+reset => ready~reg0.ENA
+start => start_int.OUTPUTSELECT
+start => data_int[7].ENA
+start => data_int[6].ENA
+start => data_int[5].ENA
+start => data_int[4].ENA
+start => data_int[3].ENA
+start => data_int[2].ENA
+start => data_int[1].ENA
+start => data_int[0].ENA
+ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+serial <= serial~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bruteForceAttack|flipFlop:inst6
+reset => data_in_int[0].ACLR
+set => data_in_int[0].LATCH_ENABLE
+data_in[0] => data_in_int[0].DATAIN
+data_out[0] <= data_in_int[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
