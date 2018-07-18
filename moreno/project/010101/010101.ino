@@ -28,6 +28,7 @@ void labyrinth();
 void serialp();
 
 // LOOP READING BUTTON
+  uint16_t left = measureDistance(12);
 
 void loop() {
   // put your main code here, to run repeatedly:
@@ -39,7 +40,6 @@ void loop() {
 // PRINTS VALUES ON SERIAL MONITOR
 
 void serialp() {
-  uint16_t left = measureDistance(2);
   uint16_t straight = measureDistance(13);
   uint16_t right = measureDistance(8);
   Serial.print("-------------------\n");
@@ -50,116 +50,32 @@ void serialp() {
   Serial.print(right);
   Serial.print("\n");
   Serial.print("-------------------\n");
-  delay(200);
+  delay(400);
 }
 
 // DIFFERENT IMPLEMENTATIONS FOR ESCAPING
 
 void escape_longest_path() {
   while(true) {
-    uint16_t left = measureDistance(11);
-    uint16_t straight = measureDistance(12);
-    uint16_t right = measureDistance(13);
-    if (left > 500) {
-      driveCurve(true, 75, 200, -60);
-    }
-    else if (right > 500) {
-       driveCurve(true, 75, 200, 60);
-    }
-    if (straight > left && straight > right) {
-      driveForward(true, 125, 100);
-    }
-    else if (left > straight && left > right) {
-       driveCurve(true, 75, 200, 60);
-          // if (right > 13) {
-           // driveForward(true, 75, 150);
-          // }
-    }
-    else if (right > straight && right > left) {
-      driveCurve(true, 75, 200, -60);
-         // if (right > 13) {
-           // driveForward(true, 75, 150);
-         // }
-    }
-  }
-}
-
-void escape() {
-  while(true) {
-    uint16_t left = measureDistance(11);
-    uint16_t straight = measureDistance(12);
-    uint16_t right = measureDistance(13);
-    if (straight < 15) {
-       driveCurve(false , 155, 200, 90);
-       int tmp_left = measureDistance(13);
-       driveCurve(false, 155, 400, -90);
-       int tmp_right = measureDistance(3);
-       if (tmp_right > tmp_left) {
-          driveCurve(false, 155, 200, -70);
-          driveForward(false, 100, 200);
-       }
-       else if (tmp_left < tmp_right) {
-          driveCurve(false, 155, 400, 90);
-          driveCurve(false, 155, 200, 70);
-          driveForward(false, 100, 200);
-       }
-    }
-    if (left != -1 && right != -1) {
-      if (left > (right)) {
-          driveCurve(false, 100, 200, 90);
-          if (right > 13) {
-            driveForward(false, 100, 250);
-          }
+    uint16_t left = measureDistance(12);
+    uint16_t straight = measureDistance(13);
+    uint16_t right = measureDistance(8);
+    if (straight < 18) {
+      if (left > right) {
+        driveCurve(true, 60, 260, 90);
       }
-      else if (right > left) {
-         driveCurve(false, 100, 200, -90);
-         if (left > 13) {
-          driveForward(false, 100, 250);
-         }
-      }
-      else { driveForward(false, 75, 200);
+      else {
+        driveCurve(true, 60, 260, -90);
       }
     }
-    else { driveForward(false, 75, 200); }
-  }
-}
-
-void labyrinth() {
-  uint16_t last_left = measureDistance(13);
-  uint16_t last_right = measureDistance(3);
-  while(true) {
-    uint16_t left = measureDistance(13);
-    uint16_t mid = measureDistance(8);
-    uint16_t right = measureDistance(3);
-
-    if (left - last_left > 20) { // big change left
-      while(mid > 40) {
-        driveForward(true, 80, 100);
-        mid = measureDistance(8);
-      }
-      driveCurve(true, 80, 500, -90);
-      last_left = measureDistance(13);
-      last_right = measureDistance(3);
-    } else if (right - last_right > 20) { // big change right
-      while(mid > 40) {
-        driveForward(true, 80, 100);
-        mid = measureDistance(8);
-      }
-      driveCurve(true, 80, 500, 90);
-      last_left = measureDistance(13);
-      last_right = measureDistance(3);
+    else if (left < 15) {
+      driveCurve(true, 60, 230, -90);
     }
-    else { // on the path
-      // hold on the path
-      if (abs(left - right) <= 90) {
-        driveCurve(true, 80, 50, left - right);
-      } else if (left - right > 90) {
-        driveCurve(true, 80, 50, 90);
-      } else if (right - left > 90) {
-        driveCurve(true, 80, 50, -90);
-      }
-      last_left = left;
-      last_right = right;
+    else if (right < 15) {
+      driveCurve(true, 60, 230, 90); 
+    }
+    else {
+      driveForward(true, 60, 100); 
     }
   }
 }
@@ -238,7 +154,7 @@ void driveCurve(boolean forward, uint8_t speed,uint16_t time, int curve_strength
 
 void button(float voltage) {
   if((1.2 < voltage) && (voltage< 1.7)){
-    labyrinth();
+    escape_longest_path();
   }
 }
 
