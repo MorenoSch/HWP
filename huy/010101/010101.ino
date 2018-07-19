@@ -35,12 +35,13 @@ void loop() {
  int value = analogRead(A0);
  float voltage = (float) (value * VOLTAGE/1023.0);
  button(voltage);
+ //serialp();
 }
 
 // PRINTS VALUES ON SERIAL MONITOR
 
 void serialp() {
-  uint16_t left = measureDistance(2);
+  uint16_t left = measureDistance(12);
   uint16_t straight = measureDistance(13);
   uint16_t right = measureDistance(8);
   Serial.print("-------------------\n");
@@ -172,18 +173,33 @@ void labyrinth2() {
     uint16_t right = measureDistance(8);
 
     float left_factor = left;
-    float mid_factor = (mid/50.0)*(mid/50.0);
-    float right_factor = -right;
+    float mid_factor = (40.0/mid)*(40.0/mid);
+    float right_factor = right;
 
-    float total_factor = (left_factor + right_factor)/ mid_factor;
+    float total_factor = (left_factor - right_factor)* mid_factor;
+
+    if (left < 20) {
+      total_factor = -90;
+    } else if (right < 20) {
+      total_factor = 90;
+    } else if (mid < 20) {
+      if (left > right) {
+        total_factor = 90;
+      } else {
+        total_factor = -90;
+      }
+    }
+    
+    if (total_factor > 90) {
+      total_factor = 90;
+    } else if (total_factor < -90) {
+      total_factor = -90;
+    }
 
     int direction = total_factor;
-    if (direction > 90) {
-      direction = 90;
-    } else if (direction < -90) {
-      direction = -90;
+    if (left != 1 && mid != 1 && right != 1) {
+      driveCurve(true, 80, 200, direction); 
     }
-    driveCurve(true, 60, 50, direction);
     //driveForward(true, 60, 50);
   }
 }
@@ -253,8 +269,8 @@ void driveCurve(boolean forward, uint8_t speed,uint16_t time, int curve_strength
     setMotorSpeed(forward, speed,'A');
     delay(time);
   }
-  // setMotorSpeed(forward, 0,'A');
-  // setMotorSpeed(forward, 0,'B');
+  setMotorSpeed(forward, 0,'A');
+  setMotorSpeed(forward, 0,'B');
  }
 
 
@@ -277,7 +293,7 @@ uint16_t measureDistance(uint8_t Pin){
     }
   digitalWrite(Pin, LOW);
   pinMode(Pin, INPUT);
-  uint16_t p_1 = millis();
+  uint64_t p_1 = millis();
   while(digitalRead(Pin) == LOW && (millis() - p_1) < 30){
     p = micros(); 
   }
