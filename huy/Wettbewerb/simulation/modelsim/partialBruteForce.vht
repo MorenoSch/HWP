@@ -19,7 +19,7 @@
 -- ***************************************************************************
 -- Generated on "07/11/2018 12:43:57"
                                                             
--- Vhdl Test Bench template for design  :  bruteForce
+-- Vhdl Test Bench template for design  :  partialBruteForce
 -- 
 -- Simulation tool : ModelSim-Altera (VHDL)
 -- 
@@ -27,9 +27,9 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY bruteForce_vhd_tst IS
-END bruteForce_vhd_tst;
-ARCHITECTURE bruteForce_arch OF bruteForce_vhd_tst IS
+ENTITY partialBruteForce_vhd_tst IS
+END partialBruteForce_vhd_tst;
+ARCHITECTURE partialBruteForce_arch OF partialBruteForce_vhd_tst IS
 -- constants
 constant dataWidth : natural := 48;
 constant keyWidth : natural := 22;
@@ -40,9 +40,10 @@ SIGNAL clk_50 : STD_LOGIC := '0';
 SIGNAL cypher_in : STD_LOGIC_VECTOR(47 DOWNTO 0);
 SIGNAL plain_out : STD_LOGIC_VECTOR(47 DOWNTO 0);
 SIGNAL plain_out_ready : STD_LOGIC;
+SIGNAL key_prefix : std_logic_vector(2 DOWNTO 0) := "101";
 SIGNAL reset : STD_LOGIC;
 SIGNAL start : STD_LOGIC;
-COMPONENT bruteForce
+COMPONENT partialBruteForce
 	generic (
 		dataWidth : natural := 48;
 		keyWidth : natural := 22;
@@ -54,12 +55,13 @@ COMPONENT bruteForce
 	cypher_in : IN STD_LOGIC_VECTOR(47 DOWNTO 0);
 	plain_out : BUFFER STD_LOGIC_VECTOR(47 DOWNTO 0);
 	plain_out_ready : BUFFER STD_LOGIC;
+	key_prefix : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
 	reset : IN STD_LOGIC;
 	start : IN STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : bruteForce
+	i1 : partialBruteForce
 	GENERIC MAP (
 		dataWidth => dataWidth,
 		keyWidth => keyWidth,
@@ -72,6 +74,7 @@ BEGIN
 	cypher_in => cypher_in,
 	plain_out => plain_out,
 	plain_out_ready => plain_out_ready,
+	key_prefix => key_prefix,
 	reset => reset,
 	start => start
 	);
@@ -105,4 +108,4 @@ END PROCESS always;
 
 clk_50 <= not clk_50 after 10 ns;
                                           
-END bruteForce_arch;
+END partialBruteForce_arch;

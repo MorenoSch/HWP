@@ -3,111 +3,75 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk_50'
-Slack : -4.895
-TNS   : -3498.828
+Slack : -4.116
+TNS   : -338.989
 
-Type  : Slow 1200mV 85C Model Setup 'UARTsender:inst5|serialClk'
-Slack : -3.248
-TNS   : -94.867
-
-Type  : Slow 1200mV 85C Model Setup 'dataAccumulator:inst2|data_out_ready'
-Slack : -0.164
-TNS   : -0.174
+Type  : Slow 1200mV 85C Model Setup 'start'
+Slack : -0.318
+TNS   : -0.318
 
 Type  : Slow 1200mV 85C Model Hold 'clk_50'
-Slack : 0.343
+Slack : 0.358
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'dataAccumulator:inst2|data_out_ready'
-Slack : 0.449
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'UARTsender:inst5|serialClk'
-Slack : 0.719
+Type  : Slow 1200mV 85C Model Hold 'start'
+Slack : 0.853
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -1853.000
+TNS   : -212.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'UARTsender:inst5|serialClk'
-Slack : -1.000
-TNS   : -33.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'dataAccumulator:inst2|data_out_ready'
-Slack : -1.000
-TNS   : -2.000
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'start'
+Slack : -3.000
+TNS   : -4.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk_50'
-Slack : -4.344
-TNS   : -2966.011
+Slack : -3.564
+TNS   : -283.897
 
-Type  : Slow 1200mV 0C Model Setup 'UARTsender:inst5|serialClk'
-Slack : -2.772
-TNS   : -83.070
-
-Type  : Slow 1200mV 0C Model Setup 'dataAccumulator:inst2|data_out_ready'
-Slack : -0.050
-TNS   : -0.050
+Type  : Slow 1200mV 0C Model Setup 'start'
+Slack : -0.139
+TNS   : -0.139
 
 Type  : Slow 1200mV 0C Model Hold 'clk_50'
-Slack : 0.299
+Slack : 0.312
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'dataAccumulator:inst2|data_out_ready'
-Slack : 0.412
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'UARTsender:inst5|serialClk'
-Slack : 0.670
+Type  : Slow 1200mV 0C Model Hold 'start'
+Slack : 0.734
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -1853.000
+TNS   : -212.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'UARTsender:inst5|serialClk'
-Slack : -1.000
-TNS   : -33.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'dataAccumulator:inst2|data_out_ready'
-Slack : -1.000
-TNS   : -2.000
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'start'
+Slack : -3.000
+TNS   : -4.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk_50'
-Slack : -2.357
-TNS   : -1262.906
+Slack : -1.909
+TNS   : -114.045
 
-Type  : Fast 1200mV 0C Model Setup 'UARTsender:inst5|serialClk'
-Slack : -1.455
-TNS   : -40.251
-
-Type  : Fast 1200mV 0C Model Setup 'dataAccumulator:inst2|data_out_ready'
-Slack : 0.354
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'dataAccumulator:inst2|data_out_ready'
-Slack : 0.159
+Type  : Fast 1200mV 0C Model Setup 'start'
+Slack : 0.200
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_50'
-Slack : 0.178
+Slack : 0.186
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'UARTsender:inst5|serialClk'
-Slack : 0.363
+Type  : Fast 1200mV 0C Model Hold 'start'
+Slack : 0.501
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_50'
 Slack : -3.000
-TNS   : -1959.287
+TNS   : -224.040
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'UARTsender:inst5|serialClk'
-Slack : -1.000
-TNS   : -33.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'dataAccumulator:inst2|data_out_ready'
-Slack : -1.000
-TNS   : -2.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'start'
+Slack : -3.000
+TNS   : -4.089
 
 ------------------------------------------------------------

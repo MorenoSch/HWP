@@ -1,5 +1,5 @@
 Flow report for escape_room
-Wed Jul 18 18:10:11 2018
+Thu Jul 19 12:23:11 2018
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Jul 18 18:10:11 2018       ;
+; Flow Status                        ; Successful - Thu Jul 19 12:23:11 2018       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; escape_room                                 ;
-; Top-level Entity Name              ; bruteForceAttack                            ;
+; Top-level Entity Name              ; partialBruteForce                           ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,955 / 22,320 ( 13 % )                     ;
-;     Total combinational functions  ; 2,135 / 22,320 ( 10 % )                     ;
-;     Dedicated logic registers      ; 1,885 / 22,320 ( 8 % )                      ;
-; Total registers                    ; 1885                                        ;
-; Total pins                         ; 9 / 154 ( 6 % )                             ;
+; Total logic elements               ; 333 / 22,320 ( 1 % )                        ;
+;     Total combinational functions  ; 230 / 22,320 ( 1 % )                        ;
+;     Dedicated logic registers      ; 210 / 22,320 ( < 1 % )                      ;
+; Total registers                    ; 210                                         ;
+; Total pins                         ; 103 / 154 ( 67 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
@@ -64,42 +64,46 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/18/2018 18:08:42 ;
+; Start date & time ; 07/19/2018 12:22:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; escape_room         ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                      ;
-+--------------------------------------+----------------------------------------+---------------+------------------+--------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name      ; Section Id         ;
-+--------------------------------------+----------------------------------------+---------------+------------------+--------------------+
-; COMPILER_SIGNATURE_ID                ; 115410748656467.153193012112112        ; --            ; --               ; --                 ;
-; EDA_DESIGN_INSTANCE_NAME             ; i1                                     ; --            ; --               ; des_vhd_tst        ;
-; EDA_DESIGN_INSTANCE_NAME             ; i1                                     ; --            ; --               ; bruteForce_vhd_tst ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; bruteForce_vhd_tst                     ; --            ; --               ; eda_simulation     ;
-; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --               ; eda_simulation     ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)                 ; <None>        ; --               ; --                 ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --               ; eda_simulation     ;
-; EDA_TEST_BENCH_FILE                  ; simulation/des.vht                     ; --            ; --               ; des_vhd_tst        ;
-; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/bruteForce.vht     ; --            ; --               ; bruteForce_vhd_tst ;
-; EDA_TEST_BENCH_MODULE_NAME           ; des_vhd_tst                            ; --            ; --               ; des_vhd_tst        ;
-; EDA_TEST_BENCH_MODULE_NAME           ; bruteForce_vhd_tst                     ; --            ; --               ; bruteForce_vhd_tst ;
-; EDA_TEST_BENCH_NAME                  ; des_vhd_tst                            ; --            ; --               ; eda_simulation     ;
-; EDA_TEST_BENCH_NAME                  ; bruteForce_vhd_tst                     ; --            ; --               ; eda_simulation     ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --               ; eda_simulation     ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --               ; --                 ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --               ; --                 ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                   ; --            ; --               ; --                 ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; bruteForceAttack ; Top                ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; bruteForceAttack ; Top                ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; bruteForceAttack ; Top                ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --               ; --                 ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --               ; --                 ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --               ; --                 ;
-; TOP_LEVEL_ENTITY                     ; bruteForceAttack                       ; escape_room   ; --               ; --                 ;
-+--------------------------------------+----------------------------------------+---------------+------------------+--------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++--------------------------------------+-------------------------------------------+---------------+-------------------+---------------------------+
+; Assignment Name                      ; Value                                     ; Default Value ; Entity Name       ; Section Id                ;
++--------------------------------------+-------------------------------------------+---------------+-------------------+---------------------------+
+; COMPILER_SIGNATURE_ID                ; 115410748656467.153199573413768           ; --            ; --                ; --                        ;
+; EDA_DESIGN_INSTANCE_NAME             ; i1                                        ; --            ; --                ; des_vhd_tst               ;
+; EDA_DESIGN_INSTANCE_NAME             ; i1                                        ; --            ; --                ; bruteForce_vhd_tst        ;
+; EDA_DESIGN_INSTANCE_NAME             ; i1                                        ; --            ; --                ; partialBruteForce_vhd_tst ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; bruteForce_vhd_tst                        ; --            ; --                ; eda_simulation            ;
+; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                      ; --            ; --                ; eda_simulation            ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)                    ; <None>        ; --                ; --                        ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                           ; --            ; --                ; eda_simulation            ;
+; EDA_TEST_BENCH_FILE                  ; simulation/des.vht                        ; --            ; --                ; des_vhd_tst               ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/bruteForce.vht        ; --            ; --                ; bruteForce_vhd_tst        ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/partialBruteForce.vht ; --            ; --                ; partialBruteForce_vhd_tst ;
+; EDA_TEST_BENCH_MODULE_NAME           ; des_vhd_tst                               ; --            ; --                ; des_vhd_tst               ;
+; EDA_TEST_BENCH_MODULE_NAME           ; bruteForce_vhd_tst                        ; --            ; --                ; bruteForce_vhd_tst        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; partialBruteForce_vhd_tst                 ; --            ; --                ; partialBruteForce_vhd_tst ;
+; EDA_TEST_BENCH_NAME                  ; des_vhd_tst                               ; --            ; --                ; eda_simulation            ;
+; EDA_TEST_BENCH_NAME                  ; bruteForce_vhd_tst                        ; --            ; --                ; eda_simulation            ;
+; EDA_TEST_BENCH_NAME                  ; partialBruteForce_vhd_tst                 ; --            ; --                ; eda_simulation            ;
+; EDA_TIME_SCALE                       ; 1 ps                                      ; --            ; --                ; eda_simulation            ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                        ; --            ; --                ; --                        ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                         ; --            ; --                ; --                        ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                                      ; --            ; --                ; --                        ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family)    ; --            ; partialBruteForce ; Top                       ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family)    ; --            ; partialBruteForce ; Top                       ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family)    ; --            ; partialBruteForce ; Top                       ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                       ; --            ; --                ; --                        ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW     ; --            ; --                ; --                        ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                              ; --            ; --                ; --                        ;
+; TOP_LEVEL_ENTITY                     ; partialBruteForce                         ; escape_room   ; --                ; --                        ;
++--------------------------------------+-------------------------------------------+---------------+-------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -107,12 +111,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:34     ; 1.0                     ; 4826 MB             ; 00:01:03                           ;
-; Fitter               ; 00:00:35     ; 1.0                     ; 5321 MB             ; 00:00:46                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4697 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.2                     ; 4803 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:07     ; 1.0                     ; 4692 MB             ; 00:00:07                           ;
-; Total                ; 00:01:24     ; --                      ; --                  ; 00:02:04                           ;
+; Analysis & Synthesis ; 00:00:25     ; 1.0                     ; 4809 MB             ; 00:00:53                           ;
+; Fitter               ; 00:00:17     ; 1.0                     ; 5278 MB             ; 00:00:20                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4689 MB             ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 4774 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 4660 MB             ; 00:00:03                           ;
+; Total                ; 00:00:52     ; --                      ; --                  ; 00:01:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
