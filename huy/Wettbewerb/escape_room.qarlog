@@ -1,0 +1,37 @@
+Quartus Prime Archive log --	C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/escape_room.qarlog
+
+Archive:	C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/escape_room.qar
+Date:		Thu Jul 19 13:41:17 2018
+Quartus Prime		18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTfifo.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTreceiver.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/UARTsender.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/adcReader.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForce.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/bruteForceAttack.bdf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/dataAccumulator.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/des.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/desDummy.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/escape_room.qpf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/escape_room.qsf
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/flipFlop.vhd
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/UARTfifo.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/UARTsender.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/bruteForceSimulation.png
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/dataAccumulator.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/des.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/des_loop.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/des_round.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/expander.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/get_key.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/modelsim/bruteForce.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/modelsim/partialBruteForce.vht
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/partialBruteForceSimulation.png
+C:/Users/Quoc-Huy/Documents/GitHub/HWP/huy/Wettbewerb/simulation/sbox1.vht
+c:/intelfpga_lite/18.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 26 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
